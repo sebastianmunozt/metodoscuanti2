@@ -1,41 +1,39 @@
-<img src="files/Banner.gif" width="800">
-
-## Bienvenidxs al curso de Métodos Cuantitativos II de la carrera de Antropología en la Universidad Alberto Hurtado.
-
-
-### Equipo Académico
-
-| Profesor         | email                       | 
-|--------------------|-----------------------------|
-| Sebastián Muñoz    | semunoz@uahurtado.cl  |
-
-
-| Ayudantes          | email                       |
-|--------------------|-----------------------------|
-| Francesca Rocco    | franroco21@gmail.com       |
-
-
-[`Canal Slack de Comunicación`](https://join.slack.com/t/metodoscuanti-yta9906/shared_invite/zt-31arlcuqv-zlbGRsmNp41OP9LLoBuHxg)
-
-
-A continuación, podrán descargar el programa y programación del curso.
-
-Programa: [`[Programa]`](https://metodoscuantitativos.github.io/mc2/files/programa_2024.pdf) 
-
-Programación: [`[Programación]`](https://metodoscuantitativos.github.io/mc2/files/programacion_2024.pdf) 
-
-
+![Banner](images/00.png)
+# 🎓 **Bienvenidxs al curso de Métodos Cuantitativos II**
+### 🏛 Carrera de Antropología - Universidad Alberto Hurtado
 
 ---
-## Descarga e instalación de R y RStudio
 
-- Descargar e instalar `R`: [`[Cápsula]`](https://youtu.be/URtP9Qo2Trw?si=6BCceJEx7f6sXduZ) 
+## ‍ **Equipo Académico**
 
+| 📌 **Rol**      | 📧 **Email**                    |
+|----------------|--------------------------------|
+| **Profesor**   | Sebastián Muñoz   
+|               | [semunoz@uahurtado.cl](mailto:semunoz@uahurtado.cl)  |
+| **Ayudante**  | Francesca Rocco   
+|               | [franroco21@gmail.com](mailto:franroco21@gmail.com)  |
+
+🔗 [**Canal de Slack para comunicación**](https://join.slack.com/t/metodoscuanti-yta9906/shared_invite/zt-31arlcuqv-zlbGRsmNp41OP9LLoBuHxg)
 
 ---
-## Calendario Clases
 
-Nota: Todas las clases son presenciales, a continuación pueden ver las presentaciones de las clases.
+## **Documentos del Curso**
+📂 **Descarga el programa y la programación del curso:**
+- 📄 [**Programa**](https://metodoscuantitativos.github.io/mc2/files/programa_2024.pdf)
+- 📅 [**Programación**](https://metodoscuantitativos.github.io/mc2/files/programacion_2024.pdf)
+
+---
+
+## 💻 **Descarga e instalación de R y RStudio**
+🔹 Instala `R`: [📺 **Ver Cápsula**](https://youtu.be/URtP9Qo2Trw?si=6BCceJEx7f6sXduZ)
+
+---
+
+## 📅 **Calendario de Clases**
+📌 **Nota**: Todas las clases son presenciales.
+
+
+
 
 | N°  | Fecha       | Contenido                                                         | Material Clase | Material Apoyo                                      |
 |----|------------|------------------------------------------------------------------|---------------|--------------------------------------------------|
@@ -107,7 +105,7 @@ Nota: En general las ayundantías son online, a excepción de algunas con Matía
 ## Grupos de trabajo
 
 
-
+- ¿Existirán cambios?
 
 
 #### Bibliografía del curso
@@ -146,7 +144,6 @@ Nota: En general las ayundantías son online, a excepción de algunas con Matía
 - [`[AS Checklist for Articles_OSF]`](https://metodoscuantitativos.github.io/mc2/bibliografía/optativa/AS-Checklist-for-Articles-OSF.pdf)
 
 - [`[Belcher Cómo-escribir-un-artículo-académico-en-12-semanas]`](https://metodoscuantitativos.github.io/mc2/bibliografía/optativa/Belcher-Cómo-escribir-un-artículo-académico-en-12-semanas.pdf)
-
 
 
 
