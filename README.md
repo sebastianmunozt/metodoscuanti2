@@ -19,8 +19,8 @@
 
 ## **Documentos del Curso**
 📂 **Descarga el programa y la programación del curso:**
-- 📄 [**Programa**](https://metodoscuantitativos.github.io/mc2/files/programa_2024.pdf)
-- 📅 [**Programación**](https://metodoscuantitativos.github.io/mc2/files/programacion_2024.pdf)
+- 📄 [**Programa**](https://sebastianmunozt.github.io/metodoscuanti2/files/programa_2025.pdf)
+- 📅 [**Programación**](https://sebastianmunozt.github.io/metodoscuanti2/files/programacion_2025.pdf)
 
 ---
 
@@ -29,13 +29,8 @@
 
 ---
 
+
 ## 📅 **Calendario de Clases**
-📌 **Nota**: Todas las clases son presenciales.
-
-
-
-
-# 📅 **Calendario de Clases**
 
 📌 **Nota**: Todas las clases son presenciales.
 
@@ -69,8 +64,11 @@
 - Las ayundantías son online
 
 
-| Fecha      | Contenido                                                  | Tareas | Material a discutir | Grabación |
-|------------|------------------------------------------------------------|--------|---------------------|------------|
+| Fecha      | Contenido  | Tareas     | Material a discutir | Grabación  |
+|------------|-----------|------------|---------------------|------------|
+|            |           | Pendiente  | Pendiente          | Pendiente  |
+|            |           | Pendiente  | Pendiente          | Pendiente  |
+
 
 
 ---
@@ -88,20 +86,19 @@
 ---
 ## Evaluaciones y Tareas
 
-| Evaluación/Tarea              | Contenido                                    | Entrega        |
-|-------------------------------|----------------------------------------------|----------------|
-| Tarea 1                    | Formulario corregido        | Marzo 21 (Viernes)|
-| Tarea 2                    | Realización de Prueba Piloto        | Marzo 28 (Viernes)|
-| Avance 1                      | Presentación de formulario corregido  - Según Prueba Piloto       | Abril 04       |
-| Evaluación individual I       | Nivelación en R                              | Abril 11       |
-| Formulario Final               | Presentación de formulario final conjunto (solo ayudantes y directores) | Abril 25       |
-| Inicio Trabajo de Campo       | Hacer 5 cuestionarios por persona            | Mayo 09        |
-| Finalización Trabajo de Campo | Hacer 5 cuestionarios por persona            | Mayo 16      |
-| Evaluación individual II      | Procesamiento y análisis de datos cuanti/cuali | Junio 27       |
-| Pruebas recuperativas         | Pruebas 1 y 2 según el caso                    | Julio 4      |
-| Entrega grupal final          | Presentación de investigación en clases y entrega de trabajo | Julio 18 |
-| Entrega final de notas          |  -  | Julio 25 |
-
+| 📌 **Evaluación/Tarea**       | 📖 **Contenido**                                        | 📅 **Entrega**         |
+|------------------------------|--------------------------------------------------------|------------------------|
+| ✅ **Tarea 1**               | 📄 Formulario corregido                               | 📅 Marzo 21 (Viernes)  |
+| ✅ **Tarea 2**               | 🛠️ Realización de Prueba Piloto                      | 📅 Marzo 28 (Viernes)  |
+| 📑 **Avance 1**              | 📊 Presentación de formulario corregido - Según Prueba Piloto | 📅 Abril 04           |
+| 🏅 **Evaluación individual I** | 📈 Nivelación en R                                   | 📅 Abril 11           |
+| 📜 **Formulario Final**       | 📑 Presentación de formulario final conjunto (solo ayudantes y directores) | 📅 Abril 25  |
+| 🏁 **Inicio Trabajo de Campo** | 📋 Hacer 5 cuestionarios por persona                 | 📅 Mayo 09            |
+| 🎯 **Finalización Trabajo de Campo** | 📋 Hacer 5 cuestionarios por persona       | 📅 Mayo 16            |
+| 🏅 **Evaluación individual II** | 📊 Procesamiento y análisis de datos cuanti/cuali  | 📅 Junio 27           |
+| 🔄 **Pruebas recuperativas**  | 📝 Pruebas 1 y 2 según el caso                        | 📅 Julio 4            |
+| 📖 **Entrega grupal final**   | 📑 Presentación de investigación en clases y entrega de trabajo | 📅 Julio 18  |
+| 🎓 **Entrega final de notas** | 📌 -                                                | 📅 Julio 25           |
 
 
 
