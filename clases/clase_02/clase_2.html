@@ -1,59 +1,52 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Clase 2: tidyverse</title>
+    <title>clase_2.knit</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Sebastián Muñoz-Tapia &amp; Gino Ocampo" />
-    <meta name="date" content="2024-03-18" />
-    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <script src="clase_2_files/header-attrs-2.25/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
 
-.title[
-# Clase 2: tidyverse
-]
-.subtitle[
-## Métodos Cuantitativos II
-]
-.author[
-### Sebastián Muñoz-Tapia &amp; Gino Ocampo
-]
-.institute[
-### Antropología UAH
-]
-.date[
-### 2024-03-18
-]
+
+
+
+
+
+
+class: slideInRight, fadeOutLeft, middle, inverse
+
+
+## repaso &amp; tidyverse
+- Métodos cuantitativos 2
+- Prof. Sebastián Muñoz
 
 ---
 
 
 
-
-
-
-class: inverse, middle
+class: slideInRight, fadeOutLeft, middle
 
 ## Repaso
 
 .pull-left[
-- ¿para qué sirve *&lt;-* ?
-- ¿para qué sirve *c()* ?
+- ¿para qué sirve `&lt;-` ?
+- ¿para qué sirve `c()` ?
 - ¿cuáles son las partes de una función?
-- ¿qué indican los corchetes *[]*?]
+- ¿qué indican los corchetes `[]`?]
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 ## Tipos de objetos: vector, data.frame, matrix
 ![v](img/Sintesis 2.png)
 
 ---
 
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
 ## dentro de un data frame
 
@@ -62,23 +55,24 @@ class: center, middle
 
 ---
 
-class: center, middle 
+class: slideInRight, fadeOutLeft, middle
 
-## tidyverse
+## `tidyverse`
 
 ![tidyverse](img/tidyverse.png)
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-## tidyverse como un dialécto
+## `tidyverse` como un dialécto
 
 - en el camino de saber aprender el lenguaje de r, aprender a hablar con los computadores.
-- tidyverse: un argot que modifica algunas formas de Rbase. 
+- `tidyverse`: un argot que modifica algunas formas de Rbase. 
 
 ### ¿Qué tiene que ver esto con la antropología?
 - además de desarrollar competencias específicas
 - propuesta:pensar la relación con los computadores
-- marco: discusiones de la antropología contemporánea sobre relaciones humanos y no-humanoS: 
+- marco: discusiones de la antropología contemporánea sobre relaciones humanos y no-humanos: 
   + dioses
   + naturaleza
   + animales
@@ -87,14 +81,14 @@ class: center, middle
   
   
 ---
-
+class: slideInRight, fadeOutLeft, middle
 
 ## Etnografía del mundo digital: 
 
 
 
 .pull-left[
-  + saber hablar con los computadores, yo y Gino como sus informantes clave.
+  + saber hablar con los computadores, yo y Rrancesca como sus informantes clave.
 
 &lt;img src="img/humanonohumano.png" width="2000px"/&gt;
 
@@ -106,6 +100,7 @@ class: center, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 ## ¿Cuál será la relación que establecermos con las máquinas?
 
@@ -119,6 +114,7 @@ class: center, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 ## Programación
 - Darles instrucciones a los computadores (nuestros "esclavos")
@@ -135,6 +131,7 @@ class: center, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 ## A quienes les interese estos temas:
 
@@ -146,9 +143,10 @@ https://lalulula.tv/cine/100076/donna-haraway-cuentos-para-la-supervivencia-terr
 
 
 ---
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
-##el pipe %&gt;% 
+
+## el pipe `%&gt;%`
 .pull-left[
 &lt;img src="img/ceci n'est pas une pipe.jfif" width="300px"/&gt;
 
@@ -160,12 +158,10 @@ class: center, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 
-
-class: center
-
-##dplyr
+## `dplyr`
 
 ![tidyverse](img/dplyr.png)
 
@@ -173,60 +169,75 @@ class: center
 
 
 ---
-class:center, middle
-## select ()
+class: slideInRight, fadeOutLeft, middle
+
+## `select ()`
 
 ![tidyverse](img/select.png)
-![tidyverse](img/select2.png)
+
+---
+class: slideInRight, fadeOutLeft, middle, center
+background-image: url("img/select2.png")
+
+
+
 
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-class:center, middle
-## filter ()
+
+## `filter ()`
 
 &lt;img src="img/filter.png" width="700px"/&gt;
+
+
+---
+class: slideInRight, fadeOutLeft, middle
 &lt;img src="img/filter2.png" width="500px"/&gt;
 
 
 ---
-class: inverse, center, middle
+class: slideInRight, fadeOutLeft, middle
 
 ## Operadores 
 ![tidyverse](img/Resumen_s1.png)
 
-- %in%: lo que está dentro de...
+- `%in%`: lo que está dentro de...
 
 ---
 
-class:center
+class: slideInRight, fadeOutLeft, middle
 
-## Mutate
+## `mutate()`
 &lt;img src="img/mutate.png" width="600px"/&gt; 
+
+
 
 ![mutate](img/mutate2.webp)
 
 ---
 
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
-## Group_by + summarize 
+## `group_by()` + `summarize()` 
 &lt;img src="img/group_by.png" width="490px"/&gt; 
 
 
 ---
 
-class: center
+class: slideInRight, fadeOutLeft, middle
 
 ## Resumen
-
 
 &lt;img src="img/resumen_tidy.png" width="500px"/&gt; 
 
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
+
 ## Entonces...
 
 .pull-left[
@@ -244,9 +255,9 @@ class: center
 
 
 ---
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
-## pacman::p_load
+## `pacman::p_load()`
 
 - Resume las funciones library() e install.packages()
 optimiza esta relación entre ambas pues solo las aplica cuando son necesarias (if requiere()), es decir, ¡no te reinicia R si ya está instalada la librería!
@@ -255,7 +266,7 @@ optimiza esta relación entre ambas pues solo las aplica cuando son necesarias (
 
 
 ---
-class: inverse
+class: slideInRight, fadeOutLeft, middle
 
 background-image: url("img/fly1.jpg")
 background-size: cover
@@ -265,9 +276,12 @@ background-size: cover
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
 "highlightStyle": "github",
 "highlightLines": true,
-"countIncrementalSlides": false
+"ratio": "16:9",
+"countIncrementalSlides": true,
+"font-family": "Outfit, Arial, sans-serif"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

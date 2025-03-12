@@ -1,48 +1,90 @@
 ---
-title: "Clase 2: tidyverse"
-subtitle: "Métodos Cuantitativos II"
-author: "Sebastián Muñoz-Tapia & Gino Ocampo"
-institute: "Antropología UAH"
-date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
-    lib_dir: libs
+    css: ["xaringan-themer.css", "custom.css"]  # Se añade custom.css aquí
     nature:
+      slideNumberFormat: "%current%"
       highlightStyle: github
       highlightLines: true
-      countIncrementalSlides: false
+      ratio: 16:9
+      countIncrementalSlides: true
+      font-family: "Outfit, Arial, sans-serif"
+---
+
+
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanExtra)
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "black",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"), 
+  base_font_size = "25px", # Ajuste del tamaño global de la fuente
+)
+
+# Crear un archivo CSS para personalizar inverse y citas
+css_code <- "
+.inverse strong { color: #b0b0b0 !important; } /* Texto en negrita en gris */
+.inverse em { color: #b0b0b0 !important; } /* Texto en cursiva en gris */
+.inverse a { color: #b0b0b0 !important; text-decoration: underline; } /* Enlaces en gris */
+.inverse a:hover { color: #d0d0d0 !important; } /* Color más claro al pasar el mouse */
+
+/* 🔹 Citas normales */
+blockquote {
+  color: #555555 !important;  /* Texto en gris oscuro */
+  font-style: italic;
+  font-size: 1.2em;  /* Aumenta el tamaño */
+  border-left: 5px solid #999999; /* Borde lateral gris */
+  padding-left: 15px;
+  margin-left: 20px;
+}
+
+/* 🔹 Citas en inverse */
+.inverse blockquote {
+  color: #bbbbbb !important;  /* Texto más claro */
+  border-left: 4px solid #d0d0d0;
+}
+"
+
+writeLines(css_code, "custom.css") # Guarda el CSS en un archivo
+
+
+```
+
+class: slideInRight, fadeOutLeft, middle, inverse
+
+
+## repaso & tidyverse
+- Métodos cuantitativos 2
+- Prof. Sebastián Muñoz
 
 ---
 
 
-```{r xaringan-themer, include=FALSE, warning=FALSE}
 
-pacman::p_load(xaringan,xaringanthemer )
-style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
-
-```
-
-
-class: inverse, middle
+class: slideInRight, fadeOutLeft, middle
 
 ## Repaso
 
 .pull-left[
-- ¿para qué sirve *<-* ?
-- ¿para qué sirve *c()* ?
+- ¿para qué sirve `<-` ?
+- ¿para qué sirve `c()` ?
 - ¿cuáles son las partes de una función?
-- ¿qué indican los corchetes *[]*?]
+- ¿qué indican los corchetes `[]`?]
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 ## Tipos de objetos: vector, data.frame, matrix
 ![v](img/Sintesis 2.png)
 
 ---
 
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
 ## dentro de un data frame
 
@@ -51,23 +93,24 @@ class: center, middle
 
 ---
 
-class: center, middle 
+class: slideInRight, fadeOutLeft, middle
 
-## tidyverse
+## `tidyverse`
 
 ![tidyverse](img/tidyverse.png)
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-## tidyverse como un dialécto
+## `tidyverse` como un dialécto
 
 - en el camino de saber aprender el lenguaje de r, aprender a hablar con los computadores.
-- tidyverse: un argot que modifica algunas formas de Rbase. 
+- `tidyverse`: un argot que modifica algunas formas de Rbase. 
 
 ### ¿Qué tiene que ver esto con la antropología?
 - además de desarrollar competencias específicas
 - propuesta:pensar la relación con los computadores
-- marco: discusiones de la antropología contemporánea sobre relaciones humanos y no-humanoS: 
+- marco: discusiones de la antropología contemporánea sobre relaciones humanos y no-humanos: 
   + dioses
   + naturaleza
   + animales
@@ -76,14 +119,14 @@ class: center, middle
   
   
 ---
-
+class: slideInRight, fadeOutLeft, middle
 
 ## Etnografía del mundo digital: 
 
 
 
 .pull-left[
-  + saber hablar con los computadores, yo y Gino como sus informantes clave.
+  + saber hablar con los computadores, yo y Rrancesca como sus informantes clave.
 
 <img src="img/humanonohumano.png" width="2000px"/>
 
@@ -95,6 +138,7 @@ class: center, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 ## ¿Cuál será la relación que establecermos con las máquinas?
 
@@ -108,6 +152,7 @@ class: center, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 ## Programación
 - Darles instrucciones a los computadores (nuestros "esclavos")
@@ -124,6 +169,7 @@ class: center, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 ## A quienes les interese estos temas:
 
@@ -135,9 +181,10 @@ https://lalulula.tv/cine/100076/donna-haraway-cuentos-para-la-supervivencia-terr
 
 
 ---
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
-##el pipe %>% 
+
+## el pipe `%>%`
 .pull-left[
 <img src="img/ceci n'est pas une pipe.jfif" width="300px"/>
 
@@ -149,12 +196,10 @@ class: center, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 
-
-class: center
-
-##dplyr
+## `dplyr`
 
 ![tidyverse](img/dplyr.png)
 
@@ -162,60 +207,75 @@ class: center
 
 
 ---
-class:center, middle
-## select ()
+class: slideInRight, fadeOutLeft, middle
+
+## `select ()`
 
 ![tidyverse](img/select.png)
-![tidyverse](img/select2.png)
+
+---
+class: slideInRight, fadeOutLeft, middle, center
+background-image: url("img/select2.png")
+
+
+
 
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-class:center, middle
-## filter ()
+
+## `filter ()`
 
 <img src="img/filter.png" width="700px"/>
+
+
+---
+class: slideInRight, fadeOutLeft, middle
 <img src="img/filter2.png" width="500px"/>
 
 
 ---
-class: inverse, center, middle
+class: slideInRight, fadeOutLeft, middle
 
 ## Operadores 
 ![tidyverse](img/Resumen_s1.png)
 
-- %in%: lo que está dentro de...
+- `%in%`: lo que está dentro de...
 
 ---
 
-class:center
+class: slideInRight, fadeOutLeft, middle
 
-## Mutate
+## `mutate()`
 <img src="img/mutate.png" width="600px"/> 
+
+
 
 ![mutate](img/mutate2.webp)
 
 ---
 
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
-## Group_by + summarize 
+## `group_by()` + `summarize()` 
 <img src="img/group_by.png" width="490px"/> 
 
 
 ---
 
-class: center
+class: slideInRight, fadeOutLeft, middle
 
 ## Resumen
-
 
 <img src="img/resumen_tidy.png" width="500px"/> 
 
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
+
 ## Entonces...
 
 .pull-left[
@@ -233,9 +293,9 @@ class: center
 
 
 ---
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
-## pacman::p_load
+## `pacman::p_load()`
 
 - Resume las funciones library() e install.packages()
 optimiza esta relación entre ambas pues solo las aplica cuando son necesarias (if requiere()), es decir, ¡no te reinicia R si ya está instalada la librería!
@@ -244,7 +304,7 @@ optimiza esta relación entre ambas pues solo las aplica cuando son necesarias (
 
 
 ---
-class: inverse
+class: slideInRight, fadeOutLeft, middle
 
 background-image: url("img/fly1.jpg")
 background-size: cover
