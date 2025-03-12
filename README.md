@@ -1,9 +1,6 @@
 <img src="files/Banner.gif" width="800">
-### Bienvenidxs al curso de Métodos Cuantitativos II de la carrera de Antropología en la Universidad Alberto Hurtado.
 
-
-
-
+## Bienvenidxs al curso de Métodos Cuantitativos II de la carrera de Antropología en la Universidad Alberto Hurtado.
 
 
 ### Equipo Académico
