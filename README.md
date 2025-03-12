@@ -10,7 +10,7 @@
 |----------------|--------------------------------|
 | **Profesor**   | Sebastián Muñoz   
 |               | [semunoz@uahurtado.cl](mailto:semunoz@uahurtado.cl)  |
-| **Ayudante**  | Francesca Rocco   
+| **Ayudante**  | Francesca Roco   
 |               | [franroco21@gmail.com](mailto:franroco21@gmail.com)  |
 
 ---
@@ -67,12 +67,14 @@
 ---
 
 ## Calendario Ayudantías
-Nota: En general las ayundantías son online, a excepción de algunas con Matías
+Nota: En general las ayundantías son online.
+
+En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSc1sShBA6IM0jOTNl4q9MmovBgTohsrTuu6vGn2Io4Oa436sw/viewform?usp=header) pueden elegir el horario que les acomode para realizar las ayudantías del curso. 
 
 
 | 📆 Fecha      | 📚 Contenido                                                  | 📌 Tareas | 📖 Material a discutir | 🎥 Grabación |
 |------------|------------------------------------------------------------|--------|---------------------|------------|
-| Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| Pendiente | Repaso RStudio y funciones básicas | Pendiente | Pendiente | Pendiente |
 
 
 
