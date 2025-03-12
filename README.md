@@ -14,6 +14,7 @@
 |               | [franroco21@gmail.com](mailto:franroco21@gmail.com)  |
 
 🔗 [**Canal de Slack para comunicación**](https://join.slack.com/t/metodoscuanti-yta9906/shared_invite/zt-31arlcuqv-zlbGRsmNp41OP9LLoBuHxg)
+🔗 [**¿Cómo funciona Slack?**](https://www.youtube.com/watch?v=FUeHfBTLBs0&t=328s)
 
 ---
 
