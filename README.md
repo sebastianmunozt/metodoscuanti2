@@ -19,8 +19,8 @@
 
 ## **Documentos del Curso**
 📂 **Descarga el programa y la programación del curso:**
-- 📄 [**Programa**](https://metodoscuantitativos.github.io/mc2/files/programa_2024.pdf)
-- 📅 [**Programación**](https://metodoscuantitativos.github.io/mc2/files/programacion_2024.pdf)
+- 📄 [**Programa**](https://sebastianmunozt.github.io/metodoscuanti2/files/programa_2025.pdf) 
+- 📅 [**Programación**](https://sebastianmunozt.github.io/metodoscuanti2/programacion_2025.pdf)
 
 ---
 
@@ -39,9 +39,9 @@
 
 | 🔢 | 📆 Fecha       | 📚 Contenido                                                         | 📂 Material Clase | 📖 Material Apoyo                                      |
 |----|------------|------------------------------------------------------------------|---------------|--------------------------------------------------|
-| 1️⃣  | 🗓️ Viernes 14 de marzo | Introducción y repaso cuestionarios                            | [`📑 Presentación`](https://syncmagic.live/?id=m53vKjr7) · [`💻 GColab-Rbase`](https://colab.research.google.com/drive/17Hc4XpyXoXXcYQtcbcBQMIJ_ztVwo0wO?usp=sharing) | -                                                |
-| 2️⃣  | 🗓️ Viernes 21 de marzo | Google Colab - Repaso Rbase y `tidyverse` 1                     | [`💻 GColab-tidyverse`](https://colab.research.google.com/drive/1Qp37zYreyqS5hoSZWSpPvg1W4bzchOW6#scrollTo=ePkok5DDR98G) | [`📊 PPT`](https://metodoscuantitativos.github.io/mc2/clases/clase_01/clase_1#1) · [`📜 .R`](https://metodoscuantitativos.github.io/mc2/clases/clase_01/clase_1.R) · [`🎥 Cápsula-Rbase`](https://www.youtube.com/playlist?list=PLtMKbC0NRgrE6LO02NvL4G9LdypG3P4lA) |
-| 3️⃣  | 🗓️ Viernes 28 de marzo | `tidyverse` 2 - Introducción muestreo                           | -             | [`📚 tidyverse`](https://metodoscuantitativos.github.io/mc2/clases/clase_02/clase_2#1) · [`📜 .R`](https://metodoscuantitativos.github.io/mc2/clases/clase_02/clase_2.R) · [`🎥 Cápsula-tidyverse`](https://youtube.com/playlist?list=PLtMKbC0NRgrHdBUAW7fcEhGYQC4qDg_XP&si=Lvx9okoAY3OXk4Bt) · [`📖 Muestreo`](https://metodoscuantitativos.github.io/mc2/clases/clase_03/clase_3#1) · [`📊 .xlsx`](https://metodoscuantitativos.github.io/mc2/clases/clase_03/marco_excel.xlsx)                              |
+| 1️⃣  | 🗓️ Viernes 14 de marzo | Introducción y repaso cuestionarios                            | [`📑 Presentación`](https://syncmagic.live/?id=m53vKjr7) · [`💻 GColab-Rbase`](https://colab.research.google.com/drive/17Hc4XpyXoXXcYQtcbcBQMIJ_ztVwo0wO?usp=sharing) |   [`📜 .R`](https://metodoscuantitativos.github.io/mc2/clases/clase_01/clase_1.R) · [`🎥 Cápsula-Rbase`](https://www.youtube.com/playlist?list=PLtMKbC0NRgrE6LO02NvL4G9LdypG3P4lA)                                         |
+| 2️⃣  | 🗓️ Viernes 21 de marzo | Google Colab - Repaso Rbase y `tidyverse` 1                     |  [`📚 tidyverse`](https://metodoscuantitativos.github.io/mc2/clases/clase_02/clase_2#1) · [`💻 GColab-tidyverse`](https://colab.research.google.com/drive/1Qp37zYreyqS5hoSZWSpPvg1W4bzchOW6#scrollTo=ePkok5DDR98G) | |
+| 3️⃣  | 🗓️ Viernes 28 de marzo | `tidyverse` 2 - Introducción muestreo                           | -              | [`📜 .R`](https://metodoscuantitativos.github.io/mc2/clases/clase_02/clase_2.R) · [`🎥 Cápsula-tidyverse`](https://youtube.com/playlist?list=PLtMKbC0NRgrHdBUAW7fcEhGYQC4qDg_XP&si=Lvx9okoAY3OXk4Bt) · [`📖 Muestreo`](https://metodoscuantitativos.github.io/mc2/clases/clase_03/clase_3#1) · [`📊 .xlsx`](https://metodoscuantitativos.github.io/mc2/clases/clase_03/marco_excel.xlsx)                              |
 | 4️⃣  | 🗓️ Viernes 4 de abril | Data Wrangling                                                 | -             | [`🎥 Cápsula`](https://youtu.be/Gjvdr_pu1-M) · [`📜 .R`](https://metodoscuantitativos.github.io/mc2/clases/clase_04/Clase_4_Data_Wrangling/Clase_4_Script.R) · [`📊 .xlsx`](https://metodoscuantitativos.github.io/mc2/clases/clase_04/Clase_4_Data_Wrangling/base/ALTO_MAIPO.xlsx)                          |
 | 5️⃣  | 🗓️ Viernes 11 de abril | **📝 Evaluación individual I**: nivelación en R                  | -             | -                            |
 | ⛔  | 🗓️ Viernes 18 de abril | 🚫 No hay clases - Viernes Santo                                 | -             | ❌                                                |
@@ -89,8 +89,8 @@ Nota: En general las ayundantías son online, a excepción de algunas con Matía
 
 | 📑 Evaluación/Tarea              | 📚 Contenido                                    | 📆 Entrega        |
 |-------------------------------|----------------------------------------------|----------------|
-| 📝 Tarea 1                    | Formulario corregido                         | 📅 Marzo 21 (Viernes) |
-| 📝 Tarea 2                    | Realización de Prueba Piloto                 | 📅 Marzo 28 (Viernes) |
+| 📝 Tarea 1                    | Formulario corregido                         | 📅 Marzo 21  |
+| 📝 Tarea 2                    | Realización de Prueba Piloto                 | 📅 Marzo 28  |
 | 📌 Avance 1                   | Presentación de formulario corregido - Según Prueba Piloto | 📅 Abril 04       |
 | ✅ Evaluación individual I     | Nivelación en R                              | 📅 Abril 11       |
 | 📋 Formulario Final           | Presentación de formulario final conjunto (solo ayudantes y directores) | 📅 Abril 25       |
