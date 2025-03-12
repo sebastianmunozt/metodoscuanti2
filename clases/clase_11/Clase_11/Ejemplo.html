@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Ejemplo con Teaching ratings</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gino Ocampo" />
+    <script src="libs/header-attrs-2.21/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Ejemplo con Teaching ratings
+]
+.author[
+### Gino Ocampo
+]
+.date[
+### 09-06-2023
+]
+
+---
+
+
+#### 1. Estadística descriptiva.
+
+&lt;table class=" lightable-classic" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;"&gt;
+&lt;caption&gt;Tabla 1. Estadísticos descriptivos&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Variable &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Etiqueta &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Media &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; D. estandar &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Mediana &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Rango &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; minority &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Minority &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1382289 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3455134 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; age &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Age &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48.3650108 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.8027420 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 44 (29-73) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4211663 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4942802 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; onecredit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; One Credit &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0583153 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2345922 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; beauty &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Beauty &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7886477 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0680143 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.42 (-1.45-1.97) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; course_eval &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Course eval &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.9982721 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5548656 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.9 (2.1-5) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; intro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Intro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3390929 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4739135 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; nnenglish &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NNenglish &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0604752 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2386229 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;&lt;span style="font-style: italic;"&gt;Fuente: &lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;
+&lt;sup&gt;&lt;/sup&gt; Elaboración propia en base a TeachingRatings&lt;/td&gt;&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+---
+
+#### Evaluación docente promedio por Nivel de belleza.
+&lt;table class=" lightable-classic" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;"&gt;
+&lt;caption&gt;Tabla 2. Promedio de Evaluación docente según Indicador de belleza&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Belleza Docente &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Evaluación Docente &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Baja belleza &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.965580 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Alta Belleza &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.046524 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;&lt;span style="font-style: italic;"&gt;Fuente:&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;
+&lt;sup&gt;&lt;/sup&gt; Elaboración propia en base TeachingRatings&lt;/td&gt;&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+
+Tenemos que el promedio de la evaluación docente para el grupo de Baja Belleza es 3.966 y para grupo de Alta Belleza es igual a 4.047
+
+---
+
+#### Indique si hay diferencias estadísticamente signicativas entre las evaluaciones promedio de docentes con un indicador de belleza alto y un indicador de belleza bajo.
+
+Al realizar el siguiente contraste de hipótesis
+
+Hipótesis nula `$$H_0:\hat{\mu_a} - \hat{\mu_b}=0$$`
+
+Hipótesis alternativa `$$H_1:\hat{\mu_a} - \hat{\mu_b}≠0$$`
+Con `\(a = alta\)` `\(belleza\)` y `\(b = baja\)` `\(belleza\)`. Usamos la prueba estadística t de Student para ver si la diferencia de medias de los grupos es estadísticamente significativa. Se asumen que los grupos son independientes.
+
+Como podemos ver el estadístico t de student -1.5441338 posee un p-value asociado igual a 0.123345 que es mayor al nivel de significancia `\(a = 0.05\)`. Por lo tanto, con un nivel de confianza del 95% no se establecen diferencias significativas en los promedios de evaluación docente entre ambos grupos.Por lo tanto, no se rechaza la hipótesis nula `\(H_0\)`.
+
+---
+Lo anterior se puede observar en la figura 1, donde se grafican los puntajes de evaluación docentes según su indicador de belleza, si bien el grupo de docentes con mayor belleza posee una evualuación docente en promedio mayor, las diferencias entre grupos **no parecen significativas**.
+
+![](Ejemplo_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+---
+
+![](Ejemplo_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+
+Por otro lado, en la figura 2 se observa un histograma, el cual nos indica que las distribuciones son distintas para cada grupo de docentes.
+---
+#### ¿Por qué podría existir una relación causal entre belleza y evaluaciones docentes?
+
+A primera vista, podemos decir que la belleza de un(a) docente puede desencadenar evaluaciones más favorables por parte del alumnado.
+Pero, siendo más rigurosos, la belleza como característica adscrita de un(a) profesor(a) puede ser una aproximación de otras características no observadas en la muestra que se correlacionan positivamente con el puntaje obtenido en la evaluación docente. Como explican los autores, si la belleza causa mayor seguridad en sí mismos, docentes cuya belleza les ha generado un mejor trato en el pasado, serían instructores más atractivos gracias a la confianza en sí mismos, por lo que seguiría siendo la belleza el determinante último de su éxito académico.
+
+---
+#### Scatterplot con las evaluaciones docentes en el eje Y y el índice de belleza en el eje X. ¿Puede ver una relación entre sus dos variables?
+
+![](Ejemplo_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+---
+#### Regresión de las evaluaciones docentes contra belleza
+
+
+&lt;table style="text-align:center"&gt;&lt;caption&gt;&lt;strong&gt;Tabla 3. Resultado de regresión&lt;/strong&gt;&lt;/caption&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td colspan="1" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;Evaluación Docente&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Indicador de belleza del docente&lt;/td&gt;&lt;td&gt;0.133&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.070, 0.196)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Constant&lt;/td&gt;&lt;td&gt;3.998&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(3.949, 4.048)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Observations&lt;/td&gt;&lt;td&gt;463&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.036&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Adjusted R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.034&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Residual Std. Error&lt;/td&gt;&lt;td&gt;0.545 (df = 461)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;F Statistic&lt;/td&gt;&lt;td&gt;17.085&lt;sup&gt;***&lt;/sup&gt; (df = 1; 461)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/td&gt;&lt;td style="text-align:right"&gt;&lt;sup&gt;*&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;**&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;***&lt;/sup&gt;p&lt;0.01&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+---
+#### Interpretación de los coeficientes estimados.
+--
+
+Un aumento en una unidad de medida en el indicador de belleza (que posee media 0) aumenta 0.13 puntos el puntaje promedio de la evaluación docente. Estos resultados son consistentes con nuestra hipótesis inicial, la cual establecía un efecto positivo del indice de belleza sobre la evaluación docente.
+---
+#### Esta vez agregamos la línea de `\(\hat{Y} = X\hat{\beta}\)` al gráfico original.
+
+![](Ejemplo_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+---
+En la Figura 4 los valores predichos del puntaje de evaluación docente son los valores que toma la recta de regresión correspondiente al eje `\(y\)`  que pasan por la recta de regresión para cada valor de `\(x\)` (Valoración del aspecto físico del docente) determinado.
+
+Los residuos `\(\epsilon\)` corresponden a las diferencias entre cada observación (punto del gráfico) y la recta, es decir, la distancia de cada punto hacia la recta, tanto por debajo como por encima de esta en el eje de las `\(y\)`. 
+
+Dado que la ecuación ahora es `\(y=3.99 + 0.133 Indicador\)` `\(Belleza\)` `\(+\)` `\(\epsilon\)`
+Tenemos que el valor estimado de `\(\beta_0=3.99\)` indica que cuando la variable indicador de belleza es 0, en promedio se espera que ese docente tenga una puntuación en la evaluación docente de 3.99. Para el estimador `\(\beta_1=0.133\)` tenemos que un aumento en una unidad de medida en el indicador de belleza aumenta 0.13 puntos el puntaje promedio de la evaluación docente.
+
+---
+#### ¿cuál sería la evaluación predicha para un docente que tenga un índice de belleza 0, 0.8 y -0.8 respectivamente?
+
+```r
+#calcular predichos
+
+p1&lt;-3.99 + 0.133*0
+p2&lt;-3.99 + 0.133*0.8
+p3&lt;-3.99 + 0.133*-0.8
+```
+
+* Para un(a) docente con un índice de belleza de 0 la evaluación docente predicha es igual a 3.99.
+* Para un(a) docente con un índice de belleza de 0.8 la evaluación docente predicha es igual a 4.0964.
+* Para un(a) docente con un índice de belleza de -0.8 la evaluación docente predicha es igual a 3.8836.
+---
+
+#### Ahora estimamos una regresión de las evaluaciones docentes contra belleza, controlando por las características del curso (intro, onecredit) y las otras características del docente (female, minority, nnenglish, age).
+
+
+&lt;table style="text-align:center"&gt;&lt;caption&gt;&lt;strong&gt;Tabla 4. Resultado de regresión controles del curso y del docente&lt;/strong&gt;&lt;/caption&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td colspan="1" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;Evaluación Docente&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Indicador de belleza del docente&lt;/td&gt;&lt;td&gt;0.159&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.097, 0.222)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Curso introductorio&lt;/td&gt;&lt;td&gt;0.008&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(-0.099, 0.115)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Curso electivo (1 credito)&lt;/td&gt;&lt;td&gt;0.633&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.415, 0.851)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Docente Mujer&lt;/td&gt;&lt;td&gt;-0.183&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(-0.283, -0.083)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Docente no blanco&lt;/td&gt;&lt;td&gt;-0.169&lt;sup&gt;**&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(-0.319, -0.020)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;No inglés nativo&lt;/td&gt;&lt;td&gt;-0.244&lt;sup&gt;**&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(-0.454, -0.034)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Edad&lt;/td&gt;&lt;td&gt;-0.002&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(-0.007, 0.003)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Constant&lt;/td&gt;&lt;td&gt;4.169&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(3.891, 4.446)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Observations&lt;/td&gt;&lt;td&gt;463&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.156&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Adjusted R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.143&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Residual Std. Error&lt;/td&gt;&lt;td&gt;0.514 (df = 455)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;F Statistic&lt;/td&gt;&lt;td&gt;11.982&lt;sup&gt;***&lt;/sup&gt; (df = 7; 455)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="2" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/td&gt;&lt;td style="text-align:right"&gt;&lt;sup&gt;*&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;**&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;***&lt;/sup&gt;p&lt;0.01&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+---
+
+##### Controlando por las características del curso y del docente:
+--
+
+* Con respecto a la constante, con un 99% de confianza se estima que cuando el docente tiene un puntaje de belleza igual a 0, el curso no es un electivo, el docente es hombre de raza blanca y es anglo-parlante nativo en promedio tendrá un puntaje en la evaluación docente de 4.16.
+--
+
+* Con un 99% de confianza se estima que un aumento del coeficiente de indicador de belleza implica un aumento de 0.16 puntos en promedio de la evaluación docente. Este estimador ha incrementado su magnitud en 0.03 puntos aproximandamente.
+--
+
+* Que un curso sea introductorio (o no) no es determinante de la evaluación docente.
+--
+
+* Con un 99% de confianza se estima que si un curso es de un crédito (electivo) existe un aumento en promedio de la evaluación de dicho docente en 0.63 puntos.
+--
+---
+* Con un 99% de confianza, si se trata de una docente mujer existe una disminución en 0.18 puntos en promedio de la evaluación de la docente.
+--
+
+* Con un 95% de confianza, se estima que si el docente no es de raza blanca existe una disminución en 0.17 puntos en promedio de su evaluación docente.
+--
+
+* Con un 95% de confianza, se estima que si el docente no es un hablante nativo de inglés su evaluación docente disminuye en 0.24 puntos en promedio su evaluación docente.
+--
+
+* La edad no es un determinante de la evaluación docente.
+--
+
+* Con respecto a la bondad de ajuste, sólo por agregar más regresores al modelo aumenta el `\(R^2\)`. Por lo tanto, debemos observar el `\(R^2\)` ajustado 0.1427. Esto nos indica que controlando por las características tanto del curso como del o la docente, nuestro modelo aumenta su capacidad predictiva pasando de explicar un 3% (Modelo 1) a un 14% de la varianza de la evaluación docente.
+---
+
+background-image: 
+background-position: 50% 50%
+class: center, bottom, inverse
+
+### Muchas gracias por su tiempo y buena suerte en sus presentaciones!
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Análisis de Variables Cuantitativas</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sebastián Muñoz-Tapia &amp; Gino Ocampo" />
+    <meta name="date" content="2024-05-16" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Análisis de Variables Cuantitativas
+]
+.subtitle[
+## Medidas de dispersión y tendencia central
+]
+.author[
+### Sebastián Muñoz-Tapia &amp; Gino Ocampo
+]
+.institute[
+### Antropología UAH
+]
+.date[
+### 2024-05-16
+]
+
+---
+
+
+
+
+
+class: inverse, center, middle
+
+# Medidas de tendencia central
+### ¿¿¿Qué valor "representa" al grupo???
+
+![salario](img/salariospocos.jpg)
+
+---
+## Medidas de tendencia central 
+
+- Conjunto de herramientas estadísticas utilizadas para encontrar un valor representativo de un conjunto de datos,las medidas más comunes son:
+
+- **Media**: 
+  + Promedio de un conjunto de datos.
+  + Calculo: suma de todos los valores y divididos por el número total de observaciones.  
+  + Es una medida es *sensible a valores extremos* y puede ser afectada por ellos.
+
+- **Mediana**: 
+  + Valor central de un conjunto de datos ordenados. 
+  + Cálculo: se ordenan los datos de menor a mayor y se ve el valor que se encuentra en el medio. Si número de observaciones es par, la mediana es el promedio de los dos valores centrales. 
+  
+
+
+
+---
+## Medidas de tendencia central
+
+- ¿Cuándo media y cuándo mediana?
+  + **Media**: cuando datos se distribuyen de forma normal, no hay tantos valores atípicos, se busca obtener una medida sensible a todos los datos. 
+  + **Mediana**: cuando se desea obtener un valor que sea representativo del centro de la distribución de los datos, sin verse afectado por valores extremos que pueden distorsionar la medida.
+  
+- **Moda**: 
+  + Es el valor que aparece con mayor frecuencia en un conjunto de datos. 
+  + Por ejemplo, si tienes los siguientes números: 2, 4, 4, 6, 8 y 10, la moda sería 4. Si hay más de un valor que aparece con la misma frecuencia máxima, entonces el conjunto de datos tiene múltiples modas.
+  + De las tres medidas de tendencia central es la única que funciona para variables categóricas (nominales u ordinales)
+
+---
+## Medidas de tendencia central
+
+
+### ¿Media o mediana?
+
+![salario](img/salario_mediana_media.png)
+
+---
+
+class: middle, center
+
+
+```
+## Warning: package 'ggplot2' was built under R version 4.3.3
+```
+
+![](Clase_9_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+
+---
+
+class: inverse, center, middle
+
+# Medidas de dispersión
+### ¿Cómo entender las diferencias entre los datos?
+
+![salario](img/salariostodos.jpg)
+
+---
+
+## Medidas de dispersión
+
+- Estadísticos de centro se quedan cortos en capacidad descriptiva en cuanto al análisis de variables cuantitativas.
+- Grupos con igual media se diferencian mucho entre sí
+- Es necesario conocer el grado de dispersión
+- *Grado de parecido entre los datos  en el sentido de concentración o alejamiento entre ellos*.
+
+
+---
+
+### Varianza
+- Medida de variabilidad de los datos, lo que nos indica cuánto se dispersan los datos de un conjunto respecto a su media. 
+  + Si los **datos están muy dispersos**, la **varianza será grande**. 
+  + Si los **datos están muy cerca del valor medio**, la **varianza será pequeña**.
+
+- Ejemplo: Queremos saber cuánto varía el ingreso de los trabajadores de una empresa, podemos calcular la varianza de los salarios. 
+  + Si los **salarios** de los trabajadores son **muy diferentes** entre sí, la **varianza será grande**. 
+  + Si los **salarios** son más **similares**, la **varianza será menor**.
+
+---
+##Ejemplo
+
+- Supongamos que tenemos el siguiente conjunto de ingresos en miles de pesos mensuales de 5 personas: 
+  + 10, 20, 30, 40, 50. 
+  + La media de estos ingresos es 30. 
+  + La varianza nos indica cuánto se dispersan estos ingresos respecto a la media. 
+
+
+---
+  
+###¿Cómo se calcula? 
+
+.pull-left[ 
+1. Restamos cada ingreso de la media: 
+  + 10-30 = **-20**, 20-30 = -**10**, 30-30 = **0**, 40-30 = **10**, 50-30 = **20**.
+2. Elevamos al cuadrado cada diferencia: (-20)^2 = **400**, (-10)^2 = **100**, 0^2 = **0**, 10^2 = **100**, 20^2 = **400**.
+3. Sumamos los cuadrados de las diferencias: 400 + 100 + 0 + 100 + 400 = **1000**.
+4. Dividimos entre la cantidad casos 5  = **200**.]
+
+.pull-rigth[
+
+&lt;img src="img/varianza.jpg" width="380px"/&gt; 
+
+- Interpretación: la varianza de los ingresos es 200 mil pesos **al cuadrado**, entre esas 5 personas (para sacar las diferencias respecto a la media tuvimos que elevar al cuadrado) 
+]
+
+---
+class: center, middle
+### Cuando es en una muestra es n-1
+
+
+&lt;img src="img/varianzamuestral.jpg" width="580px"/&gt; 
+
+---
+### Desviación estándar 
+
+- Medida de la dispersión de los datos alrededor de su media. 
+  + Raíz cuadrada positiva de la varianza. 
+  + Nos indica cuánto se alejan los datos de la media, en promedio. 
+  + Nos permite entender la variabilidad de los datos de una manera más intuitiva que la varianza, pues tiene las mismas unidades que la variable que se está analizando.
+  
+&lt;img src="img/desves.jfif" width="380px"/&gt; 
+
+
+---
+
+### Continuando con ejemplo anterior: 
+  + Varianza de los ingresos fue de 200 mil dólares **al cuadrado**. 
+  + Para obtener la desviación estándar, solo necesitamos calcular la raíz cuadrada de la varianza: 
+  + sqrt(200) = 14
+  + o con función sd()
+  
+-  Interpretación 
+  + En promedio los ingresos se alejan en 14 de la media. 
+  
+---
+
+##Cuartiles
+- Forma de dividir un conjunto de datos en cuatro partes iguales. 
+- Dividen los datos en cuatro grupos que contienen el mismo número de observaciones.
+- Primer cuartil (Q1) es el valor que separa el 25% de los datos más bajos del 75% de los datos más altos. 
+- Segundo cuartil (Q2) es la mediana, es decir, el valor que separa el 50% de los datos más bajos del 50% de los datos más altos. 
+- Tercer cuartil (Q3) es el valor que separa el 75% de los datos más bajos del 25% de los datos más altos.
+
+
+---
+
+##Deciles y percentiles
+- Deciles: 
+  + Dividen un conjunto de datos en 10 partes iguales.
+  + Primer decil (D1) es el valor que separa el 10% de los datos más bajos del 90% de los datos más altos. 
+  + Segundo decil (D2) es el valor que separa el 20% de los datos más bajos del 80% de los datos más altos
+  + Decimo decil(D10),  separa el 90% de los datos más bajos del 10% de los datos más altos.
+- Percentiles: 
+  + Dividen un conjunto de datos en 100 partes iguales. 
+  + El percentil 25 es el valor que separa el 25% de los datos más bajos del 75% de los datos más altos. El percentil 50 es la mediana, que separa el 50% de los datos más bajos del 50% de los datos más altos.
+
+---
+#Medidas de desigualdad
+## Coeficiente de Gini
+
+- Se utiliza para evaluar la distribución de una variable en una población determinada.
+- Varía entre 0 y 1: 
+  + 0 representa una distribución completamente igualitaria (cada persona tiene la misma cantidad de la variable) 
+  + 1 representa una distribución completamente desigual (una persona tiene toda la variable y los demás no tienen nada).
+  + Implica la comparación de la curva de Lorenz, que muestra la distribución acumulada de los datos, con la línea de equidad, que indica una distribución igualitaria. 
+
+
+---
+class: middle, center
+
+![](Clase_9_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+---
+### Ejemplo "riqueza de un país": 
+  + En una población de 100 personas, cada persona tiene una cantidad diferente de riqueza. 
+  + Si la distribución de la riqueza es completamente igualitaria, cada persona tendría exactamente la misma cantidad de riqueza, por lo que el coeficiente de Gini sería 0. 
+  + Si una sola persona tiene toda la riqueza y el resto de las personas no tienen nada, el coeficiente de Gini sería 1.
+
+---
+
+# Graficar. Caja y bigotes o *boxplot*
+
+.pull-left[ 
+![](Clase_9_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+- línea central: representa la mediana 
+- la caja: representa el rango intercuartílico (IQR). Va desdeel primer cuartil (25%) y el tercer cuartil (75%), abarcando un 50% de los datos. 
+- los "bigotes": representan valores fuera de la caja, sin considerar los valores atípicos. 
+- puntos:  por encima o por debajo de los bigotes se consideran valores atípicos o "outliers".
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

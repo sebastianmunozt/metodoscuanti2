@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introducción al análisis de variables categóricas</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sebastián Muñoz-Tapia" />
+    <meta name="date" content="2023-03-09" />
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Introducción al análisis de variables categóricas
+]
+.subtitle[
+## Distribución de Frecuencias y Tablas de Contingencia
+]
+.author[
+### Sebastián Muñoz-Tapia
+]
+.institute[
+### Antropología UAH
+]
+.date[
+### 2023-03-09
+]
+
+---
+
+
+
+
+
+## Pruebas de hipótesis
+
+- Herramientas utilizadas en la investigación científica y la toma de decisiones para determinar si una afirmación **sobre una población** es **estadísticamente significativa**. 
+- Se basan en la comparación de los datos observados con los que se esperarían si la afirmación fuera verdadera.
+
+**Pasos**:
+- Formulación de la hipótesis nula (H0) y la hipótesis alternativa (Ha).
+- Selección del nivel de significancia, que determina la probabilidad de cometer un error de tipo I (rechazar H0 cuando es verdadera): el p-value (en Ciencias Sociales se utiliza en general un 95%)
+- Selección de la prueba estadística apropiada y el cálculo del valor de la prueba.
+-Comparación del valor de la prueba con un valor crítico o el intervalo de confianza para determinar si se rechaza o no la hipótesis nula.
+
+---
+
+
+#P-Valor
+
+- Pregunta: 
+  + ¿Hay relación entre raza y orientación política?
+  + H nula: no existe relación entre raza y política
+  + H alternativa: si existe relación entre raza y política
+- Prueba de hipótesis: 
+  + Se observa si el p-valor es inferior o no a 0,05
+  + Si es inferior a ese valor se puede decir con un 95% de confianza que se rechaza la hipotesis nula y se acepta la hipótesis alternativa
+
+
+![ph](img/prueba hipótesis.gif)
+
+
+---
+
+## Chi cuadrado
+
+- Prueba estadística utilizada para determinar si hay una asociación significativa entre dos variables categóricas. - Compara si hay diferencia significativa entre distribución observada y distribución esperada bajo un modelo de independencia.
+
+El proceso implica los siguientes pasos:
+
+- Formular la hipótesis nula [no hay relación] y la hipótesis alternativa [si hay relación]
+- Construir una tabla de contingencia: frecuencias observadas para cada combinación de categorías de las dos variables.
+- Calcular el estadístico de prueba de chi cuadrado a partir de la tabla de contingencia.
+- Comparar el valor de la prueba con un valor crítico de chi cuadrado o calcular el p-valor para determinar si se rechaza o no la hipótesis nula.
+
+
+---
+
+# Frecuencias esperadas y observadas
+
+.pull-left[
+![ph](img/expectedFreq4.png)
+]
+
+.pull-rigth[
+![ph](img/chi.png)
+
+
+].
+
+- **Frecuencias esperadas**: número de observaciones que se esperarían en cada categoría o grupo si no hubiera una relación entre las variables.
+
+
+```r
+230*250/500
+```
+
+---
+## Distribución Chi cuadrado
+
+.pull-left[
+
+![ph](img/chi.png)
+
+- veo el resultado
+- veo ni n: número de casos
+- veo mi nivel de confianza
+- el cruce un valor que debe ser superior al que me dio en mi resultado
+- si es así es significativo
+].
+
+.pull-right[
+![ph](img/distribución chi.png)
+].
+
+---
+
+
+
+```r
+datos %&gt;% 
+  select(religion, raza) %&gt;% 
+  table() %&gt;% 
+  chisq.test()
+```
+
+```
+## 
+## 	Pearson's Chi-squared test
+## 
+## data:  .
+## X-squared = 2790, df = 28, p-value &lt; 2.2e-16
+```
+
+
+
+
+
+
+---
+
+## Test de Fisher
+
+- Prueba estadística no paramétrica utilizada para evaluar la independencia entre dos variables categóricas. 
+- Similar al  chi-cuadrado, pero se utiliza cuando los tamaños de muestra son pequeños o cuando algunas celdas de la tabla de contingencia tienen valores esperados muy pequeños.
+- Se aplica cuando se tienen dos variables categóricas y se desea determinar si hay una asociación significativa entre ellas. 
+
+.pull-left[
+- **chi-cuadrado**: se utilizacuando se tienen grandes tamaños de muestra y cuando el valor esperado en cada celda de la tabla de contingencia es mayor a 5
+] 
+
+
+.pull-right[  
+- **test de Fisher**: se utiliza cuando se tienen tamaños de muestra pequeños y/o cuando algunas celdas de la tabla de contingencia tienen valores esperados muy pequeños ( menos de 5)
+] 
+
+
+---
+
+## Pruebas paramétricas y no-paramétricas
+
+.pull-left[
+- **Pruebas estadísticas paramétricas**:
+  + Asumen que los datos siguen una distribución normal y se utilizan para probar hipótesis sobre los parámetros poblacionales, como la media y la desviación estándar. Estas pruebas requieren que los datos sean numéricos y continuos.
+] 
+
+
+.pull-right[  
+- **Pruebas estadísticas no paramétricas**: 
+  + Se utilizan cuando no se cumplen las suposiciones de normalidad o cuando los datos son categóricos o nominales en lugar de numéricos.
+]
+
+---
+
+class: center, middle
+
+## Pruebas paramétricas y no-paramétricas
+
+.pull-left[
+![](Clase-8---Presentación_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[  
+![](Clase-8---Presentación_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+]
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

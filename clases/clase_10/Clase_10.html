@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Pruebas de hipótesis</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sebastián Muñoz-Tapia &amp; Gino Ocampo" />
+    <meta name="date" content="2024-05-31" />
+    <script src="libs/header-attrs-2.26/header-attrs.js"></script>
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Pruebas de hipótesis
+]
+.subtitle[
+## T de Student y Anova
+]
+.author[
+### Sebastián Muñoz-Tapia &amp; Gino Ocampo
+]
+.institute[
+### Antropología UAH
+]
+.date[
+### 2024-05-31
+]
+
+---
+
+
+
+
+class: inverse, center, middle
+
+# Pruebas de hipótesis
+
+---
+class: inverse, center, middle
+
+# Pruebas de hipótesis
+### y qué es una prueba de hipótesis??!!
+
+---
+### Pruebas de hipótesis
+
+Parte importante del método en que opera la ciencia
+
+Hipótesis nula
+
+$$
+H_0: \mu_t = \mu_c
+$$
+Hipótesis Alternativa
+$$
+H_1: \mu_t \neq \mu_c
+$$
+
+---
+## Pruebas de hipótesis
+
+![inferencia](tablas/inferencia.png)
+
+---
+## Error muestral
+
+Apartir de una muestra hacemos uso de la probabilidad para hacer inferencias sobre la población.
+Necesitamos una muestra representativa.
+
+* Podemos calcular la probabilidad de cometer un determinado error.
+
+* En general, el tamaño de la muestra determina la probabilida de que el resultado muestral sea lo más parecido a la verdad poblacional. (Lógica inductiva). 
+
+* Este error se estima con el estadístico de **error estándar**: Cuánto se desvía tipicamente la estimación de la muestra del tamaño poblacional
+
+Error estándar: 
+$$
+SE = \frac{\sigma}{\sqrt{n}}
+$$
+donde `\(\sigma\)` es la desviación estándar de la población y  `\(n\)` es el tamaño de la muestra.
+
+---
+
+### Error Muestral
+
+Considera una muestra con media muestral `\(\bar{x}\)` y desviación estándar muestral `\(s\)`. El error muestral se calcula como:
+
+$$
+SE = \frac{s}{\sqrt{n}}
+$$
+
+El intervalo de confianza para la media poblacional `\(mu\)` se puede calcular como:
+
+$$
+\mu_x=\bar{x} \pm Z \cdot SE
+$$
+donde `\(Z\)` es el valor crítico de la distribución normal estándar correspondiente al nivel de confianza deseado.
+
+
+---
+### Prueba de Hipótesis
+
+* Estrategia diseñada para decidir si una proposición acerca de una población puede ser mantenida o debe ser rechazada (Lógica inductiva).
+
+Hipótesis científica o de investigación: afirmación directamente verificable (falseable) mediante contraste de hipótesis.
+
+
+---
+### Contraste de hipótesis  
+
+
+1.- Redacción de hipótesis estadísticas: Hipótesis nula (H0) es aquella que pondremos a prueba y la hipótesis alternativa (H1) es la negación de H0.
+
+2.- Evidencia empírica
+
+3.- Regla de decisión en términos de probabilidad: Si, suponiendo cierta la hipótesis, el resultado muestral observado es improbable, se considerará que la hipótesis es incompatible con los datos; por el contrario, si, suponiendo cierta la hipótesis, el resultado muestral observado es probable, se considerará que la hipótesis es compatible con los datos. 
+
+4.- Toma de decisión: rechazar o mantener H0
+
+
+---
+class: inverse, center, middle
+
+# Pruebas de hipótesis
+### Prueba T
+
+---
+### Prueba T
+
+Es una prueba de hipótesis utilizada cuando contamos con:
+
+* Una variable cuantitativa (Prueba T para una muestra)
+* Una variable cuantitativa y una variable dicotómica (Prueba T para muestras independientes)
+
+![Tstudent](tablas/pruebas_t.png)
+---
+### Intervalos de Confianza
+
+
+
+![IC](tablas/intervalos_confianza.png)
+
+---
+### Ejemplo de prueba T para diferencia de medias
+
+&lt;table class=" lightable-classic" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;"&gt;
+&lt;caption&gt;Table 2. Balance between treatment and control group at baseline&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Average &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; N° &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Treatment &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Control &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; P-value T=C &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Applicant age &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.39 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.95 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1833 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.38 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.968 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Household per capita income &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 120.34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 88.70 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1820 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 118.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 122.39 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.368 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Applicant monthly income &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 254.34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 209.08 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1517 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 257.86 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 250.18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.481 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Labor force participation rate &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1786 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.854 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Unemployment Rate &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1601 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.939 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Occupation Rate &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.85 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.36 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1786 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.85 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.85 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.918 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hours of work (daily) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.65 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1617 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.230 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Months Worked in 2011 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.99 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.91 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1703 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.83 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.218 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Have employment contract &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.50 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1303 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.51 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.48 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.237 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Years of Education &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1778 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.709 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Proportion without education &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.02 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1787 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.02 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.538 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Primary school proportion &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.39 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1787 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.38 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.41 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.184 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Secondary school proportion &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.53 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.50 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1787 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.54 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.51 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.274 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; College (and/or further) education proportion &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1787 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.905 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Attending an educational institution &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1811 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.975 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Stress Index &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1731 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.91 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.324 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Applicants with children less than 5 years old &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.44 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.27 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.589 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Children signed up to the program by applicants &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.57 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.34 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.117 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Proportion that receives childcare support &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.61 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1478 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.62 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.60 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.584 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Strata 1: works and has children &amp;lt; 5 (N=369) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.21 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.526 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Strata 2: does not work and has children &amp;lt; 5 (N=109) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.943 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Strata 3: works and has children &amp;gt; 5 (N=1141) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.62 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.48 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.61 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.63 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.337 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Strata 4: does not work and has children &amp;gt; 5 (N=215) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.477 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;&lt;span style="font-style: italic;"&gt;Fuente: Elaboración propia en base a Martinez y Perticará (2017): Childcare effects on maternal&lt;br&gt;employment: Evidence from Chile. &lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;
+&lt;sup&gt;&lt;/sup&gt;  &lt;/td&gt;&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+---
+class: inverse, center, middle
+
+# ANOVA
+### Analysis of Variance
+---
+### ANOVA
+
+• El procedimiento ANOVA de un factor genera un análisis de varianza de un factor para
+una variable dependiente cuantitativa respecto a una única variable de factor (la
+variable independiente). El análisis de varianza se utiliza para contrastar la hipótesis
+de que varias medias son iguales. Esta técnica es una extensión de la prueba t para
+dos muestras.
+
+• Es una prueba paramétrica
+
+• Es una prueba omnibus: no se sabe bien entre qué grupos están las diferencias (para
+eso se ocupan pruebas post-hoc)
+
+• La variable dependiente es cuantitativa u ordinal tratada como cuantitativa (ej:
+escalas likert de 1 a 7)
+
+• La variable independiente debe ser categórica de más de 2 grupos, independientes
+entre sí
+
+
+---
+### Resumen
+
+¿Cuándo usar Chi-Cuadrado?: Chi cuadrado se utiliza cuando contamos con dos variables categóricas (nominales u ordinales).
+
+¿Cuándo usar Prueba T?: Prueba T se utiliza cuando contamos con una variable cuantitativa y otra categórica (variable de agrupación). Esta última debe diferencia únicamente en dos grupos (ejemplo: variable sexo con categorías de respuesta hombre y mujer).
+
+¿Cuándo usar Anova?: Anova se utiliza cuando contamos con una variable cuantitativa y otra categórica (variable de agrupación). Esta última debe diferencia desde tres grupos (ejemplo: variable posición política con categorías de respuesta derecha, centro e izquierda).
+
+---
+### Resumen
+
+
+![IC](tablas/Pruebas_hipotesis.png)
+---
+
+class: inverse, center, middle
+
+# Vamos al código
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

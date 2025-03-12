@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Clase 4</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sebastián Muñoz &amp; Gino Ocampo" />
+    <meta name="date" content="2024-04-11" />
+    <script src="Clase-4-Presentación_files/header-attrs/header-attrs.js"></script>
+    <script src="Clase-4-Presentación_files/kePrint/kePrint.js"></script>
+    <link href="Clase-4-Presentación_files/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Clase 4
+]
+.subtitle[
+## Data Wrangling
+]
+.author[
+### Sebastián Muñoz &amp; Gino Ocampo
+]
+.date[
+### 2024-04-11
+]
+
+---
+
+
+
+
+
+
+
+### Flujo de trabajo
+
+![flujo](img/flujo.png)
+
+---
+### Orden de script
+
+![datos](img/orden script.png)
+
+
+
+---
+
+## Tipos de datos
+
+![datos](img/Rvariablesdata.jpg)
+
+---
+## Listas
+
+![datos](img/list.jpg)
+
+
+
+---
+class: center, middle
+
+## pacman::p_load
+
+- Resume las funciones library() e install.packages()
+optimiza esta relación entre ambas pues solo las aplica cuando son necesarias (if requiere()), es decir, ¡no te reinicia R si ya está instalada la librería!
+
+![datos](img/pload.png)
+
+---
+
+#Importación de bases de datos
+A la hora de importar una base de datos nos podemos llegar a enfrentar a distintos tipos de archivos. En R contamos con **distintos paquetes y funciones** según el **tipo de extensión** del archivo:    
+
+&lt;table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Tipo de archivo &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Paquete &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Extension &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Funciones &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Texto Plano &lt;/td&gt;
+   &lt;td style="text-align:left;vertical-align: middle !important;" rowspan="3"&gt; readr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; .csv &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_csv() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Texto Plano &lt;/td&gt;
+   
+   &lt;td style="text-align:left;"&gt; .txt &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_txt() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Texto Plano &lt;/td&gt;
+   
+   &lt;td style="text-align:left;"&gt; .tsv &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_tsv() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Extension de R &lt;/td&gt;
+   &lt;td style="text-align:left;vertical-align: middle !important;" rowspan="2"&gt; RBase &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; .RDS &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; readRDS() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Extension de R &lt;/td&gt;
+   
+   &lt;td style="text-align:left;"&gt; .RDATA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; open() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Otros Softwares &lt;/td&gt;
+   &lt;td style="text-align:left;vertical-align: middle !important;" rowspan="2"&gt; haven &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; .dta &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_dta() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Otros Softwares &lt;/td&gt;
+   
+   &lt;td style="text-align:left;"&gt; .sav &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_spss() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Excel &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; openxlsx &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; .xlsx &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read.xlsx() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Excel &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; readxl &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; .xls &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; read_excel() &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+#Importación de bases de datos
+
+El primer y más importante parámetro de las funciones para importar datos suele llamarse  **`file`**. Allí debemos especificar la ruta hasta el archivo, incluyendo la extensión del mismo. 
+
+Si tenemos abierto un proyecto, el punto de partida para la ruta a especificar será la carpeta del proyecto. Si queremos ir hacia atrás en las carpetas agregamos  **`../`**
+
+```r
+base.vacunas&lt;- read_csv(
+  file = "../Fuentes/Covid19VacunasAgrupadas.csv",
+  col_names = TRUE, # TRUE si la primera fila tiene nombres de columnas
+  n_max = 100)      # Puedo especificar cuantas filas levantar
+
+base.covid &lt;- readRDS(file = "../Fuentes/base_covid_sample.RDS")
+```
+**IMPORTANTE**: Siempre que lean bases de datos asignarlas a un nuevo objeto. De lo contrario, las va a mostrar completas en consola y no va a guardarlas en el ambiente de trabajo (enviroment)
+
+
+
+
+---
+
+#Exportación de resultados
+Por lo general, cada paquete que presenta funciones para importar bases de dato, tiene como complemento una función para exportar (guardar en el disco de nuestra PC) un objeto con la misma extensión. Ejemplos: 
+
+
+ - el paquete **openxlsx** tiene una función denominada **`write.xlsx()`** que nos permite exportar un dataframe creando un archivo **.xslx**
+ - En RBase la función **`saveRDS()`** nos permite exportar archivos de extensión **.RDS** (son menos pesados para trabajarlos luego desde R)
+
+En general estas funciones tienen un primer parametro para especificar el objeto a exportar, y un segundo para especificar la ruta y el nombre de archivo a crear 
+
+
+```r
+write.xlsx(x = objeto_resultados,file = "Resultados/cuadro1.xlsx")
+
+saveRDS(object = objeto_resultados,file = "Resultados/base_nueva.RDS")
+```
+
+---
+
+class: inverse, center, middle
+
+# Data Wrangling
+
+---
+
+class: inverse, middle, center
+background-image: url('img/caos_tidy.png')
+background-size: cover
+background-color: black
+
+
+---
+class:  middle, center
+
+##"Todas las familias felices se parecen entre sí; pero cada familia infeliz tiene un motivo especial para sentirse desgraciada" - **Leon Tolstoi**
+
+---
+class:  middle, center
+
+##“Tidy datasets are all alike, but every messy dataset is messy in its own way.” — **Hadley Wickham**.
+
+---
+
+![datos](img/tidydata.png)
+---
+#Data Wrangling
+
+Es el proceso que más tiempo conlleva en el análisis de datos.
+![datos](img/datawrangling_time.png)
+
+
+---
+class: center, middle
+
+##Tidyverse
+
+![datos](img/core_packages_tidyverse.png)
+
+
+---
+class: center, middle
+
+##Janitor
+![datos](img/janitor.jpg)
+
+---
+#Transformación
+
+Mutate con if_else
+class: center, middle
+
+##if else
+![datos](img/if else.png)
+
+---
+
+# Operadores lógicos
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;b&gt;Operador&lt;/b&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;b&gt;Comparación&lt;/b&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;b&gt;Ejemplo&lt;/b&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;b&gt;Resultado&lt;/b&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;x | y&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;x Ó y es verdadero&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;TRUE | FALSE&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;TRUE&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;x &amp;amp; y&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;x Y y son verdaderos&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;TRUE &amp;amp; FALSE&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;FALSE&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;!x&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;x no es verdadero (negación)&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;!TRUE&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;FALSE&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;isTRUE(x)&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;x es verdadero (afirmación)&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;isTRUE(TRUE)&lt;/code&gt;&lt;/td&gt;
+    &lt;td&gt;TRUE&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+---
+class: inverse, center, middle
+
+#Vamos al código
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

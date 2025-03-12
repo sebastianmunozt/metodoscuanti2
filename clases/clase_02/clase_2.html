@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Clase 2: tidyverse</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sebastián Muñoz-Tapia &amp; Gino Ocampo" />
+    <meta name="date" content="2024-03-18" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Clase 2: tidyverse
+]
+.subtitle[
+## Métodos Cuantitativos II
+]
+.author[
+### Sebastián Muñoz-Tapia &amp; Gino Ocampo
+]
+.institute[
+### Antropología UAH
+]
+.date[
+### 2024-03-18
+]
+
+---
+
+
+
+
+
+
+class: inverse, middle
+
+## Repaso
+
+.pull-left[
+- ¿para qué sirve *&lt;-* ?
+- ¿para qué sirve *c()* ?
+- ¿cuáles son las partes de una función?
+- ¿qué indican los corchetes *[]*?]
+
+
+---
+
+## Tipos de objetos: vector, data.frame, matrix
+![v](img/Sintesis 2.png)
+
+---
+
+class: center, middle
+
+## dentro de un data frame
+
+![tidyverse](img/dataframe 2.png)
+
+
+---
+
+class: center, middle 
+
+## tidyverse
+
+![tidyverse](img/tidyverse.png)
+
+---
+
+## tidyverse como un dialécto
+
+- en el camino de saber aprender el lenguaje de r, aprender a hablar con los computadores.
+- tidyverse: un argot que modifica algunas formas de Rbase. 
+
+### ¿Qué tiene que ver esto con la antropología?
+- además de desarrollar competencias específicas
+- propuesta:pensar la relación con los computadores
+- marco: discusiones de la antropología contemporánea sobre relaciones humanos y no-humanoS: 
+  + dioses
+  + naturaleza
+  + animales
+  + tecnologías, tecnologías digitales. 
+
+  
+  
+---
+
+
+## Etnografía del mundo digital: 
+
+
+
+.pull-left[
+  + saber hablar con los computadores, yo y Gino como sus informantes clave.
+
+&lt;img src="img/humanonohumano.png" width="2000px"/&gt;
+
+]
+
+.pull-right[
+&lt;img src="img/haraway1.png" width="1000px"/&gt; ]
+  
+
+
+---
+
+## ¿Cuál será la relación que establecermos con las máquinas?
+
+.pull-left[
+&lt;img src="img/dune.jpg" width="250px"/&gt;
+]
+
+
+.pull-right[
+&lt;img src="img/ghost.jpg" width="7100px"/&gt; ]
+
+
+---
+
+## Programación
+- Darles instrucciones a los computadores (nuestros "esclavos")
+- IA: los computadores aprenden (¿se independizarán?)
+- **ChatGpt**: democratiza la programación adaptándola al *lenguaje natural* (humano) con una base de datos gigante. 
+  + pueden hablar directamente en su celular
+  
+
+&lt;div align="center"&gt;
+  &lt;img src="img/hablandoconpc.png" width="350px"/&gt;
+&lt;/div&gt;
+
+  
+
+
+---
+
+## A quienes les interese estos temas:
+
+https://lalulula.tv/cine/100076/donna-haraway-cuentos-para-la-supervivencia-terrenal
+
+&lt;img src="img/latour2.jpg" width="4500px"/&gt;
+
+
+
+
+---
+class: center, middle
+
+##el pipe %&gt;% 
+.pull-left[
+&lt;img src="img/ceci n'est pas une pipe.jfif" width="300px"/&gt;
+
+]
+
+.pull-right[
+&lt;img src="img/procesos_tidy.png" width="3000px"/&gt; ]
+
+
+
+---
+
+
+
+class: center
+
+##dplyr
+
+![tidyverse](img/dplyr.png)
+
+
+
+
+---
+class:center, middle
+## select ()
+
+![tidyverse](img/select.png)
+![tidyverse](img/select2.png)
+
+
+
+---
+
+class:center, middle
+## filter ()
+
+&lt;img src="img/filter.png" width="700px"/&gt;
+&lt;img src="img/filter2.png" width="500px"/&gt;
+
+
+---
+class: inverse, center, middle
+
+## Operadores 
+![tidyverse](img/Resumen_s1.png)
+
+- %in%: lo que está dentro de...
+
+---
+
+class:center
+
+## Mutate
+&lt;img src="img/mutate.png" width="600px"/&gt; 
+
+![mutate](img/mutate2.webp)
+
+---
+
+class: center, middle
+
+## Group_by + summarize 
+&lt;img src="img/group_by.png" width="490px"/&gt; 
+
+
+---
+
+class: center
+
+## Resumen
+
+
+&lt;img src="img/resumen_tidy.png" width="500px"/&gt; 
+
+
+
+---
+## Entonces...
+
+.pull-left[
+- Si en mi en la base de datos de mi encuesta, quisiera: 
+  + trabajar sólo con las mujeres ¿qué función utilizaría?
+  + trabajar sólo con las variables que me interesan por ser el foco de mi grupo (e.g. solo las de "política" o "lectura")
+  + hacer una tabla de la media y la mediana de la edad por sexo.
+  + recodificar los ingresos en 3 grupos: altos, medios, bajos]
+
+.pull-right[
+
+&lt;img src="img/travolta.gif" width="900px"/&gt; 
+
+]
+
+
+---
+class: center, middle
+
+## pacman::p_load
+
+- Resume las funciones library() e install.packages()
+optimiza esta relación entre ambas pues solo las aplica cuando son necesarias (if requiere()), es decir, ¡no te reinicia R si ya está instalada la librería!
+
+![datos](img/pload.png)
+
+
+---
+class: inverse
+
+background-image: url("img/fly1.jpg")
+background-size: cover
+
+# Vamos a la práctica
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Correlación y regresión</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sebastián Muñoz-Tapia &amp; Gino Ocampo" />
+    <meta name="date" content="2024-06-07" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Correlación y regresión
+]
+.author[
+### Sebastián Muñoz-Tapia &amp; Gino Ocampo
+]
+.institute[
+### Antropología UAH
+]
+.date[
+### 2024-06-07
+]
+
+---
+
+## En esta clase
+
+Repaso de estadística inferencial y regresión lineal
+
+### 1. Inferencia estadística
+
+### 2. Correlación
+
+### 3. Regresión
+
+---
+
+
+
+
+
+
+
+### Estadística descriptiva
+
+- Medidas de tendencia central (**Media**, mediana, moda)
+
+- Medidas de dispersión (desviación estándar, **varianza**, rango)
+
+- Relación entre variables categóricas: Pruebas de hipótesis "cualitativa" (Chi cuadrado) 
+
+---
+class: inverse, center, middle
+
+# Inferencia estadística
+
+---
+
+# Inferencia Estadística
+
+&lt;img src="inferencia1.png" width="700px" /&gt;
+
+
+
+---
+
+### Repaso
+
+Las probabilidades son el vehículo de la estadística, por ello su comprensión es clave
+
+¿En qué se distinguen?
+
+1. La Teoría de la Probabilidad se pregunta por la *ocurrencia* de algo cuando conoce
+las características de la población o los resultados de un experimento. Esto implica
+que:
+
+a. Con las probabilidades se hacen predicciones sobre lo que va a pasar.
+
+b. Estas probabilidades son conjeturas, *no hechos.*
+
+c. Se asocia a una pregunta del tipo: “si saco una muestra al azar, ¿cómo será
+ésta?”
+
+2. En la Estadística, se desconoce la población.
+
+a. Se saca una muestra, se describe esa muestra (estadística descriptiva) y se
+infiere cómo es la población a partir de ella (estadística inferencial)
+
+b. Se asocia a la pregunta del tipo: “si tengo esta muestra, ¿cómo es la
+población?
+
+
+---
+### Probabilidad vs estadística
+
+&lt;img src="probabilidad_estadistica1.png" width="700px" /&gt;
+
+---
+### Distribución poblacional y muestral
+&lt;br&gt;
+--
+    Distribución poblacional
+
+&lt;img src="distribucion_poblacional.png" alt="Descripción de la imagen" style="width: 400px; height: 400px;" /&gt;
+
+Observo toda la población, en general, tener los datos de toda la población es muy díficil.
+
+---
+### Distribución poblacional y muestral
+&lt;br&gt;
+--
+    Distribución de la muestra
+
+&lt;img src="distribucion_muestral.png" alt="Descripción de la imagen" style="width: 400px; height: 400px;" /&gt;
+
+Si se extrae una **muestra aleatoria** de la población, se puede calcular su media y graficar su distribución
+
+---
+### Distribución poblacional y muestral
+&lt;br&gt;
+--
+    Distribuciones de las muestras
+
+
+&lt;img src="distribucion_muestral1.png" width="700px" /&gt;
+
+Se pueden extraer continuamente muestras del mismo tamaño (e.g. n=100) y calcular su media
+
+---
+### Distribución poblacional y muestral
+&lt;br&gt;
+--
+**Distribución muestral**
+
+Cálculo de medias de diferentes muestras, pero del mismo tamaño, extraídas aleatoriamente:
+
+&lt;img src="distribucion_muestral2.png" alt="Descripción de la imagen" style="width: 400px; height: 300px;" /&gt;
+
+Cada muestra extraída tiene asociada una media. Esta “media de la muestra” cambia de muestra en muestra, según lo que se puede ver en la tabla de arriba. En este caso, hemos extraído 50 muestras de forma aleatoria y hemos calculado su media respectiva.
+---
+### Distribución muestral
+&lt;br&gt;
+Ahora la media de cada muestra es en sí una variable aleatoria.
+
+&lt;img src="distribucion_muestral3.png" style="width: 400px; height: 300px;" /&gt;
+
+Se puede graficar la distribución de un conjunto de medias tomadas de diferentes muestras
+aleatorias. Por ejemplo, 50 muestras de tamaño 100, calculamos su media y graficamos su
+distribución. Esto se denomina **DISTRIBUCIÓN MUESTRAL**
+
+
+---
+### Estimadores
+
+La media muestral `\(\bar{Y}\)` es la manera natural de estimar `\(\mu_y\)`, pero no es el único método. Por ejemplo, otra forma de estimar `\(\mu_y\)` es simplemente utilizar la primera observación. Tanto `\(\bar{Y}\)` como `\(Y_1\)` son funciones de los datos diseñadas para estimar `\(\mu_y\)`.
+
+Si se calculan para muestras repetidas, `\(\bar{Y}\)` e `\(Y_1\)` toman valores diferentes (proporcionan
+estimaciones diferentes) de una muestra a otra. Así, los estimadores `\(\bar{Y}\)` e `\(Y_1\)` poseen ambos distribuciones
+muestrales. Existen, de hecho, muchos estimadores de `\(\mu_y\)`, de los cuales `\(\bar{Y}\)` e `\(Y_1\)` son dos ejemplos.
+
+---
+
+### ¿cuáles son las características deseables de la distribución muestral de un estimador?
+
+Nos gustaría que la distribución muestral de un estimador estuviera tan estrechamente centrada sobre el valor desconocido como fuera posible. Esta observación nos conduce a las tres características específicas deseables de un estimador: insesgadez (ausencia de **sesgo**), **consistencia** y **eficiencia**.
+
+---
+class: inverse, center, middle
+
+# Contraste de hipótesis
+---
+### Contraste de hipótesis
+&lt;br&gt;
+--
+Muchas hipótesis acerca del mundo que nos rodea pueden expresarse en forma de preguntas con respuesta
+sí/no. 
+
+* *¿La media de los ingresos salariales por hora de los recién titulados en la universidad es de $20000 la hora? *
+
+* *¿Son los ingresos salariales medios los mismos para los titulados universitarios de sexo masculino y femenino?* 
+
+Ambas preguntas incluyen hipótesis específicas acerca de la distribución poblacional de los ingresos. El desafío estadístico consiste en responder estas preguntas en base a la evidencia *muestral*.
+---
+### Contraste de hipótesis
+&lt;br&gt;
+--
+Los contrastes de hipótesis se refieren a
+
+- una *población*: ¿La *media* de los ingresos salariales por hora de los recién titulados en la universidad es de $20.000 la hora?
+
+- a *dos poblaciones diferentes*: ¿Es la *media* de ingresos la misma para *hombres* y *mujeres*?
+
+---
+### Hipótesis nula y alternativa
+&lt;br&gt;
+
+El punto de partida para la contrastación estadística de hipótesis consiste en especificar la hipótesis a contrastar, denominada **hipótesis nula**. El contraste de hipótesis implica la utilización de **datos** para comparar la hipótesis nula con una segunda hipótesis, denominada **hipótesis alternativa**, que se cumple si la nula no lo hace.
+
+---
+### Hipótesis nula
+&lt;br&gt;
+--
+La hipótesis nula consiste en que la media poblacional, `\(E(Y)\)`, toma un valor específico, denominado `\(\mu_{Y,0}\)`.
+`$$H_0: E(Y)=\mu_{Y,0}$$`
+Por ejemplo, la conjetura de que, en promedio de la población, los titulados universitarios tienen ingresos por $20.000 la hora es una hipótesis nula acerca de la distribución poblacional de los ingresos por hora. 
+
+---
+### Hipótesis alternativa
+&lt;br&gt;
+La hipótesis alternativa especifica qué es cierto si la hipótesis nula no lo es. La hipótesis alternativa más general es que `\(E(Y)≠\mu_{Y,0}\)`, lo que se denomina hipótesis alternativa bilateral porque permite que E(Y) pueda ser tanto menor como mayor que `\(\mu_{Y,0}\)`.
+
+`$$H_1:E(Y)≠\mu_{Y,0}$$`
+
+El problema al que se enfrenta el estadístico es el de utilizar la evidencia que proporciona una muestra de datos seleccionada aleatoriamente con el fin de decidir si aceptar la hipótesis nula `\(H_0\)` o rechazarla en favor de la hipótesis alternativa `\(H_1\)`. 
+
+Si la hipótesis nula es «aceptada», esto no significa que el estadístico declare que es cierta; sino que es aceptada provisionalmente reconociendo que puede ser rechazada más tarde en base a la evidencia adicional. Por esta razón, **el contraste estadístico de hipótesis puede plantearse en términos tanto de rechazar la hipótesis nula como de no hacerlo**.
+---
+### p valor
+&lt;br&gt;
+--
+Aunque una muestra de datos no pueda proporcionar evidencia concluyente acerca de la hipótesis nula, es posible realizar un cálculo probabilístico que permita contrastar la hipótesis nula de modo que se tenga en cuenta la incertidumbre del muestreo. Este cálculo implica la utilización de datos para obtener el **p-valor** de la hipótesis nula.
+
+El **p valor** es la probabilidad de obtener un valor del estadístico al menos tan adverso para la hipótesis nula como el calculado en la muestra, suponiendo que la hipótesis nula es cierta. En el caso que nos ocupa, el p-valor es la probabilidad de obtener una `\(\bar{Y}\)` al menos tan alejada en lo que respecta a las colas de su distribución, bajo la hipótesis nula, como la media muestral calculada realmente.
+
+Para calcular el p-valor, es necesario conocer la **distribución muestral** de `\(\bar{Y}\)` bajo la hipótesis nula.
+---
+### p valor
+
+Sin embargo, de acuerdo con el teorema central del límite, cuando el tamaño muestral es grande la distribución muestral de `\(\bar{Y}\)` se aproxima correctamente mediante una **distribución normal**. Bajo la hipótesis nula la media de esta distribución normal es `\(\mu_{y,0}\)` , por lo que bajo la hipótesis nula `\(\bar{Y}\)`  se distribuye Normal `\((\mu_{y,0}\)`, `\(\sigma\)` `\(_\bar{Y})\)`
+
+Esta **aproximación normal** para grandes muestras hace posible calcular el **p-valor** sin necesidad de conocer la distribución poblacional de Y, en tanto el tamaño muestral sea elevado.
+
+&lt;img src="p_valor.png" alt="Descripción de la imagen" style="width: 450px; height: 300px;" /&gt;
+---
+### Valor-p
+&lt;br&gt;
+• Medida de lo inusual de un resultado cuando la hipótesis nula es verdadera.
+
+• Que tan frecuente es que en el muestreo repetido se obtenga la diferencia observada entre el resultado muestral observado y los resultados muestrales esperados
+
+• Valor-p va de 0 a 1
+
+• Muestra probabilidad de que un suceso ocurra al azar
+
+
+En el caso de ser verdadera la `\(H_0\)`, sólo en un 5% de las veces (o menos) las
+diferencias observadas serán lo suficientemente grandes como para conducirnos erróneamente a la conclusión de H1.
+---
+### Intervalos de confianza
+
+Debido al error de muestreo aleatorio, es imposible saber el valor exacto de la media poblacional de Y utilizando solo la información de una muestra. Sin embargo, es posible utilizar los datos de una muestra aleatoria para construir un conjunto de valores que contengan la verdadera media poblacional `\(\mu_{Y}\)` con una cierta probabilidad preestablecida.
+
+Este conjunto de valores se denomina **intervalo de confianza**, y la probabilidad preestablecida de que `\(\mu_{Y}\)` esté contenida en este conjunto se denomina **nivel de confianza**.
+
+
+---
+### El estadístico t
+
+La media muestral estandarizada `\(\frac{\bar{Y}-\mu_{y,0}}{SE(\bar{Y})}\)` desempeña un papel central en el contraste de hipótesis y tiene un nombre concreto, estadístico t o t-ratio.
+`$$t=\frac{\bar{Y}-\mu_{y,0}}{SE(\bar{Y})}$$`
+
+En general, un **estadístico de contraste** es un estadístico utilizado para llevar a cabo un contraste de
+hipótesis. El estadístico t es un ejemplo importante de un contraste de hipótesis. Cuando n es grande la distribución del estadístico t se aproxima bien mediante la distribución normal. Por tanto, bajo la hipótesis nula, t se distribuye aproximadamente N(0,1) para n grande.
+
+Finalmente, se calcula el *valor-p* del asociado al estadístico t encontrado y se calcula un intervalo de confianza para el valor desconocido de la población. Todos estos cálculos los realiza el software estadístico.
+---
+### Resumen
+&lt;br&gt;
+--
+El contraste de hipótesis consiste en la formulación de una hipótesis específica acerca de la población, y a continuación, utilizando la **evidencia muestral**, decidir si es cierta. Los intervalos de confianza utilizan un conjunto de datos con el fin de estimar un intervalo o rango para una característica desconocida de la población.
+
+El valor p, es la probabilidad de que se haya producido un resultado por casualidad. El valor de significación `\((\alpha)\)` se compara con un corte predeterminado (el nivel de significación) para determinar si una prueba es estadísticamente significativa.
+
+El estadístico t se utiliza para contrastar la hipótesis nula de que la media poblacional toma un valor en
+concreto. Si n es grande, el estadístico t tiene una distribución muestral normal estándar cuando la hipótesis nula es verdadera.
+
+El estadístico t se puede utilizar para calcular el p-valor asociado con la hipótesis nula. Un p-valor
+pequeño evidencia que la hipótesis nula es falsa.
+
+Un intervalo de confianza del 95 % para `\(\mu_{y}\)` es un intervalo construido de manera que contenga el verdadero valor de  `\(\mu_{y}\)` en el 95% de todas las muestras posibles.
+---
+class: inverse, center, middle
+
+# Covarianza y correlación
+---
+### Covarianza y correlación
+&lt;br&gt;
+--
+*Covarianza*: Una medida del grado al que dos variables aleatorias evolucionan conjuntamente es su covarianza.
+
+`\(cov(X,Y) = \sigma_{xy}\)` = `\(\sum_{i=1}^{k} (x - \mu_x)(y - \mu_y)* Pr(X=x_j,Y=y_i)\)`
+
+Interpretación, si tanto `\(x_j\)` como `\(y_i\)` disminuyen o aumentan en conjunto la covarianza será positiva.
+
+En cambio, si `\(x_j\)` aumenta (o disminuye) cuando `\(y_i\)` disminuye (o aumenta), la covarianza será negativa.
+
+Finalmente, si X e Y son independientes, entonces la covarianza es cero.
+---
+### Correlación
+&lt;br&gt;
+--
+Debido a que la *covarianza* es el producto de X e Y, en desviaciones respecto de sus medias,
+sus unidades son, desafortunadamente, las unidades de X multiplicadas por las unidades de Y. Este
+problema de «unidades» puede ocasionar que los resultados numéricos de la covarianza sean difíciles de interpretar.
+
+&lt;br&gt;
+--
+La *correlación* es una medida alternativa de la dependencia entre X e Y que resuelve el problema de las «unidades» de la covarianza. En concreto, la *correlación* entre X e Y es la covarianza entre X e Y dividida por sus desviaciones típicas.
+---
+### Correlación
+&lt;br&gt;
+--
+
+`$$Corr(X,Y) = \frac{cov(X,Y)}{\sqrt{var(X)var(Y)}} = \frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}$$`
+Al ser las unidades del numerador de la Ecuación (2.25) las mismas que las del denominador, las unidades se cancelan y la correlación no tiene unidades. Las variables aleatorias X e Y se dice que están incorrelacionadas si `\(corr(X, Y) = 0\)`.
+
+La correlación siempre toma valores *entre -1 y 1*
+---
+### Correlación
+
+&lt;img src="correlaciones1.png" alt="Descripción de la imagen" width="470" height="500" /&gt;
+
+---
+#### Base de datos Teaching Ratings
+
+TeachingRatings contiene datos de evaluaciones docentes, características del profesor y del curso para 463 cursos dentro de los años 2000-2002 en la University of Texas en Austin. Estos datos fueron usados en un paper con Amy Parker, “Beauty in the Classroom: Instructors’ Pulchritude and Putative Pedagogical Productivity”.
+
+&lt;table class=" lightable-classic" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;"&gt;
+&lt;caption&gt;Tabla 1. Estadísticos descriptivos&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Variable &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Etiqueta &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Media &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; D. estandar &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Mediana &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Rango &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; minority &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Minority &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1382289 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3455134 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; age &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Age &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48.3650108 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.8027420 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 44 (29-73) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4211663 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4942802 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; onecredit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; One Credit &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0583153 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2345922 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; beauty &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Beauty &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7886477 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0680143 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.42 (-1.45-1.97) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; course_eval &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Course eval &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.9982721 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5548656 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.9 (2.1-5) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; intro &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Intro &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3390929 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4739135 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; nnenglish &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NNenglish &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 463 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0604752 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2386229 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (0-1) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;&lt;span style="font-style: italic;"&gt;Fuente: &lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;
+&lt;sup&gt;&lt;/sup&gt; Elaboración propia en base a TeachingRatings&lt;/td&gt;&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+---
+### Correlación, ejemplo 
+
+![](Clase_11_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+```
+## [1] 0.1890391
+```
+
+---
+class: inverse, center, middle
+
+# Regresión
+---
+### Regresión
+&lt;br&gt;
+--
+La regresión es una relación entre variables cuantitativas, al igual que la correlación, pero los estimadores en la regresión corresponden a los coeficientes que acompañan a las variables explicativas (independientes) en la recta de regresión. Estos coeficientes de regresión corresponden a la pendiente de la variable dependiente, es decir, cuanto afecta un predictor(v.i.) sobre una variable dependiente. **Tiene por objetivo último establecer relaciones causales entre una variable independiente sobre una dependiente**
+
+Sirve para responder preguntas del tipo
+
+Si estudio una hora más todos los días, ¿cuánto mejorará mi promedio? 
+
+¿cómo afecta la belleza de un(@) profesor(@) su evaluación docente?
+
+¿Cuánto afecta la presencia de sindicatos la probabilidad de conflicto laboral?
+---
+### Ecuación de regresión lineal
+&lt;br&gt;
+La siguiente ecuación es el modelo de regresión lineal con regresor único, en el que Y es la variable
+dependiente y X es la variable independiente o regresor
+
+`$$Y_i=\beta_0+\beta_1X_i+u_i$$`
+Donde
+
+- `\(\beta_0\)` es el término constante o intercepto de esta recta
+- `\(\beta_1\)` es la pendiente
+- `\(u_i\)` es el termino de error, recoge todos los factores responsables de la diferencia entre los valores de Y observados en los datos y el valor predicho por la recta poblacional.
+
+ `\(\beta_0\)` y `\(\beta_1\)` son los coeficientes de la recta de regresión poblacional 
+ Esta es la relación entre Y y X que se cumple en promedio para la población. Por lo que `\(\beta_0\)` y `\(\beta_1\)` son conocidos como los parámetros de regresión poblacional.
+ 
+---
+### Recta de regresión
+
+&lt;img src="regresion.png" alt="Descripción de la imagen" style="width: 800px; height: 450px;" /&gt;
+ 
+---
+### Regresión lineal
+&lt;br&gt;
+El método más utilizado para estimar los coeficientes de regresión lineal se obtienen por medio del método de Mínimos Cuadrados Ordinarios (MCO) u OLS (*Ordinary Least Squares*).
+
+`\(\beta_{HorasEstudio}\)` = `\(\frac{Variaciónnotas}{Variaciónhorasestudio}\)` = `\(\frac{\triangle{notas}}{\triangle{Horasestudio}}\)`
+
+&lt;br&gt;
+--
+
+`\(\triangle{notas}\)` =  `\(\beta_{HorasEstudio}\)` x `\(Horas Estudio\)`
+
+--
+&lt;br&gt;
+`\(notas\)` = `\(\beta_{0}\)` + `\(\beta_{HorasEstudio}\)` x `\(Horas Estudio\)`
+
+--
+
+`\(Evaluacion Docente\)` = `\(\beta_{0}\)` + `\(\beta_{Belleza}\)` x `\(Belleza\)`
+
+`\(Pr(Conflicto Laboral)\)` = `\(\beta_{0}\)` + `\(\beta_{Sindicato}\)` x `\(Sindicato\)`
+
+---
+
+background-image: 
+background-position: 50% 50%
+class: center, bottom, inverse
+
+## Ahora vamos con un ejemplo en R!
+
+---
+## Ejemplo de ejercicio
+
+[1] -0.0467139
+
+&lt;table style="text-align:center"&gt;&lt;tr&gt;&lt;td colspan="7" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td colspan="6"&gt;&lt;em&gt;Dependent variable:&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td colspan="6" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td colspan="6"&gt;Índice de Bienestar Persona&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td colspan="6"&gt;&lt;em&gt;OLS&lt;/em&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;Nororiente&lt;/td&gt;&lt;td&gt;Norponiente&lt;/td&gt;&lt;td&gt;Centro Oriente&lt;/td&gt;&lt;td&gt;Centro Poniente&lt;/td&gt;&lt;td&gt;Sur Oriente&lt;/td&gt;&lt;td&gt;Sur Poniente&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(1)&lt;/td&gt;&lt;td&gt;(2)&lt;/td&gt;&lt;td&gt;(3)&lt;/td&gt;&lt;td&gt;(4)&lt;/td&gt;&lt;td&gt;(5)&lt;/td&gt;&lt;td&gt;(6)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="7" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Intercepto (constante)&lt;/td&gt;&lt;td&gt;-0.630&lt;sup&gt;***&lt;/sup&gt; (0.124)&lt;/td&gt;&lt;td&gt;0.444&lt;sup&gt;***&lt;/sup&gt; (0.054)&lt;/td&gt;&lt;td&gt;-0.223&lt;sup&gt;***&lt;/sup&gt; (0.063)&lt;/td&gt;&lt;td&gt;0.147 (0.092)&lt;/td&gt;&lt;td&gt;-0.183&lt;sup&gt;**&lt;/sup&gt; (0.090)&lt;/td&gt;&lt;td&gt;-0.146&lt;sup&gt;***&lt;/sup&gt; (0.050)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Tipo de vivienda Departamento&lt;/td&gt;&lt;td&gt;-0.191 (0.376)&lt;/td&gt;&lt;td&gt;0.469&lt;sup&gt;***&lt;/sup&gt; (0.094)&lt;/td&gt;&lt;td&gt;-0.904&lt;sup&gt;***&lt;/sup&gt; (0.093)&lt;/td&gt;&lt;td&gt;0.443 (0.328)&lt;/td&gt;&lt;td&gt;-0.403&lt;sup&gt;***&lt;/sup&gt; (0.152)&lt;/td&gt;&lt;td&gt;-0.661&lt;sup&gt;***&lt;/sup&gt; (0.117)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Tipo de vivienda Pieza en casa&lt;/td&gt;&lt;td&gt;0.256&lt;sup&gt;***&lt;/sup&gt; (0.036)&lt;/td&gt;&lt;td&gt;0.087&lt;sup&gt;*&lt;/sup&gt; (0.050)&lt;/td&gt;&lt;td&gt;-0.075&lt;sup&gt;*&lt;/sup&gt; (0.045)&lt;/td&gt;&lt;td&gt;0.119&lt;sup&gt;**&lt;/sup&gt; (0.055)&lt;/td&gt;&lt;td&gt;-0.044 (0.049)&lt;/td&gt;&lt;td&gt;0.025 (0.056)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Sexo Hombre&lt;/td&gt;&lt;td&gt;-0.004 (0.044)&lt;/td&gt;&lt;td&gt;-0.113&lt;sup&gt;*&lt;/sup&gt; (0.064)&lt;/td&gt;&lt;td&gt;0.264&lt;sup&gt;***&lt;/sup&gt; (0.048)&lt;/td&gt;&lt;td&gt;0.025 (0.077)&lt;/td&gt;&lt;td&gt;0.236&lt;sup&gt;***&lt;/sup&gt; (0.065)&lt;/td&gt;&lt;td&gt;0.595&lt;sup&gt;***&lt;/sup&gt; (0.078)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;30 a 44 años&lt;/td&gt;&lt;td&gt;0.287&lt;sup&gt;***&lt;/sup&gt; (0.052)&lt;/td&gt;&lt;td&gt;0.187&lt;sup&gt;***&lt;/sup&gt; (0.071)&lt;/td&gt;&lt;td&gt;0.394&lt;sup&gt;***&lt;/sup&gt; (0.051)&lt;/td&gt;&lt;td&gt;-0.480&lt;sup&gt;***&lt;/sup&gt; (0.079)&lt;/td&gt;&lt;td&gt;-0.403&lt;sup&gt;***&lt;/sup&gt; (0.085)&lt;/td&gt;&lt;td&gt;0.342&lt;sup&gt;***&lt;/sup&gt; (0.072)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;45 a 59 años&lt;/td&gt;&lt;td&gt;-0.301&lt;sup&gt;***&lt;/sup&gt; (0.055)&lt;/td&gt;&lt;td&gt;-0.118 (0.077)&lt;/td&gt;&lt;td&gt;-0.044 (0.055)&lt;/td&gt;&lt;td&gt;-0.094 (0.074)&lt;/td&gt;&lt;td&gt;-0.427&lt;sup&gt;***&lt;/sup&gt; (0.062)&lt;/td&gt;&lt;td&gt;0.451&lt;sup&gt;***&lt;/sup&gt; (0.074)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;60 a 74 años&lt;/td&gt;&lt;td&gt;0.136 (0.086)&lt;/td&gt;&lt;td&gt;0.036 (0.146)&lt;/td&gt;&lt;td&gt;0.376&lt;sup&gt;***&lt;/sup&gt; (0.071)&lt;/td&gt;&lt;td&gt;-0.555&lt;sup&gt;***&lt;/sup&gt; (0.148)&lt;/td&gt;&lt;td&gt;-0.015 (0.148)&lt;/td&gt;&lt;td&gt;0.502&lt;sup&gt;***&lt;/sup&gt; (0.096)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;75 años o más&lt;/td&gt;&lt;td&gt;0.046 (0.043)&lt;/td&gt;&lt;td&gt;-0.252&lt;sup&gt;***&lt;/sup&gt; (0.049)&lt;/td&gt;&lt;td&gt;0.082&lt;sup&gt;**&lt;/sup&gt; (0.039)&lt;/td&gt;&lt;td&gt;0.195&lt;sup&gt;***&lt;/sup&gt; (0.070)&lt;/td&gt;&lt;td&gt;0.200&lt;sup&gt;***&lt;/sup&gt; (0.057)&lt;/td&gt;&lt;td&gt;0.288&lt;sup&gt;***&lt;/sup&gt; (0.073)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Nacionalidad Extranjera&lt;/td&gt;&lt;td&gt;3.711&lt;sup&gt;***&lt;/sup&gt; (0.135)&lt;/td&gt;&lt;td&gt;2.917&lt;sup&gt;***&lt;/sup&gt; (0.074)&lt;/td&gt;&lt;td&gt;3.195&lt;sup&gt;***&lt;/sup&gt; (0.063)&lt;/td&gt;&lt;td&gt;3.139&lt;sup&gt;***&lt;/sup&gt; (0.111)&lt;/td&gt;&lt;td&gt;3.286&lt;sup&gt;***&lt;/sup&gt; (0.099)&lt;/td&gt;&lt;td&gt;2.900&lt;sup&gt;***&lt;/sup&gt; (0.066)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="7" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Observations&lt;/td&gt;&lt;td&gt;466&lt;/td&gt;&lt;td&gt;384&lt;/td&gt;&lt;td&gt;409&lt;/td&gt;&lt;td&gt;383&lt;/td&gt;&lt;td&gt;384&lt;/td&gt;&lt;td&gt;379&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.348&lt;/td&gt;&lt;td&gt;0.297&lt;/td&gt;&lt;td&gt;0.381&lt;/td&gt;&lt;td&gt;0.239&lt;/td&gt;&lt;td&gt;0.311&lt;/td&gt;&lt;td&gt;0.547&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Adjusted R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.337&lt;/td&gt;&lt;td&gt;0.282&lt;/td&gt;&lt;td&gt;0.369&lt;/td&gt;&lt;td&gt;0.222&lt;/td&gt;&lt;td&gt;0.297&lt;/td&gt;&lt;td&gt;0.538&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Residual Std. Error&lt;/td&gt;&lt;td&gt;3.711 (df = 457)&lt;/td&gt;&lt;td&gt;5.905 (df = 375)&lt;/td&gt;&lt;td&gt;4.877 (df = 400)&lt;/td&gt;&lt;td&gt;7.540 (df = 374)&lt;/td&gt;&lt;td&gt;4.108 (df = 375)&lt;/td&gt;&lt;td&gt;3.301 (df = 370)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;F Statistic&lt;/td&gt;&lt;td&gt;30.508&lt;sup&gt;***&lt;/sup&gt; (df = 8; 457)&lt;/td&gt;&lt;td&gt;19.833&lt;sup&gt;***&lt;/sup&gt; (df = 8; 375)&lt;/td&gt;&lt;td&gt;30.836&lt;sup&gt;***&lt;/sup&gt; (df = 8; 400)&lt;/td&gt;&lt;td&gt;14.648&lt;sup&gt;***&lt;/sup&gt; (df = 8; 374)&lt;/td&gt;&lt;td&gt;21.199&lt;sup&gt;***&lt;/sup&gt; (df = 8; 375)&lt;/td&gt;&lt;td&gt;55.923&lt;sup&gt;***&lt;/sup&gt; (df = 8; 370)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="7" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/td&gt;&lt;td colspan="6" style="text-align:right"&gt;&lt;sup&gt;*&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;**&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;***&lt;/sup&gt;p&lt;0.01&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td colspan="6" style="text-align:right"&gt;*** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

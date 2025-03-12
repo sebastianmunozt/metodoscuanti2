@@ -1,0 +1,322 @@
+---
+title: "Ejemplo con Teaching ratings"
+author: "Gino Ocampo"
+date: 09-06-2023
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+#### 1. Estadística descriptiva.
+
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE}
+#---- 1.Cargar paquetes y datos----
+#tinytex::install_tinytex(force = TRUE)
+#cargar paquetes
+pacman::p_load(tidyverse,
+               sjmisc,#tablas
+               sjlabelled,
+               kableExtra,#tablas
+               sjPlot,
+               stargazer,#tablas
+               texreg,
+               performance,
+               patchwork,
+               car)
+
+               
+#cargar datos
+data <-read.csv("TeachingRatings.xls - TeachingRatings.csv")
+
+#----2. Procesamiento----
+#Como las variables beauty y course_val son "chr" hay que cambiarlas a "numeric" para obtener sus descriptivos.
+
+#Cambiar comas por puntos
+data$beauty <- gsub(pattern = ",", replacement = ".", x=data$beauty)
+data$course_eval <- gsub(pattern = ",", replacement = ".", x=data$course_eval)
+
+#Coercionar a factor
+data$beauty <-as.factor(data$beauty)
+data$course_eval <-as.factor(data$course_eval)
+
+#Coercionar a numeric
+data$beauty <- as.numeric(as.character(data$beauty)) 
+data$course_eval <- as.numeric(as.character(data$course_eval)) 
+
+#Etiquetar variables
+data$minority <- set_label(data$minority, "Minority")
+data$age <- set_label(data$age, "Age")
+data$female <- set_label(data$female, "Female")
+data$onecredit <- set_label(data$onecredit, "One Credit")
+data$beauty = set_label(data$beauty, "Beauty")
+data$course_eval = set_label(data$course_eval, "Course eval")
+data$intro = set_label(data$intro, "Intro")
+data$nnenglish = set_label(data$nnenglish, "NNenglish")
+
+#----3.Tabla de descriptivos----
+data %>% 
+  descr(show = c("label", "n", "mean", "sd", "md", "range")) %>% 
+  kable(format = "html", #Especificamos output en HTML
+        caption = "Tabla 1. Estadísticos descriptivos", 
+        col.names = c("Variable", #Asignamos nombres a las columnas
+                      "Etiqueta",
+                      "n", "Media",
+                      "D. estandar",
+                      "Mediana", "Rango"),
+        position = "center") %>% #Especificamos que la tabla se muestre al centro
+  kable_classic(full_width = F, #Especificamos que el ancho de la tabla no se ajuste 
+                html_font = "Cambria") %>% #Definimos fuente
+  footnote("Elaboración propia en base a TeachingRatings",#Nota al pie
+           general_title = "Fuente: ")
+  
+
+```
+---
+
+#### Evaluación docente promedio por Nivel de belleza.
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE}
+
+#Construya una variable dicotómica que tome el valor 0 para docentes cuyo indicador de belleza esté bajo la media y tome el valor 1 para docentes cuyo indicador de belleza esté sobre la media.
+data<-data %>% mutate(docente= if_else(beauty < mean(beauty),0,1))
+
+data<-data %>% mutate(docente=factor(data$docente, 
+                                     labels = c("Baja belleza", "Alta Belleza")))
+
+#Calcule las evaluaciones promedios para ambos tipos de docentes.
+belleza_mean <-data %>% group_by(docente) %>% summarise(Evaluacion_Docente= mean(course_eval, na.rm=T))
+
+kable(belleza_mean,
+      caption = "Tabla 2. Promedio de Evaluación docente según Indicador de belleza",
+      col.names = c("Belleza Docente", "Evaluación Docente"),
+      position = "center") %>% 
+  kable_classic(full_width = F,
+                html_font = "Cambria") %>% #Definimos fuente
+  footnote("Elaboración propia en base TeachingRatings", #Especificamos la nota al pie
+           general_title = "Fuente:")
+
+
+```
+
+Tenemos que el promedio de la evaluación docente para el grupo de Baja Belleza es `r round(belleza_mean[1,2],3)` y para grupo de Alta Belleza es igual a `r round(belleza_mean[2,2],3) `
+
+---
+
+#### Indique si hay diferencias estadísticamente signicativas entre las evaluaciones promedio de docentes con un indicador de belleza alto y un indicador de belleza bajo.
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE, results='hide'}
+
+t<-t.test(course_eval ~ docente, data = data)
+
+```
+Al realizar el siguiente contraste de hipótesis
+
+Hipótesis nula $$H_0:\hat{\mu_a} - \hat{\mu_b}=0$$
+
+Hipótesis alternativa $$H_1:\hat{\mu_a} - \hat{\mu_b}≠0$$
+Con $a = alta$ $belleza$ y $b = baja$ $belleza$. Usamos la prueba estadística t de Student para ver si la diferencia de medias de los grupos es estadísticamente significativa. Se asumen que los grupos son independientes.
+
+Como podemos ver el estadístico t de student `r t["statistic"]` posee un p-value asociado igual a `r t["p.value"]` que es mayor al nivel de significancia $a = 0.05$. Por lo tanto, con un nivel de confianza del 95% no se establecen diferencias significativas en los promedios de evaluación docente entre ambos grupos.Por lo tanto, no se rechaza la hipótesis nula $H_0$.
+
+---
+Lo anterior se puede observar en la figura 1, donde se grafican los puntajes de evaluación docentes según su indicador de belleza, si bien el grupo de docentes con mayor belleza posee una evualuación docente en promedio mayor, las diferencias entre grupos **no parecen significativas**.
+
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE}
+#Gráfico
+data  %>% 
+  ggplot(aes(
+    y=course_eval, 
+    group=docente, 
+    colour=docente)) +
+  geom_boxplot () +
+  scale_color_discrete(name=NULL)+
+  theme(legend.position = "none") +
+  facet_grid( . ~ docente )+
+    labs(
+      y= "Puntaje evaluación docente",
+    title = "Figura 1. Puntaje evaluación docente por Nivel de Belleza",
+    caption = "Fuente: Elaboración propia en base a TeachingRatings"
+  )+
+  theme_classic()
+```
+---
+
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE,message=FALSE}
+#Histogramas
+data  %>% 
+  ggplot(aes(
+    x=course_eval, 
+    fill=docente)) +
+  geom_histogram (color="#e9ecef", alpha = 0.5, position = "identity") +
+  scale_fill_hue(c=75, l=80)+
+  theme(legend.position = "none") +
+    labs(
+      x= "Puntaje evaluación docente",y="Frecuencia",
+      fill="Indicador Belleza Docente",
+    title = "Figura 2. Puntaje evaluación docente por Nivel de Belleza",
+    caption = "Fuente: Elaboración propia en base a TeachingRatings"
+  )+
+  theme_classic()
+# 
+
+```
+
+Por otro lado, en la figura 2 se observa un histograma, el cual nos indica que las distribuciones son distintas para cada grupo de docentes.
+---
+#### ¿Por qué podría existir una relación causal entre belleza y evaluaciones docentes?
+
+A primera vista, podemos decir que la belleza de un(a) docente puede desencadenar evaluaciones más favorables por parte del alumnado.
+Pero, siendo más rigurosos, la belleza como característica adscrita de un(a) profesor(a) puede ser una aproximación de otras características no observadas en la muestra que se correlacionan positivamente con el puntaje obtenido en la evaluación docente. Como explican los autores, si la belleza causa mayor seguridad en sí mismos, docentes cuya belleza les ha generado un mejor trato en el pasado, serían instructores más atractivos gracias a la confianza en sí mismos, por lo que seguiría siendo la belleza el determinante último de su éxito académico.
+
+---
+#### Scatterplot con las evaluaciones docentes en el eje Y y el índice de belleza en el eje X. ¿Puede ver una relación entre sus dos variables?
+
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE}
+
+plot_scatter(data, 
+             beauty,course_eval,
+             title = "Figura 3. Scatterplot del Puntaje evaluación docente por Nivel de Belleza")+
+  labs(y= "Puntaje evaluación docente",
+      x= "Valoración del aspecto físico del docente",
+    title = "Figura 3. Dispersión del Puntaje evaluación docente por Indicador de Belleza",
+    caption = "Fuente: Elaboración propia en base a TeachingRatings")+
+  theme_classic()
+
+
+```
+
+---
+#### Regresión de las evaluaciones docentes contra belleza
+
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, message=FALSE, results='asis'} 
+
+lm1 <- lm(course_eval~beauty,
+              data=data,
+              na.action = na.omit)
+#summary(lm1)
+stargazer(lm1,type = "html",
+          intercept.bottom = T,
+          intercept.top = F,
+          ci = T, digits=3,
+          title = "Tabla 3. Resultado de regresión",
+          notes = NULL,
+           dep.var.caption = " ",
+          dep.var.labels = "Evaluación Docente",
+          covariate.labels = c("Indicador de belleza del docente")
+          )
+
+
+
+
+```
+---
+#### Interpretación de los coeficientes estimados.
+--
+
+Un aumento en una unidad de medida en el indicador de belleza (que posee media 0) aumenta 0.13 puntos el puntaje promedio de la evaluación docente. Estos resultados son consistentes con nuestra hipótesis inicial, la cual establecía un efecto positivo del indice de belleza sobre la evaluación docente.
+---
+#### Esta vez agregamos la línea de $\hat{Y} = X\hat{\beta}$ al gráfico original.
+
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE,message=FALSE}
+plot_scatter(data, 
+             beauty,course_eval,
+             title = "Figura 4. Correlación Puntaje evaluación docente por Nivel de Belleza",
+             fit.line = "lm")+
+  labs(
+      y= "Puntaje evaluación docente",
+      x= "Valoración del aspecto físico del docente",
+    title = "Figura 4. Relación entre el Puntaje evaluación docente y Nivel de Belleza",
+    caption = "Fuente: Elaboración propia en base a TeachingRatings"
+  )+
+  theme_classic()
+```
+---
+En la Figura 4 los valores predichos del puntaje de evaluación docente son los valores que toma la recta de regresión correspondiente al eje $y$  que pasan por la recta de regresión para cada valor de $x$ (Valoración del aspecto físico del docente) determinado.
+
+Los residuos $\epsilon$ corresponden a las diferencias entre cada observación (punto del gráfico) y la recta, es decir, la distancia de cada punto hacia la recta, tanto por debajo como por encima de esta en el eje de las $y$. 
+
+Dado que la ecuación ahora es $y=3.99 + 0.133 Indicador$ $Belleza$ $+$ $\epsilon$
+Tenemos que el valor estimado de $\beta_0=3.99$ indica que cuando la variable indicador de belleza es 0, en promedio se espera que ese docente tenga una puntuación en la evaluación docente de 3.99. Para el estimador $\beta_1=0.133$ tenemos que un aumento en una unidad de medida en el indicador de belleza aumenta 0.13 puntos el puntaje promedio de la evaluación docente.
+
+---
+#### ¿cuál sería la evaluación predicha para un docente que tenga un índice de belleza 0, 0.8 y -0.8 respectivamente?
+```{r, echo=TRUE, eval=TRUE, warning=FALSE, error=FALSE,message=FALSE}
+#calcular predichos
+
+p1<-3.99 + 0.133*0
+p2<-3.99 + 0.133*0.8
+p3<-3.99 + 0.133*-0.8
+```
+
+* Para un(a) docente con un índice de belleza de 0 la evaluación docente predicha es igual a `r p1`.
+* Para un(a) docente con un índice de belleza de 0.8 la evaluación docente predicha es igual a `r p2`.
+* Para un(a) docente con un índice de belleza de -0.8 la evaluación docente predicha es igual a `r p3`.
+---
+
+#### Ahora estimamos una regresión de las evaluaciones docentes contra belleza, controlando por las características del curso (intro, onecredit) y las otras características del docente (female, minority, nnenglish, age).
+
+```{r, echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE,message=FALSE,results='asis'}
+
+lm2 <- lm(course_eval~beauty + intro +onecredit + female + minority +nnenglish + age,
+              data=data,
+              na.action = na.omit)
+
+#summary(lm2)
+
+stargazer(lm2,type = "html",
+          intercept.bottom = T,
+          intercept.top = F,
+          ci = T, digits=3,
+          title = "Tabla 4. Resultado de regresión controles del curso y del docente",
+          notes = NULL,
+           dep.var.caption = " ",
+          dep.var.labels = "Evaluación Docente",
+          covariate.labels = c("Indicador de belleza del docente",
+                               "Curso introductorio",
+                               "Curso electivo (1 credito)",
+                               "Docente Mujer",
+                               "Docente no blanco",
+                               "No inglés nativo",
+                               "Edad")
+          )
+```
+---
+
+##### Controlando por las características del curso y del docente:
+--
+
+* Con respecto a la constante, con un 99% de confianza se estima que cuando el docente tiene un puntaje de belleza igual a 0, el curso no es un electivo, el docente es hombre de raza blanca y es anglo-parlante nativo en promedio tendrá un puntaje en la evaluación docente de 4.16.
+--
+
+* Con un 99% de confianza se estima que un aumento del coeficiente de indicador de belleza implica un aumento de 0.16 puntos en promedio de la evaluación docente. Este estimador ha incrementado su magnitud en 0.03 puntos aproximandamente.
+--
+
+* Que un curso sea introductorio (o no) no es determinante de la evaluación docente.
+--
+
+* Con un 99% de confianza se estima que si un curso es de un crédito (electivo) existe un aumento en promedio de la evaluación de dicho docente en 0.63 puntos.
+--
+---
+* Con un 99% de confianza, si se trata de una docente mujer existe una disminución en 0.18 puntos en promedio de la evaluación de la docente.
+--
+
+* Con un 95% de confianza, se estima que si el docente no es de raza blanca existe una disminución en 0.17 puntos en promedio de su evaluación docente.
+--
+
+* Con un 95% de confianza, se estima que si el docente no es un hablante nativo de inglés su evaluación docente disminuye en 0.24 puntos en promedio su evaluación docente.
+--
+
+* La edad no es un determinante de la evaluación docente.
+--
+
+* Con respecto a la bondad de ajuste, sólo por agregar más regresores al modelo aumenta el $R^2$. Por lo tanto, debemos observar el $R^2$ ajustado 0.1427. Esto nos indica que controlando por las características tanto del curso como del o la docente, nuestro modelo aumenta su capacidad predictiva pasando de explicar un 3% (Modelo 1) a un 14% de la varianza de la evaluación docente.
+---
+
+background-image: 
+background-position: 50% 50%
+class: center, bottom, inverse
+
+### Muchas gracias por su tiempo y buena suerte en sus presentaciones!
+---
