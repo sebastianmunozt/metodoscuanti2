@@ -25,7 +25,6 @@ Programa: [`[Programa]`](https://metodoscuantitativos.github.io/mc2/files/progra
 Programación: [`[Programación]`](https://metodoscuantitativos.github.io/mc2/files/programacion_2024.pdf) 
 
 
-![useR](files/curso_mc2.png)
 
 ---
 ## Descarga e instalación de R y RStudio
