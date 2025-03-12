@@ -1,4 +1,4 @@
-![Banner](files/Banner.png)
+![Banner](files/Banner.gif)
 ### Bienvenidxs al curso de Métodos Cuantitativos II de la carrera de Antropología en la Universidad Alberto Hurtado.
 
 
@@ -59,8 +59,8 @@ Nota: Todas las clases son presenciales, a continuación pueden ver las presenta
 | -  | vier jun 20 | No hay clases - Feriado                                       | -             | x                                                |
 | 12 | vier jun 27 | **Evaluación individual II**: Procesamiento y análisis de datos categóricos | -             |   Pendiente                                |
 | 13 | vier jul 4  | Pruebas recuperativas                                        | -             | Pendiente    |
-| 14 | vier jul 11 | Tiempo para preparación y dudas                              | -             | Pendiente                                        |
-| 15 | vier jul 18 | **Entrega Grupal Final** presentación de investigación en clases y entrega de trabajo | -             | Pendiente                                        |
+| - | vier jul 11 | Tiempo para preparación y dudas                              | -             | Pendiente                                        |
+| 14 | vier jul 18 | **Entrega Grupal Final** presentación de investigación en clases y entrega de trabajo | -             | Pendiente                                        |
 
 
 
