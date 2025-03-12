@@ -1,4 +1,4 @@
-![Banner](images/00.png)
+![Banner](images/01.png)
 # 🎓 **Bienvenidxs al curso de Métodos Cuantitativos II**
 ### 🏛 Carrera de Antropología - Universidad Alberto Hurtado
 
