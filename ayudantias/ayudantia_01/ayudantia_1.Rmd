@@ -1,0 +1,605 @@
+---
+title: "Ayudantía 1: Repaso RStudio y funciones básicas"
+subtitle: "Metodología Cuantitativa con RStudio"
+author: "Francesca Alejandra Roco"
+date: "Primer semestre 2025"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    collapsed: true
+    smooth_scroll: true
+    theme: journal
+    highlight: kate
+    df_print: paged
+    code_folding: show
+---
+
+A lo largo de este curso utilizaremos R Markdown para practicar y ejeritar durante las ayudantías.  
+
+# `Markdown`
+#### 1. ¿Para qué nos sirve Markdown?
+R Markdown es una herramienta que permite combinar texto con código en un mismo documento. Nos sirve para:
+
+* Redactar informes reproducibles combinando análisis estadístico y texto explicativo.
+* Crear documentos dinámicos en diversos formatos como HTML, PDF o Word.
+* Organizar el trabajo de investigación en un solo archivo que integre datos, código y explicaciones.
+* Facilitar la comunicación de resultados de investigación en antropología y otras ciencias sociales.
+
+#### 2. ¿Cómo crear un script (hoja) en Markdown?
+Para crear un archivo en R Markdown dentro de RStudio:
+
+* Abre RStudio.
+
+* Ve a File (Archivo) > New File (Nuevo Archivo) > R Markdown....
+
+* Selecciona el formato de salida deseado (HTML, PDF o Word).
+
+* Escribe un título y autor para el documento.
+
+* Haz clic en OK. Se abrirá un nuevo documento con estructura básica de R Markdown.
+
+#### 3. ¿Cómo usarlo?
+* En la parte superior del documento se encuentra el encabezado YAML, donde se define el título, autor y formato de salida.
+
+* El contenido del documento se escribe en Markdown, incluyendo texto y código de R.
+
+* Se pueden ejecutar bloques de código directamente dentro del documento y ver los resultados en la salida.
+
+* Para generar el documento final, se presiona el botón Knit (Tejer) en RStudio.
+
+#### 4. Formato básico 
+Markdown permite dar formato al texto de manera sencilla:
+
+##### Tamaño de la letra (títulos y subtítulos)
+
+* Los títulos principales se colocan con #
+* Los subtitulos con ## 
+* Y los subsubtítulos con ### 
+
+De esta forma se va dando tamaño a la letra. Mientras más gatos tenga, más pequeña será la letra. 
+
+##### Otros símbolos para establecer formato al texto:
+
+Negrita: **texto** o __texto__
+
+Cursiva: *texto* o _texto_
+
+##### Listas:
+
+- Elemento 1
+
+- Elemento 2
+
+* Elemento 3
+
+##### Encabezados:
+
+Código en línea: `código`
+
+Bloques de código:
+```{r}
+suma <- 2 + 2
+print(suma)
+```
+
+#### 5. Funciones básicas de ejecución
+* Insertar un bloque de código: **Ctrl + Alt + I** (Windows) o **Cmd + Option + I** (Mac) para agregar un bloque de código.
+
+* Ejecutar código dentro de un bloque: Ubica el cursor en el bloque y presiona **Ctrl + Enter**. (es básicamente correr el código)
+
+* Compilar el documento y actualizar cambios: **Ctrl + Alt + K** (Windows) o **Cmd + Shift + K** (Mac) 
+
+* Tejer el documento: Presiona el botón **Knit** en la parte superior para generar el archivo de salida en HTML, PDF o Word.
+
+Es necesario entender a Markdown como una herramienta dentro de RStudio. Finalmente vamos a trabajar en RStudio, como el semestre pasado, pero esta vez lo haremos en formato markdown para que puedan ir guardando sus clases en un documento más fácil de visualizar y entender.
+
+
+
+# Operaciones básicas
+#### I. R como calculadora
+
+#### II. Funciones básicas
+
+#### III. Lenguaje orientado a objetos
+
+#### IV. Indexación
+
+#### V. Tipos de Variables y Estructuras de Datos en R
+
+#### VI. Data frames
+
+----
+# I. R como calculadora
+
+* Suma y resta
+* Multiplicación y división
+* Potencias
+
+Ejecuta y mira el resultado de las siguientes operaciones:
+```{r}
+# Suma y resta
+21 + 12
+11 - 2
+```
+
+```{r}
+# Multiplicación y división
+6 * 8
+45 / 5
+```
+
+```{r}
+# Potencias y raíces
+2 ^ 3  # 2 elevado a 3
+```
+
+
+### 🔶 ¡Ejercicio! Análisis de la Población con calculadora
+
+Imagina que estás realizando una investigación sobre una pequeña población que vive en distintas áreas rurales. Tienes los siguientes datos:
+
+* Edad de 10 personas (en años)
+* Ingresos mensuales de las personas (en CLP)
+* Años de escolaridad (relacionados con el acceso a la educación en zonas rurales vs. urbanas)
+
+Tus objetivos son calcular estadísticas culturales relacionadas con los ingresos, la educación y la edad, y mezclar varias operaciones matemáticas para hacer un análisis más profundo.
+
+🔹 Datos:
+
+* Edad (en años) de las personas: 31, 53, 35, 61, 46, 29, 45, 50, 22, 27
+
+* Ingresos mensuales (en CLP) : 480000, 150000, 300000, 120000, 250000, 340000, 240000, 620000, 550000, 450000
+
+* Años de escolaridad : 5, 1, 3, 0, 2, 4, 3, 8, 6, 5
+
+#### 📍 Calcule el total de Edad y Promedio de Ingresos y Escolaridad:
+
+#### 1. Total de las edades : Suma de todas las edades de la población.
+
+#### 2. Promedio de ingresos : Calcula el ingreso promedio mensual de la población.
+
+#### 3. Promedio de años de escolaridad : Calcula el promedio de años de escolaridad de la población.
+
+```{r}
+
+
+
+
+```
+
+
+# II. Funciones básicas
+Descriptivas:
+* sum()
+* mean()
+* median()
+* min()
+* max()
+
+Podemos realizar el mismo ejercicio anterior, pero esta vez con funciones:
+```{r}
+# Total de edades
+sum(c(31, 53, 35, 61, 46, 29, 45, 50, 22, 27))
+```
+
+```{r}
+# Promedio de ingresos
+mean(c(480000, 150000, 300000, 120000, 250000, 340000, 240000, 620000, 550000, 450000))
+```
+
+```{r}
+# Promedio de años de escolaridad
+mean(c(5, 1, 3, 0, 2, 4, 3, 8, 6, 5))
+```
+
+### 🔶 ¡Ejercicio! Análisis de la Población con funciones
+
+#### a) Promedio y mediana
+Calcula la media y la mediana de las edades, ingresos y años de escolaridad. Estas dos medidas te ayudarán a comprender cómo se distribuyen estos factores en la población.
+
+* Promedio de las edades
+* Promedio de los ingresos
+* Promedio de los años de escolaridad
+* Mediana de las edades
+* Mediana de los ingresos
+* Mediana de los años de escolaridad
+
+#### b) Rangos
+##### Desigualdad en la Comunidad
+Para comprender mejor cómo se distribuyen los recursos, vamos a *calcular los valores máximos y mínimos de las edades, los ingresos y los años de escolaridad*. Esto te permitirá identificar las diferencias más grandes en los datos.
+
+* Edad mínima y edad máxima
+* Ingreso mínimo e ingreso máximo
+* Años de escolaridad mínimo y máximo
+
+##### Reflexión sobre desigualdades
+Calcule:
+
+* ¿Cuál es la diferencia de ingresos entre la persona con más ingresos y la persona con menos ingresos?
+* ¿Cuál es la diferencia de escolaridad entre la persona con más años de escolaridad y la persona con menos escolaridad?
+
+
+# III. Lenguaje orientado a objetos
+*Podemos guardar objetos con `<-`*
+
+Con esto guardamos objetos con determinados valores. Podemos guardar variables con los nombres y valores que necesitemos. 
+
+#### a) Guarda valores en variables
+```{r}
+a <- 10
+b <- 5
+```
+
+```{r}
+print(a) # muestra el valor del objeto a
+print(b) # muestra el valor del objeto b
+```
+
+#### b) Utiliza los valores guardados en operaciones
+```{r}
+suma <- a + b
+multiplicación <- suma * 2
+```
+
+```{r}
+suma  # Muestra el velor del objeto "suma" que contiene la suma entre a y b
+multiplicación  # Muestra el resultado de la multiplicación entre la suma por 2
+```
+
+### Desafío práctico
+1️⃣ Guarde una variable X con valor 12
+
+2️⃣ Guarde una variable Y como X + 10
+
+3️⃣ Guarde con el nombre CAPIBARA la multiplicación entre X e Y
+
+
+### 🔶 ¡Ejercicio! Análisis de la Población creando objetos
+Vamos a organizar los datos anteriores en objetos para realizar el análisis.
+
+🔹 Datos:
+
+* Edad (en años) de las personas: 31, 53, 35, 61, 46, 29, 45, 50, 22, 27
+* Ingresos mensuales (en CLP) : 480000, 150000, 300000, 120000, 250000, 340000, 240000, 620000, 550000, 450000
+* Años de escolaridad : 5, 1, 3, 0, 2, 4, 3, 8, 6, 5
+
+#### a) Crear objetos con los datos
+Vamos a crear tres objetos (variables):
+
+* edades
+* ingresos
+* escolaridad
+
+```{r}
+edades <- c(31, 53, 35, 61, 46, 29, 45, 50, 22, 27)
+ingresos <- c(480000, 150000, 300000, 120000, 250000, 340000, 240000, 620000, 550000, 450000)
+```
+
+```{r}
+escolaridad <- c(5, 1, 3, 0, 2, 4, 3, 8, 6, 5)
+```
+
+#### b) Realizar cálculos con los objetos
+Vamos a calcular algunas estadísticas básicas utilizando las funciones que aprendimos anteriormente: suma, promedio (media), mediana, dato mínimo y dato máximo.
+
+```{r}
+# Suma total de las edades
+total_edades <- sum(edades)
+```
+
+```{r}
+# Promedio de los ingresos
+promedio_ingresos <- mean(ingresos)
+```
+
+```{r}
+# Mediana de los años de escolaridad
+mediana_escolaridad <- median(escolaridad)
+```
+
+```{r}
+# Mínimo de las edades
+min_edad <- min(edades)
+```
+
+```{r}
+# Máximo de los ingresos
+max_ingreso <- max(ingresos)
+```
+
+```{r}
+# Imprimir los resultados
+total_edades
+promedio_ingresos
+mediana_escolaridad
+min_edad
+max_ingreso
+```
+
+#### 📍 Guarda los Resultados en Objetos:
+* Guarda total_edades con el nombre resultado_edades
+* Guarda promedio_ingresos con el nombre resultado_ingresos
+* Guarda mediana_escolaridad con el nombre resultado_escolaridad
+* Imprime los resultados guardados
+
+```{r}
+ 
+
+
+```
+
+
+# IV. Indexación
+
+La indexación en R permite acceder a elementos específicos de un vector o una matriz utilizando sus posiciones.
+
+### a) Crear los vectores
+
+Primero, creamos los vectores con los datos proporcionados (edad, ingresos y escolaridad). Los vectores se crean con la siguiente estructura `c(dato,dato,dato,dato)`.
+
+Este paso ya se realizó previamente creando las variables `edades`, `ingresos` y `escolaridad`.
+
+```{r}
+edades <- c(31, 53, 35, 61, 46, 29, 45, 50, 22, 27)
+ingresos <- c(480000, 150000, 300000, 120000, 250000, 340000, 240000, 620000, 550000, 450000)
+escolaridad <- c(5, 1, 3, 0, 2, 4, 3, 8, 6, 5)
+```
+
+### b) Acceder a Elementos Específicos Usando Indexación
+
+Ahora vamos a acceder a elementos específicos de los vectores utilizando `[]`.
+
+Utilizaremos la indexación para obtener:
+
+- La edad de la tercera persona
+- El ingreso de la séptima persona
+- Los primeros tres años de escolaridad
+
+```{r}
+# Edad de la tercera persona
+edad_tercera_persona <- edades[3] # la edad de la persona en la posición 3
+
+# Ingreso de la séptima persona
+ingreso_septima_persona <- ingresos[7] # los ingresos de la persona en la posición 7
+
+# Primeros tres años de escolaridad
+primeros_tres_escolaridad <- escolaridad[1:3] # los años de escolaridad desde la posición 1 a la 3
+```
+
+### Imprimir los resultados
+
+```{r}
+edad_tercera_persona
+ingreso_septima_persona
+primeros_tres_escolaridad
+```
+
+### 🔶 ¡Ejercicio!
+
+Identifica los ingresos mayores a 300.000 y guarda el resultado en un objeto llamado `ingresos_altos`.
+
+```{r}
+# Personas con ingresos superiores a 300.000 CLP
+ingresos_altos <- ingresos[ingresos > 300000]
+```
+
+#### Imprime resultados
+
+```{r}
+ingresos_altos
+```
+
+📍 **¡Ahora tú!** Identifica los ingresos menores a 300.000 y guarda el resultado en un objeto llamado `ingresos_bajos`.
+
+```{r}
+
+
+
+```
+
+
+⚡ **OJO!** Diferencia los `[]` de los `()`.
+
+- Los `[]` indican posiciones.
+- Los `()` encierran argumentos.
+
+
+# V. Tipos de Variables y Estructuras de Datos en R
+
+### Tipos de Variables
+
+- **Integer (Entero)**: Representa números enteros. Especificado con `L` después del número (e.g., `34L`).
+  
+  ```{r}
+  x <- 34L
+  class(x) # devuelve "integer"
+  ```
+
+- **Numeric (Numérico)**: Incluye tanto números enteros como decimales.
+  
+  ```{r}
+  x <- 34.5
+  class(x) # devuelve "numeric"
+  ```
+
+- **Character (Carácter)**: Almacena texto y se define entre comillas dobles o simples.
+  
+  ```{r}
+  x <- "Hola mundo"
+  class(x) # devuelve "character"
+  ```
+
+- **Logical (Lógico)**: Almacena valores booleanos: `TRUE` o `FALSE`.
+  
+  ```{r}
+  x <- TRUE
+  class(x) # devuelve "logical"
+  ```
+
+- **Factor**: Utilizado para datos categóricos con un número fijo de categorías únicas. Suele usarse para datos ordinales.
+  
+  ```{r}
+  x <- factor(c("bajo", "medio", "alto"))
+  class(x) # devuelve "factor"
+  ```
+
+### 🔶 ¡Ejercicio!
+
+Obtenga qué tipos de variables corresponden a las variables `edades`, `ingresos` y `escolaridad`, utilizando `class()`.
+
+```{r}
+
+
+
+```
+
+
+# VI. Data Frames
+
+### Creación y Exploración de Data Frames
+
+#### 1. Crear los vectores con los datos (variables de la base de datos)
+
+```{r}
+edades <- c(31, 53, 35, 61, 46, 29, 45, 50, 22, 27)
+ingresos <- c(480000, 150000, 300000, 120000, 250000, 340000, 240000, 620000, 550000, 450000)
+escolaridad <- c(5, 1, 3, 0, 2, 4, 3, 8, 6, 5)
+```
+
+⚡ **OJO!** Recuerde que los vectores deben tener la misma longitud, es decir, la misma cantidad de elementos. En este caso, cada vector tiene 10 elementos, pues la muestra corresponde a 10 personas.
+
+#### 2. Crear el data frame con `data.frame()` otorgándole el nombre `desigualdad_poblacion` y finalmente imprímelo para verlo.
+
+```{r}
+desigualdad_poblacion <- data.frame(edades, ingresos, escolaridad)
+desigualdad_poblacion
+```
+
+#### 3. Explorar la base de datos
+
+Aplica las siguientes funciones a la base `desigualdad_poblacion`:
+
+#### 1. Instalamos y cargamos los paquetes necesarios
+
+```{r}
+summary(desigualdad_poblacion) # Sumario general
+nrow(desigualdad_poblacion) # Número de filas (casos)
+ncol(desigualdad_poblacion) # Número de columnas
+names(desigualdad_poblacion) # Nombres de las variables
+```
+
+## 🔹 Conclusiones 
+
+Tras analizar los datos recopilados, se pueden observar desigualdades significativas en términos de ingresos mensuales y años de escolaridad dentro de la comunidad.
+
+El análisis de estos datos nos muestra una comunidad con desigualdades marcadas en ingresos y educación, lo que probablemente impacta otras dimensiones de la vida, como la estabilidad laboral, el acceso a la salud y la movilidad social.
+
+
+# VII. Proceso inicial de análisis de datos
+
+## 1. Instalar y llamar los paquetes a utilizar 
+```{r}
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+install.packages("haven") #abrir bases de datos
+library(haven)
+install.packages("tidyverse") #herramientas tidyverse 
+library(tidyverse)
+library(readxl)#para abrir bases en formato excell
+install.packages("openxlsx")
+library(openxlsx)
+```
+
+## 2. Importar base de datos (abrir la base)
+En RStudio, podemos importar bases de datos que estén en distintos formatos. Por ej. bases de datos en Excell, como la que utilizamos el curso pasado. También existen otros formatos como SCV, DTA, SAV, etc. 
+
+### a) Abrir base de datos en formato Excell
+**1. read_excel()_ xlsx**
+```{r}
+library(readxl)
+base_antropologia_limpia <- read_excel("/Users/fran/Desktop/Ayudantías Cuanti 2 R/Ayudantías markdown/base_antropologia_limpia.xlsx")
+```
+
+
+**2. read.xlsx(): xlsx** 
+
+Abriremos el archivo, en pestaña 1 y que empiece en fila 1 en este caso.
+
+La función startRow = ; indica desde que fila empezar
+
+La función cols ajusta el rango según el número total de columnas. 
+Parte desde la columna 5 hasta la 147 que es la última. 
+Esto lo hacemos para borrar las columnas que obtengan información personal de los entrevistadores y así resguardar la confidencialidad.
+```{r}
+base_antropologia_limpia <- read.xlsx(xlsxFile = "/Users/fran/Desktop/Ayudantías Cuanti 2 R/Ayudantías markdown/base_antropologia_limpia.xlsx", 
+                                 sheet = 1, startRow = 1, cols = 5:147)  
+
+base_antropologia_limpia
+
+names(base_antropologia_limpia)
+```
+
+
+### b) Abrir archivo CSV 
+**read.csv()**
+
+Está en tidyverse
+```{r}
+library (tidyverse) 
+
+```
+`c19 <- read_csv(file ="/Users/fran/Desktop/Ayudantías Cuanti 2 R/Ayudantías markdown/Ayudantía 1/2024 MESU BBDD/MESU 2024_v2.csv")`
+
+
+#### Recordemos ¿Para qué sirve el siguiente código? `remove(list = ls())`
+
+
+### 🔶 Práctica: 
+Si quisiera abrir una base de datos llamada base_antropología.xlsx y guardarla con el nombre base, que parta desde la fila 6 y desde la columna 4 ¿cómo debería completar el siguiente código?
+
+* Completa:
+
+
+_________ <- read.xlsx(xlsxFile = "/file/_________", 
+                                 sheet = 1, startRow = ____, cols = ___) 
+
+
+## 3. Exploración de la base de datos
+
+* summary
+* glimpse
+* names
+* ncol
+* nrow
+
+
+### 🔶 Completa el código con la función según corresponda:
+
+#### Número de filas (casos)
+____(base_antropologia_limpia) 
+
+
+#### Número de columnas
+____(base_antropologia_limpia) 
+
+
+#### Nombres de las variables
+____(base_antropologia_limpia) 
+
+
+#### Vistazo inicial
+____(base_antropologia_limpia)
+
+
+#### Sumario general
+____(base_antropologia_limpia) 
+
+
+
+
+
+
+
+
+
