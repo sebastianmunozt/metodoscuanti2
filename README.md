@@ -24,7 +24,7 @@
 ## **Documentos del Curso**
 📂 **Descarga el programa y la programación del curso:**
 - 📄 [**Programa**](https://sebastianmunozt.github.io/metodoscuanti2/files/programa_2025.pdf) 
-- 📅 [**Programación**](https://sebastianmunozt.github.io/metodoscuanti2/programacion_2025.pdf)
+- 📅 [**Programación**](https://sebastianmunozt.github.io/metodoscuanti2/files/programacion_2025.pdf)
 
 ---
 
@@ -115,6 +115,7 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSc1sShBA6IM
 
 - ¿Existirán cambios?
 
+---
 
 #### Bibliografía del curso
 
