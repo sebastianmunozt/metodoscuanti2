@@ -22,7 +22,7 @@ style_mono_accent(
   header_font_google = google_font("Josefin Sans"),
   text_font_google   = google_font("Montserrat", "300", "300i"),
   code_font_google   = google_font("Fira Mono"), 
-  base_font_size = "25px", # Ajuste del tamaño global de la fuente
+  base_font_size = "23px", # Ajuste del tamaño global de la fuente
 )
 
 # Crear un archivo CSS para personalizar inverse y citas
@@ -72,6 +72,22 @@ class: slideInRight, fadeOutLeft, middle, inverse
 
 
 ---
+class: slideInRight, fadeOutLeft, middle, inverse
+background-image: url("img/temp/05.png") 
+background-size: cover
+
+### ¿Qué veremos?
+
+1. <span style="font-size: 1.2em;">Introducción</span>  
+2. <span style="color:gray; font-size: 1em;">¿Qué es el muestreo?</span>  
+3. <span style="color:gray; font-size: 1em;">Conceptos claves del muestreo</span>  
+4. <span style="color:gray; font-size: 1em;">¿Qué sustenta la idea de "representatividad"?</span>  
+5. <span style="color:gray; font-size: 1em;">¿Cuáles son los errores del muestreo?</span>  
+6. <span style="color:gray; font-size: 1em;">Elementos básicos de diseño de muestra</span>  
+7. <span style="color:gray; font-size: 1em;">Tipos de muestreo</span>  
+
+
+---
 background-image: url("img/1.png")
 background-size: 80%
 
@@ -89,8 +105,9 @@ background-image: url("img/3.png")
 background-size: 70%
 
 ---
-
-class: slideInRight, fadeOutLeft, middle, inverse
+background-image: url("img/temp/02.jpg") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle
 
 ## ¿Cómo 1355 puede representar a 14.000.000 (CENSO 2017)?
 
@@ -99,7 +116,6 @@ class: slideInRight, fadeOutLeft, middle, inverse
 #### ¿Cómo es que con tan pocos casos se pueda intentar decir lo que pasa en todo Chile?
 
 ---
-
 background-image: url("img/4.png")
 background-size: cover
 class: center, bottom, inverse
@@ -111,8 +127,9 @@ class: center, bottom, inverse
 </div>
 
 ---
-
-class: slideInRight, fadeOutLeft, middle, inverse
+background-image: url("img/temp/02.jpg") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle
 > Al preparar una sopa, uno saca una pequeña cucharada para ver el nivel general de sal y aliños. 
 
 - ¿Por qué una pequeña cucharada puede **representar** la totalidad?
@@ -121,9 +138,23 @@ class: slideInRight, fadeOutLeft, middle, inverse
 
 
 ---
+background-image: url("img/temp/05.png") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle, inverse
+
+1. <span style="color:gray; font-size: 1em;">Introducción</span>  
+2. <span style="font-size: 1.2em;">¿Qué es el muestreo?</span>  
+3. <span style="color:gray; font-size: 1em;">Conceptos claves del muestreo</span>  
+4. <span style="color:gray; font-size: 1em;">¿Qué sustenta la idea de "representatividad"?</span>  
+5. <span style="color:gray; font-size: 1em;">¿Cuáles son los errores del muestreo?</span>  
+6. <span style="color:gray; font-size: 1em;">Elementos básicos de diseño de muestra</span>  
+7. <span style="color:gray; font-size: 1em;">Tipos de muestreo</span>  
+
+
+---
 class: slideInRight, fadeOutLeft, middle
 
-## ¿Qué es el Muestreo?
+
 .pull-left[
 
 - Es el procedimiento mediante el cual se selecciona una **muestra** de una **población** con el fin de conocer características de esa población.
@@ -137,9 +168,9 @@ class: slideInRight, fadeOutLeft, middle
 ![v](img/5.png)]
 
 ---
-class: slideInRight, fadeOutLeft, middle, inverse
+class: slideInRight, fadeOutLeft, middle
 
-## ¿Por qué estudiamos con **muestras** y no **poblaciones**?
+### ¿Por qué estudiamos con **muestras** y no **poblaciones**?
 - **Recursos**: estudiar una muestra es más rápido y económico.
 - **Precisión**: Una muestra puede ser más precisa en la estimación de los valores poblacionales que un CENSO.
 - ¿Cómo se explica esta paradoja?
@@ -147,10 +178,23 @@ class: slideInRight, fadeOutLeft, middle, inverse
   - Errores del muestreo 
 
 ---
+background-image: url("img/temp/05.png") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle, inverse
 
+1. <span style="color:gray; font-size: 1em;">Introducción</span>  
+2. <span style="color:gray; font-size: 1em;">¿Qué es el muestreo?</span>  
+3. <span style="font-size: 1.2em;">Conceptos claves del muestreo</span>  
+4. <span style="color:gray; font-size: 1em;">¿Qué sustenta la idea de "representatividad"?</span>  
+5. <span style="color:gray; font-size: 1em;">¿Cuáles son los errores del muestreo?</span>  
+6. <span style="color:gray; font-size: 1em;">Elementos básicos de diseño de muestra</span>  
+7. <span style="color:gray; font-size: 1em;">Tipos de muestreo</span>  
+
+
+---
 class: slideInRight, fadeOutLeft, middle
 
-## Conceptos claves de muestreo
+
 - Hay dos tipos de muestreos: **probabilísticos** y **no probabilísticos**.
 - El fin de un **muestreo probabilístico** es utilizar información de una muestra representativa para explorar, describir o explicar las propiedades de la población origen de la muestra. 
 - ¿Cómo logramos esto?....
@@ -158,7 +202,8 @@ class: slideInRight, fadeOutLeft, middle
 
 
 ---
-
+background-image: url("img/temp/02.jpg") 
+background-size: cover
 class: slideInRight, fadeOutLeft, middle
 
 .pull-left[
@@ -213,19 +258,33 @@ class: slideInRight, fadeOutLeft, middle
 
 
 
+---
+background-image: url("img/temp/05.png") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle, inverse
+1. <span style="color:gray; font-size: 1em;">Introducción</span>  
+2. <span style="color:gray; font-size: 1em;">¿Qué es el muestreo?</span>  
+3. <span style="color:gray; font-size: 1em;">Conceptos claves del muestreo</span>  
+4. <span style="font-size: 1.2em;">¿Qué sustenta la idea de "representatividad"?</span>  
+5. <span style="color:gray; font-size: 1em;">¿Cuáles son los errores del muestreo?</span>  
+6. <span style="color:gray; font-size: 1em;">Elementos básicos de diseño de muestra</span>  
+7. <span style="color:gray; font-size: 1em;">Tipos de muestreo</span>  
 
 
 ---
+background-image: url("img/temp/02.jpg") 
+background-size: cover
 
 class: slideInRight, fadeOutLeft, middle
 
-## ¿Qué sustenta a la representatividad
+
 - El **teorema del límite central** → La distribución de medias muestrales extraídas de forma aleatoria de una población se aproxima a la **distribución normal** a medida que aumenta el tamaño de la muestra.
 - La **ley de los grandes números** → la diferencia entre el estadístico muestral y el parámetro poblacional tiende a 0 cuando el tamaño de la muestra tiende al infinito.
 
 
 
 ---
+
 class: slideInRight, fadeOutLeft, middle
 background-image: url("img/7.png")
 background-size: 65%
@@ -266,6 +325,8 @@ class: slideInRight, fadeOutLeft, middle
 
 
 ---
+background-image: url("img/temp/02.jpg") 
+background-size: cover
 class: slideInRight, fadeOutLeft, middle
 
 ## Supuesto Normalidad
@@ -277,6 +338,20 @@ class: slideInRight, fadeOutLeft, middle
 ---
 background-image: url("img/10.png")
 background-size: 70%
+
+
+---
+background-image: url("img/temp/05.png") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle, inverse
+
+1. <span style="color:gray; font-size: 1em;">Introducción</span>  
+2. <span style="color:gray; font-size: 1em;">¿Qué es el muestreo?</span>  
+3. <span style="color:gray; font-size: 1em;">Conceptos claves del muestreo</span>  
+4. <span style="font-size: 1.2em;">¿Qué sustenta la idea de "representatividad"?</span>  
+5. <span style="color:gray; font-size: 1em;">¿Cuáles son los errores del muestreo?</span>  
+6. <span style="color:gray; font-size: 1em;">Elementos básicos de diseño de muestra</span>  
+7. <span style="color:gray; font-size: 1em;">Tipos de muestreo</span>  
 
 
 ---
@@ -305,9 +380,23 @@ class: center, middle
 
 
 ---
+background-image: url("img/temp/05.png") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle, inverse
+
+1. <span style="color:gray; font-size: 1em;">Introducción</span>  
+2. <span style="color:gray; font-size: 1em;">¿Qué es el muestreo?</span>  
+3. <span style="color:gray; font-size: 1em;">Conceptos claves del muestreo</span>  
+4. <span style="color:gray; font-size: 1em;">¿Qué sustenta la idea de "representatividad"?</span>  
+5. <span style="font-size: 1.2em;">¿Cuáles son los errores del muestreo?</span>  
+6. <span style="color:gray; font-size: 1em;">Elementos básicos de diseño de muestra</span>  
+7. <span style="color:gray; font-size: 1em;">Tipos de muestreo</span>  
+
+
+---
 class: slideInRight, fadeOutLeft, middle
 
-## ¿Cómo se diseña una muestra?
+### ¿Cómo se diseña una muestra?
 - Primer paso: definición del **marco muestral**
     - El ‘marco muestral’ son los insumos utilizados para identificar cada una de las unidades de muestreo.
     - Permite **enumerar** las **unidades de muestreo** para su **posterior selección**.
@@ -318,6 +407,8 @@ class: slideInRight, fadeOutLeft, middle
 ![v](img/13png.png)
 
 ---
+background-image: url("img/temp/02.jpg") 
+background-size: cover
 class: slideInRight, fadeOutLeft, middle
 
 ### En lo posible se busca que el marco:
@@ -342,6 +433,8 @@ class: slideInRight, fadeOutLeft, middle
 
 
 ---
+background-image: url("img/temp/02.jpg") 
+background-size: cover
 class: slideInRight, fadeOutLeft, middle
 
 
@@ -366,6 +459,8 @@ class: slideInRight, fadeOutLeft, middle
 
 
 ---
+background-image: url("img/temp/02.jpg") 
+background-size: cover
 class: slideInRight, fadeOutLeft, middle
 
 ### ¿Cuántos casos son necesarios?
@@ -393,17 +488,27 @@ Lo infinito: Población/Universo mayor a 10.000
 class: slideInRight, fadeOutLeft, middle
 
 ### Ejercicio: Considerando muestras infinitas
-- a) ¿Cuántos casos se necesitan para una muestra aleatoria simple con un error de 5% y un nivel de confianza de 90% y una varianza máxima?
-- b) ¿Cuántos casos se necesitan para una muestra aleatoria simple con un error de 2% y un nivel de confianza de 95% y una varianza máxima?
+- a) ¿Cuántos casos se necesitan para una muestra aleatoria simple con un **error de 5%** y un **nivel de confianza de 90%** y una **varianza máxima**?
+- b) ¿Cuántos casos se necesitan para una muestra aleatoria simple con un **error de 2%** y un **nivel de confianza de 95%** y una **varianza máxima**?
 
 <img src="img/19.png" alt="Descripción de la imagen" width="400" />
 
+---
+background-image: url("img/temp/05.png") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle, inverse
 
-
+1. <span style="color:gray; font-size: 1em;">Introducción</span>  
+2. <span style="color:gray; font-size: 1em;">¿Qué es el muestreo?</span>  
+3. <span style="color:gray; font-size: 1em;">Conceptos claves del muestreo</span>  
+4. <span style="color:gray; font-size: 1em;">¿Qué sustenta la idea de "representatividad"?</span>  
+5. <span style="color:gray; font-size: 1em;">¿Cuáles son los errores del muestreo?</span>  
+6. <span style="font-size: 1.2em;">Elementos básicos de diseño de muestra</span>  
+7. <span style="color:gray; font-size: 1em;">Tipos de muestreo</span>  
 
 ---
 
-## Comparación entre Muestreo Probabilístico y No Probabilístico
+#### Comparación entre Muestreo Probabilístico y No Probabilístico
 
 | Característica                                  | Muestreo Probabilístico                                                                     | Muestreo No Probabilístico                                                                |
 |-------------------------------------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
@@ -415,41 +520,45 @@ class: slideInRight, fadeOutLeft, middle
 
 
 ---
-
-class:  middle, inverse
+background-image: url("img/01.gif")
+background-size: cover
+class: slideInRight, fadeOutLeft, middle, inverse
 
 ## Muestreos Probabilísticos
 
-Muestreo Aleatorio Simple (MAS)
-- La selección se realiza de un listado de la población asignándole igual probabilidad a cada elemento.
+
+---
+class: slideInRight, fadeOutLeft, middle
+### **Muestreo Aleatorio Simple (MAS)**
+- La selección se realiza de un **listado de la población** asignándole **igual probabilidad a cada elemento**.
 - Se caracteriza por:
     - Cada unidad tiene una probabilidad igual de participar en la selección.
     - La selección es totalmente aleatoria.
     - Todas las posibles muestras tienen igual probabilidad de ser elegidas.
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-class: middle
-
-## Selección Aleatoria
+#### Selección Aleatoria
 - Por lo general, la selección aleatoria se hace computacionalmente. También existen tablas de números aleatorios.
 - Como el MAS exige un listado exhaustivo, es imposible utilizarlo en poblaciones de magnitud elevada. Por ejemplo, es imposible hacer un MAS en todo Chile.
 
 ---
-
-## Listado de estudiantes de Antropología Universidad Alberto Hurtado: 220 personas
+class: slideInRight, fadeOutLeft, middle
+#### Listado de estudiantes de Antropología Universidad Alberto Hurtado: 220 personas
 
 
 ![v](img/13png.png)
 ---
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
 ![v](img/20.png)
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-## Ventajas y Desventajas del Muestreo Aleatorio Simple
+### Ventajas y Desventajas del Muestreo Aleatorio Simple
 
 | Ventajas                                 | Desventajas                                                        |
 |------------------------------------------|--------------------------------------------------------------------|
@@ -459,44 +568,56 @@ class: center, middle
 
 
 ---
+background-image: url("img/temp/02.jpg") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle
 
-class:  middle
-
-## Muestreo Sistemático
-- Es una variante del MAS. Se elige un punto de arranque aleatorio y se seleccionan casos en forma sucesiva según un intervalo numérico convencional.
-- Sólo la primera unidad de la muestra se elige al azar.
+### Muestreo Sistemático
+- Es una variante del MAS. Se elige un **punto de arranque aleatorio** y se seleccionan casos en forma sucesiva según un intervalo numérico convencional.
+- Sólo la **primera unidad de la muestra se elige al azar**.
 - Los restantes elementos de la muestra se eligen sumando el coeficiente de elevación que es igual a N/n hasta llegar al n requerido.
 - En trabajo en terreno es mucho más práctico que un MAS.
 
 ---
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
 ![v](img/13png.png)
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
+
+- ¿Alguién participó como **encuestador** en alguna encuesta?
+
+---
+class: slideInRight, fadeOutLeft, middle
+
 ![v](img/21.png)
 
 ---
-class: middle
+background-image: url("img/temp/02.jpg") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle
 
-## Muestreo Estratificado
-- Se caracteriza por la utilización de información auxiliar para mejorar la eficiencia en la selección de elementos y mejorar la precisión de las estimaciones.
-- La información auxiliar corresponde a variables de estratificación que dividen a la población en estratos.
+### Muestreo Estratificado
+- Se caracteriza por la utilización de **información auxiliar** para **mejorar la eficiencia** en la **selección** de elementos y mejorar la **precisión de las estimaciones**.
+- La información auxiliar corresponde a **variables de estratificación** que dividen a la población en estratos.
 - Las variables de estratificaciones más utilizadas son edad, sexo, clase social, ocupación. Esto se debe a que tienden a estar recogidas en los marcos muestrales (como el CENSO).
+- En nuestro caso realizaremos estratos según el **año de ingreso** a la carrera.  
 
 
 ---
-
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
 <img src="img/22.png" alt="Descripción de la imagen" width="500" />
 
 ---
-
-## Muestreo Estratificado
-- ¿Qué es un estrato? → Los estratos son grupos homogéneos de elementos por lo que no es preciso seleccionar un número elevado de casos para representar al estrato.
-- Mientras más homogéneo sea el estrato, más precisa será la estimación.
+background-image: url("img/temp/02.jpg") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle
+### Muestreo Estratificado (cont.)
+- ¿Qué es un **estrato**? → Los estratos son grupos homogéneos de elementos por lo que no es preciso seleccionar un número elevado de casos para representar al estrato.
+- Mientras **más homogéneo** sea el estrato, más precisa será la estimación.
 - Las varianza entre los estratos es máxima y al interior de cada estrato es mínima.
 - El fin es lograr que el estrato esté representado en la muestra.
 - Logrará estimaciones más precisas siempre que:
@@ -504,33 +625,35 @@ class: center, middle
     - De no ser así, no tendría sentido (se lograría una precisión similar a si no se hubiera estratificado).
 
 ---
-
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
+- Ordeno por año de admisión
 
 ![v](img/13png.png)
 
 ---
-
-## Muestreo por Conglomerados
+background-image: url("img/temp/02.jpg") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle
+### Muestreo por Conglomerados
 
 .pull-left[
-- ¿Qué es un conglomerado? → conjunto de elementos con valores diferentes entre sí en la variable medida.
+- ¿Qué es un conglomerado? → conjunto de elementos con **valores diferentes entre sí** en la **variable medida**.
 - Diferencias con el ME:
-  - La lógica es inversa. El error disminuye en la medida que aumenta la heterogeneidad de cada uno de los conglomerados.
+  - La lógica es inversa: El error disminuye en la medida que **aumenta la heterogeneidad** de cada uno de los conglomerados.
   - Se extrae una muestra aleatoria de conglomerados (no una muestra al interior de cada estrato).
   - La unidad de muestreo es el conglomerado y no el individuo.]
 
 .pull-right[
 <img src="img/23.png" alt="Descripción de la imagen" width="200" />]
 ---
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
-## Muestreo Polietápico
-- El MC da paso comúnmente a los muestreos polietápicos….
-- Son diseños complejos caracterizados por la selección de muestras en etapas sucesivas.
+### Muestreo Polietápico
+- El MC da paso comúnmente a los muestreos polietápicos.
+- Son **diseños complejos** caracterizados por la selección de muestras en etapas sucesivas.
 - Cada etapa requiere su propio marco muestral. Hay así unidades primarias de muestreo (UPM), unidades secundarias de muestreo (USM), etc.
 - La versión más sencilla tiene 2 etapas:
-    - Se seleccionan los conglomerados (unidades de muestreo primarias).
+    - Se **seleccionan los conglomerados** (unidades de muestreo primarias).
     - Se elige mediante MAS a los miembros de la población a observar al interior de los conglomerados previamente seleccionados.
 - Es el más típico muestreo nacional → por ejemplo, muestreo polietápico estratificado por conglomerados.
 
@@ -539,11 +662,16 @@ class: center, middle
 
 
 ---
-![v](img/24.png)
+
+background-image: url("img/24.png")
+background-size: 70%
+
+
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-## Ejemplo 1: Encuesta Electoral
+#### Ejemplo 1: Encuesta Electoral para Santiago
 - Paso 1: estratifico región y urbano/rural
 - Paso 2: Selecciono Manzanas aleatoriamente
 - Paso 3: Hago un listado de casas (construyo el marco muestra) y voy seleccionando Casas de una manzana de forma sistemática. Toco el timbre cada 3 casas
@@ -552,8 +680,9 @@ class: center, middle
  - Luego selecciono de forma aleatoria: Último que está de cumpleaños, Tabla kish
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-##Ejemplo 2:Percepciones sobre la desigualdad social en Santiago
+####Ejemplo 2:Percepciones sobre la desigualdad social en Santiago
 Paso 1: estratifico manzanas por nivel socioeconómico
 Paso 2: Selecciono Manzanas aleatoriamente
 Paso 3: Hago un listado de casas (construyo el marco muestra) y voy seleccionando Casas de una manzana de forma sistemática. Toco el timbre cada 3 casas
@@ -562,13 +691,18 @@ Paso 4:
 - Luego selecciono de forma aleatoria: Último que está de cumpleaños, Tabla kish
 
 ---
+class: slideInRight, fadeOutLeft, middle
+### Muestreos No Probabilísticos
+
+<img src="img/27.png" width="70%">
+
+---
+background-image: url("img/temp/02.jpg") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle
 
 
-## Muestreos No Probabilísticos
-
-![v](img/27.png)
-
-## Muestreo por Cuotas
+### Muestreo por Cuotas
 - Es un muestreo no probabilístico muy utilizado. Intenta alcanzar grados mínimos de representatividad de un modo más simple.
 - Procedimiento:
     - Se define una matriz con las características básicas de la población que interesa representar y se establece la proporción en que cada una de ellas existe.
@@ -576,37 +710,15 @@ Paso 4:
     - Finalmente, se le señala a los encuestadores que alcancen la cuota (es decir, que busquen un cierto número de encuestados que cumplan los requisitos de cada cuota).
 
 
----
-
-class: center, middle
-
-## Sirve el excel?
-<img src="img/excel1.jpg" alt="Descripción de la imagen" width="500" />
-
 
 ---
-
-class: center, middle
-
-## Sirve el excel?
-<img src="img/excel2.jpg" alt="Descripción de la imagen" width="500" />
-
+background-image: url("img/temp/02.jpg") 
+background-size: cover
+class: slideInRight, fadeOutLeft, middle
+### Ejercicio en clases
 
 
----
-
-class: center, middle
-
-## Sirve el excel?
-<img src="img/excel3.jpeg" alt="Descripción de la imagen" width="500" />
-
-
----
-
-## Ejercicio en clases
-
-
-Instrucción
+#### Instrucción
 - Revise el marco muestral entregado y trate de identificar qué tipo de muestreo podría ser.
 
 
