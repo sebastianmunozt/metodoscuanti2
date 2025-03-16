@@ -109,7 +109,7 @@ background-image: url("img/temp/02.jpg")
 background-size: cover
 class: slideInRight, fadeOutLeft, middle
 
-## ¿Cómo 1355 puede representar a 14.000.000 (CENSO 2017)?
+# ¿Cómo 1355 puede representar a 14.000.000 (CENSO 2017)?
 
 = 0.01%
 
