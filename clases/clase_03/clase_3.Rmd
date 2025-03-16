@@ -54,12 +54,22 @@ writeLines(css_code, "custom.css") # Guarda el CSS en un archivo
 
 ```
 
+
+background-image: url("img/00.gif")
+background-size: cover
 class: slideInRight, fadeOutLeft, middle, inverse
 
 
-## Introducción al Muestreo
-- Métodos cuantitativos 2
-- Prof. Sebastián Muñoz
+<div style="position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); background: rgba(0, 0, 0, 0.7); padding: 15px; border-radius: 10px; color: white; text-align: center; width: 80%;">
+  
+  <h3 style="margin-bottom: 5px; font-size: 1.2em;">Introducción al Muestreo</h3>
+  <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 1em;">
+    <li>Métodos cuantitativos 2</li>
+    <li>Prof. Sebastián Muñoz</li>
+  </ul>
+
+</div>
+
 
 ---
 background-image: url("img/1.png")
@@ -92,13 +102,17 @@ class: slideInRight, fadeOutLeft, middle, inverse
 
 background-image: url("img/4.png")
 background-size: cover
-class: inverse, center, middle
+class: center, bottom, inverse
 
-## Formas de seleccionar para “representar” totalidad
+<div style="position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); background: rgba(0, 0, 0, 0.8); padding: 15px 20px; border-radius: 10px; color: white; text-align: center; width: 80%; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+  
+  <h2 style="margin: 0; font-size: 1.5em;">Formas de seleccionar para “representar” totalidad</h2>
+
+</div>
 
 ---
 
-class: inverse, middle
+class: slideInRight, fadeOutLeft, middle, inverse
 > Al preparar una sopa, uno saca una pequeña cucharada para ver el nivel general de sal y aliños. 
 
 - ¿Por qué una pequeña cucharada puede **representar** la totalidad?
@@ -107,6 +121,7 @@ class: inverse, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 ## ¿Qué es el Muestreo?
 .pull-left[
@@ -162,12 +177,41 @@ background-size: cover
 
 class: slideInRight, fadeOutLeft, middle
 
+<style>
+.bloque {
+  border: 3px solid white;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.8em; /* Tamaño de fuente más pequeño */
+  text-align: left;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+.bloque h2, .bloque ul, .bloque li, .bloque em, .bloque strong {
+  color: white; /* Asegura que todo el texto sea blanco */
+}
+.bloque h2 {
+  font-size: 1em; /* Título más pequeño */
+  margin-bottom: 8px;
+}
+</style>
 
-## Muestra: 
+<div class="bloque">
+  <h2>Muestra:</h2>
+  <ul>
+    <li><em>“no es cualquier parte de la población”</em></li>
+    <li>Metafóricamente: “es una maqueta de la población en las que están reproducidos sus atributos a una escala menor”.</li>
+    <li><strong>Representatividad:</strong> la cualidad de reproducir a escala los atributos de la población y en consecuencia permitir inferir a la población origen de la muestra.</li>
+  </ul>
+</div>
 
-- *“no es cualquier parte de la población”*
-- Metafóricamente: “es una maqueta de la población en las que están reproducidos sus atributos a una escala menor”. 
-- **Representatividad**: la cualidad de reproducir a escala los atributos de la población y en consecuencia permitir inferir a la población origen de la muestra
+
 
 
 
@@ -182,11 +226,14 @@ class: slideInRight, fadeOutLeft, middle
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 background-image: url("img/7.png")
 background-size: 65%
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
+
 ## Distribución Normal
 - Saco aleatoriamente distintas muestras gran cantidad de esas muestras se acercarán a la curva normal.
 
@@ -202,14 +249,14 @@ background-size: 65%
   - Se organizarán en una curva normal]
 
 ---
-
+class: slideInRight, fadeOutLeft, middle
 background-image: url("img/9.png")
 background-size: 80%
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-class: middle
 
 ## Distribución teórica de variables continuas.
 - Es una distribución **simétrica** (moda, mediana y media coinciden).
@@ -218,14 +265,12 @@ class: middle
 
 
 
-
-
 ---
-class: inverse,  middle
+class: slideInRight, fadeOutLeft, middle
 
 ## Supuesto Normalidad
 - La estadística paramétrica involucra supuestos de **normalidad en la distribución muestral** de los valores de interés (ej: la media).
-- Esto es importante para calcular áreas bajo la curva → significación estadística (probabilidad de que la relación que se encuentra en la muestra se encuentra en la población).
+- Esto es importante para calcular **áreas bajo la curva** → significación estadística (probabilidad de que la relación que se encuentra en la muestra se encuentra en la población).
 - El supuesto de normalidad suele cumplirse cuando n>30 casos, aún si la distribución de la variable de interés no es normal en la muestra o la población.
 
 
@@ -235,13 +280,16 @@ background-size: 70%
 
 
 ---
+class: slideInRight, fadeOutLeft, middle
+### ¿Qué errores se imaginan más allá del estadístico?
 
-# ¿Qué errores se imaginan más allá del estadístico?
 
-
-![v](img/11.png)
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+  <img src="img/11.png" alt="v" style="width: 65%; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+</div>
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
 | Tipo de Error                | Descripción                                                                                           | Cómo Afecta la Investigación                                                                                   | Específico de |
 |------------------------------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|---------------|
@@ -257,12 +305,12 @@ class: center, middle
 
 
 ---
-class: inverse
+class: slideInRight, fadeOutLeft, middle
 
-## Cómo se diseña una muestra
-- Primer paso: definición del marco muestral.
+## ¿Cómo se diseña una muestra?
+- Primer paso: definición del **marco muestral**
     - El ‘marco muestral’ son los insumos utilizados para identificar cada una de las unidades de muestreo.
-    - Permite enumerar las unidades de muestreo para su posterior selección.
+    - Permite **enumerar** las **unidades de muestreo** para su **posterior selección**.
     - Suelen ser: listados de individuos (clientes etc.); listados de manzanas, distritos, mapas y planos.
 
 
@@ -270,21 +318,22 @@ class: inverse
 ![v](img/13png.png)
 
 ---
-class:  middle
+class: slideInRight, fadeOutLeft, middle
 
-## En lo posible se busca que el marco:
-  - Sea completo.
-  - Esté actualizado.
-  - No debe incluir unidades que no correspondan a la población que se analiza.
-  - Debe contener información suplementaria que ayude a localizar a las unidades seleccionadas.
-  - Debe ser fácil de utilizar.
-  - El marco muestral es CLAVE: la muestra recogida sólo podrá considerarse representativa de la población que está comprendida en el marco muestral.
+### En lo posible se busca que el marco:
+  - Sea **completo**.
+  - Esté **actualizado**.
+  - **No** debe **incluir unidades que no correspondan** a la población que se analiza.
+  - Debe **contener información suplementaria** que ayude a localizar a las unidades seleccionadas.
+  - Debe ser **fácil** de utilizar.
+  
+> El marco muestral es CLAVE: la muestra recogida sólo podrá considerarse representativa de la población que está comprendida en el marco muestral.
 
 
 ---
-class: middle, inverse
+class: slideInRight, fadeOutLeft, middle
 
-## Definimos entonces:
+### Definimos entonces:
 - **Población/Universo**: agregado de elementos respecto del cual se recaba información.  
 - **Población objetivo**: es una parte de la población, excluye elementos de difícil acceso o que son muy caros de encuestar.
 - **Población marco**: es una parte de la población objetivo; se excluyen los elementos que no son encuestados por marco insuficiente o falta de cobertura.
@@ -292,12 +341,11 @@ class: middle, inverse
 
 
 
-
 ---
-class: center, middle
+class: slideInRight, fadeOutLeft, middle
 
 
-## ¿Cómo se calcula el tamaño de la muestra?
+### ¿Cómo se calcula el tamaño de la muestra?
 
 .pull-left[
 ![v](img/14.png)]
@@ -309,18 +357,24 @@ class: center, middle
 - Efecto diseño: 1.2]
 
 ---
-class: middle
+class: slideInRight, fadeOutLeft, middle
 
-## Algunos conceptos claves:
+### Algunos conceptos claves:
 - **Intervalo de Confianza (IC)**: Rango de valores que tiene una cierta probabilidad conocida de contener el verdadero valor del parámetro de la población (ej: {56; 67} o {35%; 52%}): valor se mueve entre X e Y.
 - **Nivel de Confianza**: Es la probabilidad 1- α que es la proporción de veces que el intervalo de confianza realmente contiene el parámetro de población. Lo elige el/la investigador/a generalmente 90%, 95% o 99%: con cuánta confianza mi muestra está en el IC?
-- **El error máximo de estimación**: Nos indica el mayor error que podemos cometer por predecir la proporción poblacional con una proporción muestral (ej: 2%): cuánto error estoy dispuesto admitir?
+- **El error máximo de estimación**: Nos indica el mayor error que podemos cometer por predecir la proporción poblacional con una proporción muestral (ej: 2%): ¿cuánto error estoy dispuesto admitir?
 
 
 ---
-## ¿Cuántos casos son necesarios?
-- Cálculo del tamaño de la muestra mediante MAS (muestreo aleatorio simple).
-- La fórmula incorpora el tamaño de la población, la varianza, el error máximo de estimación, y el nivel de confianza deseado…
+class: slideInRight, fadeOutLeft, middle
+
+### ¿Cuántos casos son necesarios?
+- Cálculo del tamaño de la muestra mediante **MAS** (muestreo aleatorio simple).
+- La fórmula incorpora el **tamaño de la población**, la **varianza** (de variable clave), el error máximo de estimación, y el nivel de confianza deseado.
+
+---
+class: slideInRight, fadeOutLeft, middle
+
 .pull-left[
 ![v](img/15.png)]
 
@@ -333,12 +387,12 @@ class: middle
 - PQ: Variación poblacional (0.5 * 0.5; máxima)
 - z: Coeficiente de confianza (asociado a NC, áreas bajo la curva normal) 
 
-Población/Universo mayor a 10.000
+Lo infinito: Población/Universo mayor a 10.000
 
 ---
+class: slideInRight, fadeOutLeft, middle
 
-
-## Ejercicio: Considerando muestras infinitas
+### Ejercicio: Considerando muestras infinitas
 - a) ¿Cuántos casos se necesitan para una muestra aleatoria simple con un error de 5% y un nivel de confianza de 90% y una varianza máxima?
 - b) ¿Cuántos casos se necesitan para una muestra aleatoria simple con un error de 2% y un nivel de confianza de 95% y una varianza máxima?
 
