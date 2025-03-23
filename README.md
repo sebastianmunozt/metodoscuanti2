@@ -74,7 +74,8 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSc1sShBA6IM
 
 | 📆 Fecha      | 📚 Contenido                                                  | 📌 Tareas | 📖 Material a discutir | 🎥 Grabación |
 |------------|------------------------------------------------------------|--------|---------------------|------------|
-| Pendiente | Repaso RStudio y funciones básicas | Pendiente | Pendiente | Pendiente |
+| Pendiente | Repaso RStudio y funciones básicas |  [`.Rmd`](/Users/fran/Desktop/Ayudantías Cuanti 2 R/metodoscuanti2/ayudantias/ayudantia_01) · [`html`](file:///Users/fran/Desktop/Ayudanti%CC%81as%20Cuanti%202%20R/metodoscuanti2/ayudantias/ayudantia_01/ayudantia_1.html) .  [`Base`](/Users/fran/Desktop/Ayudantías Cuanti 2 R/metodoscuanti2/ayudantias/ayudantia_01) . 
+[`PPT`](/Users/fran/Desktop/Ayudantías Cuanti 2 R/metodoscuanti2/ayudantias/ayudantia_01) | Pendiente | Pendiente |
 
 
 
