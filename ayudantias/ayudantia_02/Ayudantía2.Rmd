@@ -3,9 +3,6 @@ title: 'Ayudantía 2: TIDYVERSE'
 author: "Francesca Alejandra Roco"
 date: "Primer semestre 2025"
 output:
-  pdf_document:
-    toc: true
-    toc_depth: '3'
   html_document:
     toc: true
     toc_depth: 3
@@ -44,20 +41,24 @@ pacman::p_load(haven, tidyverse, readxl, openxlsx)
 ```
 
 ## 2. Importar base de datos (abrir la base)
-En RStudio, podemos importar bases de datos que estén en distintos formatos. Por ej. bases de datos en Excell, como la que utilizamos el curso pasado. También existen otros formatos como SCV, DTA, SAV, etc. 
+En RStudio, podemos importar bases de datos que estén en distintos formatos. Por ej. bases de datos en Excell. También existen otros formatos como SCV, DTA, SAV, etc. 
 
 ### a) Abrir base de datos en formato Excell
-**1. read_excel()_ xlsx**
+**1. read_excel()**
 ```{r}
 library(readxl)
 base_antropologia_limpia <- read_excel("/Users/fran/Desktop/Ayudantías Cuanti 2 R/Ayudantías markdown/base_antropologia_limpia.xlsx")
+
+View(base_antropologia_limpia)
 ```
 
-**2. read.xlsx(): xlsx** 
+**2. read.xlsx()** 
 
 Abriremos el archivo, en pestaña 1 y que empiece en fila 1 en este caso.
 
-* La función startRow = ; indica desde que fila empezar
+* La función sheet indica la hoja desde donde se empieza a leer la base.
+
+* La función startRow indica desde que fila empezar.
 
 * La función cols ajusta el rango según el número total de columnas. 
 
