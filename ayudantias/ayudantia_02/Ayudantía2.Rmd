@@ -1,0 +1,221 @@
+---
+title: 'Ayudantía 2: TIDYVERSE'
+author: "Francesca Alejandra Roco"
+date: "Primer semestre 2025"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    collapsed: true
+    smooth_scroll: true
+    theme: journal
+    highlight: kate
+    df_print: paged
+    code_folding: show
+subtitle: Metodología Cuantitativa con RStudio
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) #se usa en documentos R Markdown para especificar que en el código dentro de cada fragmento debe mostrarse en el documento generado.
+```
+
+# Proceso inicial de análisis de datos
+
+## 1. Instalar y cargar los paquetes a utilizar 
+```{r}
+# Instalar y llamar librerías de paquetes uno por uno
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+install.packages("haven") #abrir bases de datos
+library(haven)
+install.packages("tidyverse") #herramientas tidyverse 
+library(tidyverse)
+install.packages("readxl") #para abrir bases en formato excell
+library(readxl) 
+install.packages("openxlsx")
+library(openxlsx)
+
+# Instalar y cargar paquetes con pacman
+if (!requireNamespace("pacman", quietly = TRUE)) install.packages("pacman")
+pacman::p_load(haven, tidyverse, readxl, openxlsx)
+```
+
+## 2. Importar base de datos (abrir la base)
+En RStudio, podemos importar bases de datos que estén en distintos formatos. Por ej. bases de datos en Excell. También existen otros formatos como SCV, DTA, SAV, etc. 
+
+### a) Abrir base de datos en formato Excell
+**1. read_excel()**
+```{r}
+library(readxl)
+base_antropologia_limpia <- read_excel("/Users/fran/Desktop/Ayudantías Cuanti 2 R/Ayudantías markdown/base_antropologia_limpia.xlsx")
+
+View(base_antropologia_limpia)
+```
+
+**2. read.xlsx()** 
+
+Abriremos el archivo, en pestaña 1 y que empiece en fila 1 en este caso.
+
+* La función sheet indica la hoja desde donde se empieza a leer la base.
+
+* La función startRow indica desde que fila empezar.
+
+* La función cols ajusta el rango según el número total de columnas. 
+
+Parte desde la columna 5 hasta la 147 que es la última. 
+Esto lo hacemos para borrar las columnas que obtengan información personal de los entrevistadores y así resguardar la confidencialidad.
+```{r}
+base_antropologia_limpia <- read.xlsx(xlsxFile = "/Users/fran/Desktop/Ayudantías Cuanti 2 R/Ayudantías markdown/base_antropologia_limpia.xlsx", 
+                                 sheet = 1, startRow = 1, cols = 5:147)  
+
+base_antropologia_limpia
+```
+
+### b) Abrir archivo CSV 
+**read.csv()**
+```{r}
+c19 <- read_csv(file ="/Users/fran/Desktop/Ayudantías Cuanti 2 R/Ayudantías markdown/Ayudantía 2/2024 MESU BBDD/MESU 2024_v2.csv")
+```
+
+#### 🔶 Práctica: 
+Si quisieras abrir una base de datos llamada base_antropología.xlsx y guardarla con el nombre base, que parta desde la fila 6 y desde la columna 4 ¿cómo debería completar el siguiente código?
+
+* Completa:
+
+_________ <- read.xlsx(xlsxFile = "/file/_________", 
+                                 sheet = 1, startRow = ____, cols = ___) 
+
+
+## 3. Exploración de la base de datos
+* summary
+* glimpse
+* names
+* ncol
+* nrow
+
+#### 🔶 Completa el código con la función según corresponda:
+
+#### Número de filas (casos)
+____(base_antropologia_limpia) 
+
+
+#### Número de columnas
+____(base_antropologia_limpia) 
+
+
+#### Nombres de las variables
+____(base_antropologia_limpia) 
+
+
+#### Vistazo inicial
+____(base_antropologia_limpia)
+
+
+#### Sumario general
+____(base_antropologia_limpia) 
+
+```{r}
+# Ver nombres de las variables
+names(base_antropologia_limpia)  
+
+# Ver primeras filas
+head(base_antropologia_limpia)   
+
+# Dimensiones de la base
+dim(base_antropologia_limpia)    
+```
+
+# `Tidyverse`
+## Selección de Variables (`select()`)
+**Seleccionamos columnas, es decir, variables** que sean necesarias para el tema que busquemos analizar. Por ejemplo, si buscamos realizar un análisis sobre las horas de estudio y el rendimiento académico, podemos seleccionar variables relacionadas con el tema. 
+```{r}
+# Seleccionar algunas variables clave
+seleccionadas <- base_antropologia_limpia %>% 
+  select(ea_01_horas_estudio_semana, ea_02_horas_estudio_fin_semana, ea_04_notas_ultimo_semestre, ea_05_satisfaccion_rendimiento_academico)
+head(seleccionadas)
+```
+#### 🔶 Práctica: 
+Si quisieras seleccionar solo las variables `edad`, `género` y `horas_estudio`, ¿cómo completarías el siguiente código?
+
+* **Completa:**
+```r
+_________ <- base %>%  
+  select(_________, _________, _________)
+```
+
+## Filtrado de Datos (`filter()`)
+**Filtramos filas, es decir casos**, con el fin de obtener datos particulares necesarios para nuestro análisis. Por ejemplo, si necesitamos hacer un análisis de los estudiantes que ingresaron después del año 2020 a la universidad, podemos filtrar y quedarnos únicamente con aquellos estudiantes. 
+```{r}
+# Filtrar estudiantes que ingresaron después de 2020
+ingreso_2020_mas <- base_antropologia_limpia %>% 
+  filter(año_ingreso_carrera >= 2020)
+head(ingreso_2020_mas)
+```
+#### 🔶 Práctica 3: Filtrado de Datos
+Si quisieras filtrar a los estudiantes que estudian más de 15 horas a la semana, ¿cómo completarías el código?
+
+* **Completa:**
+```r
+estudiantes_dedicados <- base %>%  
+  filter(_________ > ____)
+```
+
+## Creación de Nuevas Variables (`mutate()`)
+Mutamos variables para crear nuevas variables. Esto quiere decir que transformamos variables en otras, con el fin de realizar el análisis deseado. Por ejemplo, en este caso, mutamos la variable *categoria_edad* para que sus categorías queden con los nombres deseados. 
+```{r}
+# Crear una variable para clasificar edad en rangos
+base_antropologia_limpia <- base_antropologia_limpia %>% 
+  mutate(categoria_edad = case_when(
+    edad < 20 ~ "Menor de 20",
+    edad >= 20 & edad < 25 ~ "20-24",
+    TRUE ~ "25 o más"
+  ))
+table(base_antropologia_limpia$categoria_edad)
+```
+#### 🔶 Práctica 4: Creación de Nueva Variable
+Si quisieras crear una variable `categoria_estudio` que clasifique las horas de estudio en "Bajo" (0-5), "Medio" (6-15) y "Alto" (>15), ¿cómo completarías el código?
+
+* **Completa:**
+```r
+base <- base %>%  
+  mutate(categoria_estudio = case_when(  
+    _________ <= 5 ~ "Bajo",  
+    _________ > 5 & _________ <= 15 ~ "Medio",  
+    TRUE ~ "Alto"  
+  ))
+```
+
+## Agrupar y Resumir (`group_by()` y `summarise()`)
+Con `group_by()` agrupamos por categorías y con `summarise()` hacemos un resumen de los datos. Por ejemplo, en primer lugar agrupamos por comuna el total de estudiantes, de manera que podamos contabilizar cuántos estudiantes hay por comuna. 
+```{r}
+# Contar número de estudiantes por comuna
+conteo_comuna <- base_antropologia_limpia %>% 
+  group_by(comuna) %>% 
+  summarise(total_estudiantes = n()) %>% 
+  arrange(desc(total_estudiantes))
+
+head(conteo_comuna)
+```
+#### 🔶 Práctica 5: Agrupar y Resumir
+Si quisieras calcular el promedio de notas por comuna, ¿cómo completarías este código?
+
+* **Completa:**
+```r
+promedio_notas_comuna <- base %>%  
+  group_by(_________) %>%  
+  summarise(promedio_nota = mean(_________, na.rm = TRUE))
+```
+
+## Visualización de Datos (`ggplot2`)
+Con `ggplot2` podemos visualizar los datos en gráficos. 
+```{r}
+# Gráfico de distribución de edades
+base_antropologia_limpia %>% 
+  ggplot(aes(x = edad)) +
+  geom_histogram(binwidth = 2, fill = "skyblue", color = "black") +
+  labs(title = "Distribución de Edades", x = "Edad", y = "Frecuencia")
+```
+
+## 🔹Conclusiones
+El manejo de `tidyverse` no solo facilita el procesamiento y análisis de datos en antropología, sino que también permite generar hallazgos valiosos a partir de la información disponible. La combinación de estas herramientas con un enfoque crítico y reflexivo es clave para una investigación rigurosa en ciencias sociales.
+
