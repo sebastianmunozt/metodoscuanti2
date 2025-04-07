@@ -1,0 +1,286 @@
+---
+title: "Ayudantía 3: Data Wrangling"
+author: "Francesca Alej. Roco"
+date: "Segundo semestre 2025"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    collapsed: true
+    smooth_scroll: true
+    theme: journal
+    highlight: kate
+    df_print: paged
+    code_folding: show
+subtitle: Metodología Cuantitativa con RStudio
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+# 0. Instalar y cargar paquetes necesarios
+pacman::p_load(tidyverse,
+               openxlsx,
+               readxl,
+               janitor,#limpieza de datos
+               writexl,#Guardar tablas formato excel
+               DataExplorer) #Exploración rápida
+```
+
+# **Data Wrangling** y Repaso **Tidyverse**
+Data wrangling es el proceso de limpiar, transformar y organizar datos crudos para que estén listos para su análisis. Implica tareas como seleccionar variables, filtrar casos, corregir errores, crear nuevas variables y resumir información. 
+
+**En el proceso de data Wrangling realizaremos:**
+
+ 1. Exploración de la base de datos: `glimpse`, `summary` y `names`
+
+ 2. Limpieza de datos: limpiar y renombrar variables `janitor::clean_names` y `dplyr::rename` 
+
+ 3. Transformación de datos: recodificación de categorías  `table`, `tolower()`, `gsub()`, `LATIN-ACSII`, `mutate` `case_when` / `recode`
+
+  3.1 Variables categóricas (cualitativas): `mutate` `recode`
+ 
+  3.2 Variables numéricas: `mutate` `case_when`
+
+---
+
+**Importación de la base de datos**
+
+Vamos a trabajar con la base de datos `base_antropologia`, correspondiente a la Encuesta Estudiantes Antropología 2023.
+```{r}
+# Importar base de datos 
+base_antropologia <- read.xlsx("Encuesta-Estudiantes-Antropología-2023-(respuestas).xlsx") %>%
+  dplyr::select(3:ncol(.)) #seleccioné para abrir la base de datos desde la columna 3 en adelante
+```
+
+---
+
+**I. DATA WRANGLING**
+
+## 1. Explorar la base de datos
+
+Explorar los datos al comienzo del proceso de data wrangling nos permite **conocer qué información tenemos, cómo está organizada y detectar posibles errores o inconsistencias**. Esta etapa inicial es fundamental para **decidir cómo transformar los datos** de manera informada: qué variables son útiles, qué categorías necesitamos agrupar, si hay datos faltantes o mal ingresados, entre otros aspectos clave.
+
+¿Cómo se ven nuestros datos? ¿Cómo se ven nuestras columnas/variables?
+
+```{r}
+# Vistazo inicial
+glimpse(base_antropologia) 
+
+# Sumario general
+summary(base_antropologia) 
+
+# Ver nombres de las variables
+names(base_antropologia)  
+```
+
+## 2. Limpieza de datos: Renombrar variables
+### **a) Limpiar nombres de variables**
+Para esto utilizamos `janitor::clean_names`
+Con esta función transformamos todo a minúscula, quitamos tildes, sacamos signos, borramos espacios.
+Le vamos a decir al RStudio que nos guarde bajo el mismo nombre los datos limpios, es decir, nos sobreescribió la data, pero ahora está limpia.
+
+```{r}
+base_antropologia <- janitor::clean_names(base_antropologia)
+
+names(base_antropologia)
+```
+
+### **b) Renombrar variables**
+Para esto utilizamos `dplyr::rename`
+
+Renombramos las variables cuando estas tienen nombres muy largos, desordenados o difíciles de trabajar. Lo hacemos para poder trabajar con más facilidad y evitar errores de tipeo.
+
+**Pasos:**
+
+1) Extraer el nombre de todas las variables desde la consola aplicando `names()` (copiar y pegar nombres desde la respuesta a names)
+
+2) Aplicar `dplyr::rename` a las variables copiadas
+
+3) Guardar la modificación en la base de datos trabajada (`<-`)
+
+```{r}
+base_antropologia <- base_antropologia %>%
+  dplyr::rename(
+    edad = p02_edad_del_a_entrevistado,
+    genero = p03_genero_del_a_entrevistado_a,
+    anio_carrera = p04_ano_en_que_se_encuentra_de_la_carrera_1_2_3_4_5,
+    comuna_actual = p05_comuna_actual_de_residencia,
+    comuna_previa = p06_comuna_de_residencia_de_su_familia_nuclear_padres_hermanos_as_u_otros_as_cuidadores_o_en_la_que_vivio_la_mayor_parte_de_infancia_y_adolescencia,
+    tipo_establecimiento = p07_ultimo_tipo_de_establecimiento_educativo_en_que_realizo_su_ensenanza_media,
+    puntaje = p08_puntaje_final_obtenido_en_la_prueba_de_seleccion_universitaria_poderado_segun_carrera_elegida,
+    situacion = p09_cual_de_estas_situaciones_describe_mejor_su_actividad_principal_durante_el_ultimo_mes,
+    nivel_educativo_madre = p10_indique_el_maximo_nivel_educativo_obtenido_por_su_madre,
+    empleo_madre = p11_actualmente_su_madre_trabaja,
+    ocupacion_madre = p12_cual_es_la_ocupacion_u_oficio_actual_de_su_madre_describa_las_principales_tareas_y_funciones_en_el_puesto_de_trabajo_actual_de_su_madre,
+    nivel_educativo_padre = p13_indique_el_maximo_nivel_educativo_obtenido_por_su_padre,
+    empleo_padre = p14_actualmente_su_padre_trabaja,
+    ocupacion_padre = p15_cual_es_la_ocupacion_u_oficio_actual_de_su_padre_describa_las_principales_tareas_y_funciones_en_el_puesto_de_trabajo_actual_de_su_padre,
+    sostenedor = p17_quien_es_el_principal_sostenedor_a_de_su_hogar_actual_quien_aporta_mas_ingresos,
+    clase_social = p18_en_la_sociedad_comunmente_existen_distintos_grupos_o_clases_sociales_las_personas_de_clase_social_alta_son_las_que_tienen_los_ingresos_mas_altos_el_mayor_nivel_de_educacion_y_los_trabajos_mas_valorados_las_personas_de_clase_social_baja_son_las_que_tienen_los_ingresos_mas_bajos_el_menor_nivel_de_educacion_y_los_trabajos_menos_valorados_entre_estas_clases_existen_otras_intermedias_segun_su_opinion_a_cual_de_los_siguientes_grupos_o_clases_sociales_pertenece_usted,
+    acceso_computador_hogar = p19_podria_decirme_si_su_casa_tiene_computador_ya_sea_notebook_o_de_escritorio_actualmente,
+    acceso_computador_personal = p20_podria_decirme_si_usted_tiene_computador_para_uso_personal_ya_sea_notebook_o_de_escritorio_actualmente,
+    acceso_celular = p21_podria_decirme_si_usted_tiene_smartphone_personal_actualmente,
+    frecuencia_música = p22_con_que_frecuencia_escucha_musica,
+    preferencia_música_1 = p23_que_tipo_de_musica_es_la_que_mas_prefiere_escuchar_aun_cuando_escuche_mas_de_un_estilo_elija_el_que_mas_escuche,
+    preferencia_música_otra_1 = p24_si_eligio_otra_cual,
+    preferencia_música_2 = p25_cual_es_la_segunda_musica_que_mas_prefiere_escuchar,
+    preferencia_música_otra_2 = p26_si_eligio_otra_cual,
+    dispositivo_música = p27_con_que_dispositivo_suele_escuchar_mas_musica,
+    app_música = p28_cual_es_principal_sitio_programa_o_aplicacion_para_bajar_o_escuchar_musica,
+    app_música_otra = p29_si_respondio_otro_cual,
+    red_social_tiempo_1 = p30_cual_es_la_red_social_pasa_mas_tiempo,
+    red_social_tiempo_otra_1 = p31_si_respondio_otra_cual,
+    red_social_tiempo_2 = p32_y_cual_es_la_segunda_red_social_pasa_mas_tiempo,
+    red_social_tiempo_otra_2 = p33_si_respondio_otra_cual
+  )
+
+#Vemos cómo quedaron los nombres de nuestras variables
+names(base_antropologia)
+
+```
+
+## 3. Transformación de datos: Recodificación de categorías de las variables
+
+### a) En variables categóricas/ cualitativas
+Una vez renombradas las variables, debo ver si es necesario **renombrar sus categorías de respuesta**
+¿En qué me fijo para determinar esto? Si hay muchas respuestas referentes a lo mismo va a ser necesario recodificar y dejar una categoría que agrupe a todas esas respuestas.
+
+Voy a elegir las variables que deseo recodificar, pero estas se deben hacer por separado para cada variable, ya que al enfocarnos en las categorías de respuesta, estamos hablando de una variable que tiene categorías diferentes a las otras variables. Todas tienen categorías distintas.
+
+#### 1. Elijo variables de interés y veo cuáles necesitan ser recodificadas. 
+No necesariamente todas las variables necesitan ser recodificadas. Por lo general las **preguntas con respuesta abierta necesitan recodificación**. 
+Para determinar esto, puedo ver las categorías de todas las variables para seleccionar la(s) variable(s) a recodificar.
+```{r}
+sapply(base_antropologia, FUN = unique) #sapply aplica la función unique a toda la base_antropologia. unique sirve para ver las categorías de respuesta.
+```
+En este caso vamos a elegir solo una variable para ejemplificar.
+
+**VARIABLE DE INTERÉS: Situación Ocupacional de la madre: ocupacion_madre**
+
+#### 2. Obtengo de manera más directa los valores únicos de esta variable: sus CATEGORÍAS DE RESPUESTA.
+```{r}
+table(base_antropologia$ocupacion_madre)
+```
+Esta variable se respondía a través de una respuesta abierta, por lo que hay diversas respuestas que refieren a un mismo concepto: que trabaja remuneradamente o que no trabaja.
+
+
+#### 3. Homogeneizar valores: Dejar todas las categorías en un mismo formato, poner todo en minúscula y eliminar los espacios para facilitar la recodificación. 
+Esto se hace con `tolower()`, `gsub()` y `LATIN-ACSII`
+```{r}
+base_antropologia <- base_antropologia %>%
+  mutate(
+    ocupacion_madre = stringi::stri_trans_general(ocupacion_madre, "Latin-ASCII"),  # Convierte caracteres latinos en la columna `ocupacion_madre` a su equivalente en formato ASCII (lo mismo pero sin tildes, ñ, etc)
+    ocupacion_madre = tolower(ocupacion_madre),  # Convierte todos los caracteres en la columna `ocupacion_madre` a minúsculas
+    ocupacion_madre = gsub(" ", "_", ocupacion_madre),  # Reemplaza espacios por guiones bajos en la columna `ocupacion_madre`
+  )
+```
+
+
+#### 4. Ver cómo quedan nuestras categorías con las modificaciones anteriores con `table()` y `unique()`
+```{r}
+table(base_antropologia$ocupacion_madre)
+unique(base_antropologia$ocupacion_madre)
+```
+
+#### 5. `MUTATE` Y `RECODE` para recodificar **categorías de respuesta**
+En este caso usamos recode() para transformar valores específicos. Recordemos que con `mutate` creamos una nueva variable o modificamos una que ya tenemos (herramienta tidyverse).
+recode() reemplaza solo los valores especificados. Los demás se mantienen automáticamente.
+
+**Estructura del código:**
+base <- base %>% mutate(variable_elegida=recode(variable_elegida=="valor respuesta dada"~"Nuevo valor de la categoría", variable_elegida=="valor respuesta dada"~"Nuevo valor de la categoría")) 
+
+En el siguiente ejemplo, vamos a recodificar la **ocupacion_madre** definiéndo 2 grupos para sus categorías:
+
+* `"Servicios"`
+
+* `"Salud y cuidado"`
+
+* `"Administrativo / Profesional"`
+
+* `"Trabajo doméstico / Inactiva"`
+
+* `"Desconocido"`
+
+```{r}
+base_antropologia <- base_antropologia %>%
+  mutate(
+    ocupacion_madre = recode(ocupacion_madre,
+      "reponedara_en_un_supermercado_" = "Servicios",
+      "docente_de_yoga" = "Servicios",
+      "reponedora" = "Servicios",
+      "paisajista,_esta_a_cargo_de_supervisar_y_dirigir_el_mantenimiento_de_las_areas_verdes_en_una_comuna." = "Servicios",
+      "tia_de_furgon,_transportar_ninos_de_basica\r\n" = "Servicios",
+      "duena_de_casa,_cuidados_del_hogar,,_repostera_" = "Servicios",
+      "cocinera_de_casino" = "Servicios",
+      "instructor_de_yoga_y_actividad_fisica_para_adultos_y_adultos_mayores,_tambien_trabaja_por_una_empresa_local_como_organizadora_de_casas._como_organizadora,_limpia_profundamente_y_ordena_casas,_bota_cosas_en_masa,_etc" = "Servicios",
+      
+      "tens,_trabaja_en_el_pensionado_de_un_hospital_y_tiene_que_atender_personas_post_operatorios_o_casos_psiquiatricos_derivados_del_estado." = "Salud y cuidado",
+      "auxiliar_de_servicio" = "Salud y cuidado",
+      
+      "abogada" = "Administrativo / Profesional",
+      "administracion_en_empresa_de_transporte_de_valores" = "Administrativo / Profesional",
+      
+      "duena_de_casa" = "Trabajo doméstico / Inactiva",
+      "jubilada" = "Trabajo doméstico / Inactiva",
+      
+      "-" = "Desconocido"
+    )
+  )
+```
+
+#### 6. Verificamos nuestra recodificación: nuevas categorías de respuesta.
+```{r}
+table(base_antropologia$ocupacion_madre)
+```
+
+### b) En variables numéricas
+#### `MUTATE` Y `CASE_WHEN` para recodificar **categorías de respuesta**
+
+**Estructura del código:**
+base <- base %>% mutate(variable_elegida=case_when(variable_elegida=="valor respuesta dada"~"Nuevo valor de la categoría", variable_elegida=="valor respuesta dada"~"Nuevo valor de la categoría",
+TRUE ~ variable_elegida)) 
+                                                   
+* True conserva el valor original para cualquier otra categoría no especificada.
+
+En el siguiente ejemplo, vamos a recodificar la **variable puntaje** definiéndo 3 grupos para sus categorías:
+
+* `"Alto"`: puntajes de 650 o más (incluye `"700+"`, `"670"`, `"680"`, `"650"`)
+
+* `"Medio"`: puntajes entre 600 y 649 (incluye `"630"`, `"610"`)
+
+* `"Bajo"`: puntajes menores a 600 (`"590"`, `"500"`, y el caso del `"no me acuerdo..."`)
+
+Vamos a establecer No se o no aplica como NA. Estos pueden borrarse utilizando filter (en caso de no ser necesarios para el análisis)
+
+* `"NA"`: respuestas como `"No se"` o `"No se aplica (ACT 30)"`
+                                                   
+```{r}
+#Vemos las categorías de respuesta 
+table(base_antropologia$puntaje)
+
+#Recodificamos
+base_antropologia <- base_antropologia %>%
+  mutate(puntaje = case_when(
+    puntaje %in% c("650", "670", "680", "700+") ~ "Alto",
+    puntaje %in% c("610", "630") ~ "Medio",
+    puntaje %in% c("500", "590", "no me acuerdo, pero creo que eran como 590/600") ~ "Bajo",
+    puntaje %in% c("No se", "No se aplica (ACT 30)") ~ "NA",
+    TRUE ~ NA_character_  # Por si aparece algún otro valor no contemplado
+  ))
+
+#Comprobamos la recodificación 
+table(base_antropologia$puntaje)
+```
+
+## Guardar base de datos limpia 
+```{r}
+dir.create(path = "base limpia") #crea un directorio o carpeta llamada base limpia
+write.xlsx(x = base_antropologia,file = "base limpia/Encuesta_Antropología_Limpia") #guarda la base de datos con el nombre Encuesta_Antropología_Limpia
+```
+
+## 🔹Conclusiones
+Las herramientas `tidyverse` como `mutate` `case_when` o `rename` son útiles a la hora de realizar Data Wrangling, pues nos permiten recodificar y modificar las categorías de las variables de interés. A su vez, también existen otras herramientas que podemos utilizar en el proceso, tales como filter (para eliminar NA o valores perdidos) o select (para seleccionar las variables de interés y modificarlas).
+
