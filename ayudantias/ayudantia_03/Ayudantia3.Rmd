@@ -139,7 +139,6 @@ base_antropologia <- base_antropologia %>%
 
 #Vemos cómo quedaron los nombres de nuestras variables
 names(base_antropologia)
-
 ```
 
 ## 3. Transformación de datos: Recodificación de categorías de las variables
@@ -169,6 +168,15 @@ Esta variable se respondía a través de una respuesta abierta, por lo que hay d
 
 #### 3. Homogeneizar valores: Dejar todas las categorías en un mismo formato, poner todo en minúscula y eliminar los espacios para facilitar la recodificación. 
 Esto se hace con `tolower()`, `gsub()` y `LATIN-ACSII`
+
+##### 🔶**Ejercicio:** Completa el código con las funciones que corresponda:
+base_antropologia <- base_antropologia %>%
+  mutate(
+    ocupacion_madre = stringi::stri_trans_general(ocupacion_madre, "__________"), #quita tíldes 
+    ocupacion_madre = ______(ocupacion_madre), #convierte a minúsculas
+    ocupacion_madre = _____(" ", "_", ocupacion_madre) # reemplaza espacios por _
+  )
+
 ```{r}
 base_antropologia <- base_antropologia %>%
   mutate(
@@ -275,11 +283,37 @@ base_antropologia <- base_antropologia %>%
 table(base_antropologia$puntaje)
 ```
 
-## Guardar base de datos limpia 
+##### 🔶**Ejercicio:** Completa el código para recodificar la variable 'edad' utilizando mutate y case_when
+
+1. Recodificar 
+
+base_antropologia <- _______________ %>%
+  ______(
+    edad = _________(
+      grepl("años", edad) ~ as.numeric(gsub(" años", "", edad)), # Elimina " años" y convierte a numérico
+      TRUE ~ as.numeric(edad) 
+    )
+  )
+
+2. Verificar el resultado
+
+_____(base_antropologia$edad_recodificada)
+
+
+## 4. Guardar base de datos limpia 
 ```{r}
 dir.create(path = "base limpia") #crea un directorio o carpeta llamada base limpia
 write.xlsx(x = base_antropologia,file = "base limpia/Encuesta_Antropología_Limpia") #guarda la base de datos con el nombre Encuesta_Antropología_Limpia
 ```
+
+##### 🔶**Ejercicio:** Completa el código para guardar la base con el nombre Datos, en la carpeta llamada Output, ¿cómo sería el código? 
+
+1. Crear carpeta llamada 'Output'
+______ (path = "______")
+
+2. Guardar base limpia con el nombre 'Datos' en la carpeta 'Output'
+______ (x = _____, file = "______/Datos.xlsx")
+
 
 ## 🔹Conclusiones
 Las herramientas `tidyverse` como `mutate` `case_when` o `rename` son útiles a la hora de realizar Data Wrangling, pues nos permiten recodificar y modificar las categorías de las variables de interés. A su vez, también existen otras herramientas que podemos utilizar en el proceso, tales como filter (para eliminar NA o valores perdidos) o select (para seleccionar las variables de interés y modificarlas).

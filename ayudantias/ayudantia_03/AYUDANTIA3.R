@@ -9,9 +9,8 @@
 # 2. Limpieza de datos: limpiar y renombrar variables
 # 3. Transformación de datos: recodificación de categorías
 
-# ------------------------------------------------------------------------------
 
-# 0. Instalar y cargar paquetes necesarios
+# Instalar y cargar paquetes necesarios-----------------------------------------
 pacman::p_load(tidyverse,
                openxlsx,
                readxl,
@@ -19,15 +18,15 @@ pacman::p_load(tidyverse,
                writexl, # guardar tablas formato excel
                DataExplorer) # exploración rápida
 
-# ------------------------------------------------------------------------------
-# Importación de la base de datos
+
+# Importación de la base de datos-----------------------------------------------
 base_antropologia <- read.xlsx("Encuesta-Estudiantes-Antropología-2023-(respuestas).xlsx") %>%
   dplyr::select(3:ncol(.)) # seleccionar desde la columna 3 en adelante
 
-# ------------------------------------------------------------------------------
-# I. DATA WRANGLING
 
-# 1. Explorar la base de datos
+# DATA WRANGLING----------------------------------------------------------------
+
+# 1. Explorar la base de datos--------------------------------------------------
 
 # Vistazo inicial
 glimpse(base_antropologia)
@@ -38,8 +37,8 @@ summary(base_antropologia)
 # Ver nombres de las variables
 names(base_antropologia)
 
-# ------------------------------------------------------------------------------
-# 2. Limpieza de datos: Renombrar variables
+
+# 2. Limpieza de datos: Renombrar variables-------------------------------------
 
 # a) Limpiar nombres de variables
 base_antropologia <- janitor::clean_names(base_antropologia)
@@ -82,8 +81,8 @@ base_antropologia <- base_antropologia %>%
   )
 names(base_antropologia)
 
-# ------------------------------------------------------------------------------
-# 3. Transformación de datos: Recodificación de variables
+
+# 3. Transformación de datos: Recodificación de variables-----------------------
 
 # a) Variables cualitativas
 sapply(base_antropologia, FUN = unique)
@@ -139,13 +138,37 @@ base_antropologia <- base_antropologia %>%
   ))
 table(base_antropologia$puntaje)
 
-# ------------------------------------------------------------------------------
-# Guardar base de datos limpia
+# 🔶**Ejercicio:** Completa el código para recodificar la variable 'edad' utilizando mutate y case_when
+
+#1. Recodificar 
+
+base_antropologia <- _______________ %>%
+  ______(
+    edad = _________(
+      grepl("años", edad) ~ as.numeric(gsub(" años", "", edad)), # Elimina " años" y convierte a numérico
+      TRUE ~ as.numeric(edad) 
+    )
+  )
+
+#2. Verificar el resultado
+
+_____(base_antropologia$edad_recodificada)
+
+
+# 4. Guardar base de datos limpia-----------------------------------------------
 dir.create(path = "base limpia")
 write.xlsx(x = base_antropologia, file = "base limpia/Encuesta_Antropología_Limpia.xlsx")
 
-# ------------------------------------------------------------------------------
-# Conclusión
+# 🔶**Ejercicio:** Completa el código para guardar la base con el nombre Datos, en la carpeta llamada Output, ¿cómo sería el código? 
+
+#1. Crear carpeta llamada 'Output'
+ ______ (path = "______")
+
+#2. Guardar base limpia con el nombre 'Datos' en la carpeta 'Output'
+ ______ (x = _____, file = "______/Datos.xlsx")
+
+
+# Conclusión--------------------------------------------------------------------
 # Las herramientas tidyverse como mutate, case_when o rename son útiles para realizar
 # data wrangling. También podemos usar filter para eliminar valores perdidos o
 # select para trabajar con variables específicas.
