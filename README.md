@@ -61,7 +61,6 @@
 
 ---
 ### Materiales para encuesta
-clases/clase_03/trabajo_de_campo/carta-encuestadxs.pdf
 
 - 🔗 [**Marco-muestral**](https:///sebastianmunozt.github.io/metodoscuanti2/clases/clase_03/trabajo_de_campo/marco-muestral.xlsx)
 - 🔗 [**Carta-encuestadxs**](https:///sebastianmunozt.github.io/metodoscuanti2/clases/clase_03/trabajo_de_campo/carta-encuestadxs.pdf)
