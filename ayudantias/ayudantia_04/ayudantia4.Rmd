@@ -1,0 +1,229 @@
+---
+title: "Ayudantía 4: REPASO"
+author: "Francesca Alej. Roco"
+date: "Segundo semestre 2025"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    collapsed: true
+    smooth_scroll: true
+    theme: journal
+    highlight: kate
+    df_print: paged
+    code_folding: show
+subtitle: Metodología Cuantitativa con RStudio
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+```
+
+# Repaso Prueba
+
+* R básico
+* Tidyverse 
+* Data Wrangling
+
+# R BÁSICO
+
+## Crear datos y guardar objetos de datos
+```{r}
+# Generamos un vector de 10 edades aleatorias entre 22 y 61 años
+edades <- sample(x = 22:61, size = 10, replace = TRUE)
+
+# Generamos un vector de 10 ingresos aleatorios entre 120.000 y 650.000
+ingresos <- sample(x = 120000:650000, size = 10, replace = TRUE)
+
+# Generamos un vector de 10 datos para años de escolaridad entre 0 y 8
+escolaridad <- sample(x = 0:8, size = 10, replace = TRUE)
+```
+Detalle de los argumentos:
+* **x = 22:61**: define el rango de valores posibles 
+
+* **size = 10**: indica que quieres 200 valores en total (como si fueran 10 personas).
+
+* **replace = TRUE**: permite que los valores se repitan, o sea, una misma edad puede aparecer varias veces (esto es realista para datos de encuestas, por ejemplo).
+
+## Crear data frame
+```{r}
+desigualdad_poblacion <- data.frame(edades, ingresos, escolaridad)
+```
+
+## Explorar data
+```{r}
+# Sumario general
+summary(desigualdad_poblacion)
+
+# Número de filas
+nrow(desigualdad_poblacion)
+
+# Número de columnas
+ncol(desigualdad_poblacion)
+
+# Nombres variables
+names(desigualdad_poblacion)
+
+# Tipo de dato
+class(desigualdad_poblacion)
+class(edades)
+class(ingresos)
+class(escolaridad)
+```
+
+## Realizamos cálculos básicos (calculadora)
+* Esto nos permitirá detectar posibles desigualdades 
+```{r}
+# Rango de ingresos
+max(ingresos) - min(ingresos)
+
+# Diferencia máxima de escolaridad
+max(escolaridad) - min(escolaridad)
+```
+La diferencia de ingresos en la muestra es considerablemente alta (más de $350.000), mientras que la diferencia máxima de escolaridad es de solo 7 años. Esta brecha sugiere que pequeñas diferencias en educación pueden estar asociadas a grandes desigualdades económicas, lo que podría reflejar una distribución desigual de los recursos y oportunidades.
+
+* Calculamos estadísticas: MTC (funciones básicas)
+```{r}
+# Edad total de la población
+total_edades <- sum(edades)
+
+# Ingreso promedio mensual
+promedio_ingresos <- mean(ingresos)
+
+# Mediana de escolaridad
+mediana_escolaridad <- median(escolaridad)
+```
+En esta muestra se observa una combinación de baja escolaridad con ingresos promedio elevados, lo que puede reflejar desigualdades estructurales: pocos con altos ingresos elevan el promedio, mientras la mayoría, posiblemente con menor escolaridad, enfrenta condiciones más precarias.
+
+## Observamos situaciones específicas con indexación
+```{r}
+# Edad de la persona con menor ingreso
+edad_menor_ingreso <- edades[which.min(ingresos)]
+edad_menor_ingreso
+
+# Escolaridad de la persona con mayor ingreso
+escolaridad_mayor_ingreso <- escolaridad[which.max(ingresos)]
+escolaridad_mayor_ingreso
+```
+La persona con menor ingreso tiene 23 años, lo que podría sugerir que se encuentra recién incorporándose al mercado laboral o que aún no ha acumulado experiencia suficiente para acceder a mejores oportunidades económicas.
+
+Por otro lado, la persona con mayor ingreso tiene 5 años de escolaridad, lo cual llama la atención, ya que podría esperarse que mayores ingresos se asocien con mayor nivel educativo. 
+
+Esto sugiere que en esta muestra hay factores distintos a la escolaridad que influyen en los ingresos, lo que podría reflejar desigualdades estructurales o acceso desigual a oportunidades económicas.
+
+## 🔹 Conclusiones
+
+Los resultados indican que una baja escolaridad puede estar vinculada a grandes desigualdades en los ingresos, reflejando una distribución desigual de recursos y oportunidades. Además, la combinación de baja escolaridad con ingresos elevados sugiere desigualdades estructurales (acceso a oportunidades económicas, redes de contacto, herencias, capital social, o discriminación). Por otro lado, el análisis de casos específicos muestra que factores como la experiencia laboral también influyen en los ingresos, evidenciando dinámicas socioeconómicas complejas que no dependen exclusivamente del nivel educativo.
+
+Es decir, las desigualdades no solo se explican por la escolaridad, sino por una serie de condiciones sociales, políticas y económicas que favorecen a ciertos grupos, independientemente de su nivel educativo. 
+
+
+# TIDYVERSE Y DATA WRANGLING
+
+# 0. Instalar y cargar paquetes necesarios
+```{r}
+pacman::p_load(tidyverse,
+               openxlsx,
+               readxl)
+```
+
+# 1. Importar/abrir base de datos
+**read_excel()** 
+```{r}
+# Importamos la base de datos con read_excel y la guardamos <- 
+base_antropologia_limpia <- read_excel("/Users/fran/Desktop/Ayudantías Cuanti 2 R/Ayudantías markdown/base_antropologia_limpia.xlsx")
+```
+**ls()**
+```{r}
+# Nos permite ver los objetos o bases de datos guardados en enviroment
+# con esto verificamos si se ha guardado la base
+ls()
+```
+**View**
+```{r}
+# Nos permite ver la base de datos 
+View(base_antropologia_limpia)
+```
+
+
+# 2. Explorar base de datos
+```{r}
+# Vistazo inicial
+glimpse(base_antropologia_limpia) 
+
+# Sumario general
+summary(base_antropologia_limpia) 
+
+# Ver nombres de las variables
+names(base_antropologia_limpia)  
+```
+
+
+# 3. Seleccionar variables con `select()`
+**Seleccionamos columnas, es decir, variables** que sean necesarias para el tema que busquemos analizar. Por ejemplo, si buscamos realizar un análisis sobre las horas de estudio y el rendimiento académico obtenido (notas)
+```{r}
+# Names para ver los nombres de las variables a seleccionar
+names(base_antropologia_limpia)
+
+# Restar variables "marca", "direc" y "n_encuestador" de la base de datos
+base_antropologia_limpia <- base_antropologia_limpia %>% 
+  select(-c(marca, direc, n_encuestador))
+
+# Seleccionar variables clave
+seleccionadas <- base_antropologia_limpia %>% 
+  select(ea_01_horas_estudio_semana, ea_02_horas_estudio_fin_semana, ea_04_notas_ultimo_semestre)
+
+print(seleccionadas)
+
+```
+
+# 4. Filtrar casos con `filter()`
+**Filtramos filas, es decir casos**, con el fin de obtener datos particulares necesarios para nuestro análisis. Por ejemplo, si necesitamos hacer un análisis de los estudiantes que viven en las comunas del sector norte de Stgo. 
+
+* Huechuraba
+
+* Quilicura
+
+* Lampa
+
+* Pudahuel
+
+* Conchalí
+
+* Renca
+
+```{r}
+# Unique para ver las categorías únicas de la variable
+unique(base_antropologia_limpia$comuna) 
+
+# Filtrar estudiantes que viven en el sector norte
+base_antropologia_limpia %>% 
+  filter(comuna %in% c("huechuraba", "quilicura", "lampa", "pudahuel", "conchali", "renca"))
+
+```
+
+# 5. Mutar categorías de variables con `mutate(case_when())` (Recodificar)
+```{r}
+# Unique para ver las categorías de la variable
+unique(base_antropologia_limpia$ea_06_nivel_estres_ultimo_semestre)
+
+# Mutate case_when para recodificar la variable (mutar sus categorías) 
+# creando una nueva variable llamada nivel_estres_r
+base_antropologia_limpia <- base_antropologia_limpia %>%
+  mutate(nivel_estres_r = case_when(
+    ea_06_nivel_estres_ultimo_semestre == 1 ~ "Muy poco estrés",
+    ea_06_nivel_estres_ultimo_semestre == 2 ~ "Poco estrés",
+    ea_06_nivel_estres_ultimo_semestre == 3 ~ "Algo de estrés",
+    ea_06_nivel_estres_ultimo_semestre == 4 ~ "Suficiente estrés",
+    ea_06_nivel_estres_ultimo_semestre == 5 ~ "Mucho estrés"))
+
+#Unique nuevamente para ver cómo quedan las categorías de esta nueva variable
+unique(base_antropologia_limpia$nivel_estres_r)
+```
+
+## 🔹 Conclusiones
+A lo largo de este ejercicio pusimos en práctica herramientas clave de Tidyverse para trabajar con bases de datos de manera más ordenada y eficiente. Reforzamos los procesos de importar, explorar y limpiar una base de datos, seleccionando solo las variables que nos interesan, filtrando casos específicos (como estudiantes de ciertas comunas) y recodificando variables para que sean más comprensibles. **Estas herramientas no solo nos permiten ordenar los datos, sino también prepararlos para analizarlos**.
+
+
