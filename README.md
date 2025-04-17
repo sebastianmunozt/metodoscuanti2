@@ -67,6 +67,11 @@
 - 🔗 [**Manual-encuestador**](https:///sebastianmunozt.github.io/metodoscuanti2/clases/clase_03/trabajo_de_campo/manual-encuestador_a-2025.pdf)
 
 
+---
+### Guías interactivas en R con ChatGPT
+
+- 📅 [**Prueba 1**](https://sebastianmunozt.github.io/metodoscuanti2/prompt-general-estudio-Rmd.md)
+
 
 ---
 
