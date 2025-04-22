@@ -91,6 +91,13 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSc1sShBA6IM
 
 ---
 
+### Asistencias Ayudantías 
+
+- Puedes ver cómo vas con las asistencias de las ayudantías [`[aquí]`](https://docs.google.com/spreadsheets/d/1xiA-3Ax8luWj-NZvo3nbx15PvagDve5y/edit?gid=291208957#gid=291208957)
+
+
+---
+
 ### Sugerencias y Comentarios Clases, Ayudantías y Evaluaciones
 
 - Aquí, en el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSetmFl4HRcoa8bM0jKJBcZP3blN_XASOaUC06g82zaqvmanbw/viewform?usp=sf_link), pueden dejar sus comentarios. En lo posible que sean críticas constructivas o  sugerencias sobre las clases, las evaluacioens o ayudantías para que podamos ir mejorando :) 
