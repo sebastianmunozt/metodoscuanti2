@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="" xml:lang="">
-  <head>
-    <title>Clase-6-Analizar-Datos-Categóricos---Presentación2.knit</title>
-    <meta charset="utf-8" />
-    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
-    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
-    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
+---
 
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 
+---
 
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
+
+```
 
 class: slideInRight, middle
 
@@ -57,7 +60,7 @@ class: slideInRight, middle
 ---
 class: slideInRight, middle
 
-&lt;img src="tablas/unibimulti.png" style="width:100%; height:auto;"&gt;
+<img src="tablas/unibimulti.png" style="width:100%; height:auto;">
 
 ---
 class: slideInRight, middle
@@ -91,7 +94,7 @@ class: slideInRight, middle
 ---
 class: slideInRight, middle, center
 
-&lt;img src="tablas/des-inf.png" style="width:70%; height:auto;"&gt;
+<img src="tablas/des-inf.png" style="width:70%; height:auto;">
 
 
 
@@ -112,12 +115,12 @@ class: slideInRight, middle
 ---
 class: slideInRight, middle, center
 
-&lt;img src="tablas/ml.png" style="width:70%; height:auto;"&gt;
+<img src="tablas/ml.png" style="width:70%; height:auto;">
 
 ---
 class: slideInRight, middle
 
-&lt;img src="tablas/red.png" style="width:100%; height:auto;"&gt;
+<img src="tablas/red.png" style="width:100%; height:auto;">
 
 
 ---
@@ -128,7 +131,7 @@ class: slideInRight, middle
 
 
 
-&lt;img src="tablas/unibimulti.png" style="width:100%; height:auto;"&gt;
+<img src="tablas/unibimulti.png" style="width:100%; height:auto;">
 ---
 
 ## Análisis univariado: 
@@ -243,7 +246,7 @@ class: slideInRight, center
 
 
 
-&lt;img src="tablas/f_religion2.png" style="width:60%; height:auto;"&gt;
+<img src="tablas/f_religion2.png" style="width:60%; height:auto;">
 
 
 
@@ -258,105 +261,35 @@ class: slideInRight, middle
 
 ---
 class: slideInRight, middle
+```{r echo=FALSE}
+
+pacman::p_load(tidyverse, openxlsx, readxl,readr,janitor, forcats, writexl, 
+               datos,  knitr, gt, 
+               summarytools, ggthemes)
 
 
-&lt;table class=" lightable-classic" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
-&lt;caption&gt;Distribución de frecuencias de Relgión&lt;/caption&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; Religion &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Frecuencia &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; % &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; % Acumulado &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Protestante &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 10846 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 50.71 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 50.71 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Católica &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 5124 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 23.96 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 74.66 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Ninguna &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3523 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 16.47 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 91.13 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Cristiana &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 689 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.22 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 94.35 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Judía &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 388 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.81 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 96.17 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Otra &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 224 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.05 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 97.21 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Budismo &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 147 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.69 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 97.90 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Inter o no confesional &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 109 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.51 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 98.41 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Musulmana/Islam &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 104 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.49 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 98.90 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Cristiana ortodoxa &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 95 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.44 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 99.34 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Hinduismo &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 71 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.33 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 99.67 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Otra religión oriental &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.15 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 99.82 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Nativa americana &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.11 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 99.93 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; No sabe &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.07 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 100.00 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+datos <- datos::encuesta
+
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, results='asis' }
+
+
+
+library(kableExtra)
+
+datos %>% 
+  mutate(religion = as.character(religion)) %>%
+  mutate(religion = if_else(religion %in% c("Sin respuesta", "No aplica"), as.character(NA), religion)) %>% 
+  freq(religion, prop = TRUE, order = "freq", report.nas =  FALSE)  %>% 
+  tb() %>%
+  kable(col.names = c("Religion", "Frecuencia", "%", "% Acumulado"),
+        caption = "Distribución de frecuencias de Relgión", 
+        format = "html", digits = 2) %>%  #le doy formate con kable
+  kable_classic(full_width = F, html_font = "Cambria") 
+
+```
 
 
 
@@ -392,18 +325,31 @@ class: slideInRight, middle
 - Estos gráficos nos permiten visualizar la distribución de los datos y las características más relevantes de la distribución.
 
 ---
-
-```r
-alturas &lt;- c(1.70, 1.78, 1.75, 1.65, 1.68, 1.72, 1.85, 1.62, 1.80, 1.76, 1.73, 1.90, 1.69, 1.74, 1.79)
+```{r, out.width="100%", fig.width=8, fig.height=5}
+alturas <- c(1.70, 1.78, 1.75, 1.65, 1.68, 1.72, 1.85, 1.62, 1.80, 1.76, 1.73, 1.90, 1.69, 1.74, 1.79)
 hist(alturas, breaks = 5, main = "Distribución de Frecuencias de Alturas", xlab = "Alturas", ylab = "Frecuencia")
-```
 
-&lt;img src="Clase-6-Analizar-Datos-Categóricos---Presentación2_files/figure-html/unnamed-chunk-3-1.png" width="100%" /&gt;
+```
 
 ---
 class: slideInRight, middle
 
-&lt;img src="Clase-6-Analizar-Datos-Categóricos---Presentación2_files/figure-html/unnamed-chunk-4-1.png" width="100%" /&gt;
+```{r, out.width="100%", fig.width=8, fig.height=5, echo=FALSE}
+
+library(ggplot2)
+
+datos <- data.frame(
+  raza = c("Blanca", "Negra", "Indígena", "Mestiza"),
+  cantidad = c(30, 20, 10, 40)
+)
+
+ggplot(datos, aes(x=raza, y=cantidad)) +
+  geom_bar(stat="identity", fill="blue") +
+  ggtitle("Distribución de razas en un país") +
+  xlab("Raza") +
+  ylab("Cantidad")
+
+```
 
 - ¿Qué indica el eje Y? ¿Cómo está midiendo?
 - ¿Qué indica el eje x?
@@ -431,12 +377,13 @@ class: slideInRight, middle
 - En una tabla de contingencia, la **variable independiente** se coloca en la parte superior y la **variable dependiente** se coloca en el lateral izquierdo. 
 - Por ejemplo, si se está analizando la relación entre la etnia y la religión, se colocaría la etnia en la parte superior (variable independiente) y la religión (variable dependiente) en el lateral izquierdo. 
 
+---
 
 class: slideInRight, center
 
 
 
-&lt;img src="tablas/vivsvd.png" style="width:60%; height:auto;"&gt;
+<img src="tablas/vivsvd.png" style="width:60%; height:auto;">
 
 
 
@@ -449,7 +396,7 @@ class: slideInRight, middle
 .pull-left[
 
 
-&lt;img src="tablas/c_religionxraza1_c.png" style="width:100%; height:auto;"&gt;
+<img src="tablas/c_religionxraza1_c.png" style="width:100%; height:auto;">
 
 ]
   
@@ -511,139 +458,3 @@ class: slideInRight, middle, inverse
 - **Las tablas de contingencia** son una herramienta útil para analizar la relación entre dos variables en la investigación antropológica.
   + En ellas, es importante identificar la *variable independiente* y la *variable dependiente* para poder interpretar correctamente los resultados.
   + El uso de *porcentajes en columnas* permite visualizar cómo la variable dependiente se ve afectada por la variable independiente.
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
-// screen reader (see PR #262)
-(function(d) {
-  let res = {};
-  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
-    const t = tr.querySelector('td:nth-child(2)').innerText;
-    tr.querySelectorAll('td:first-child .key').forEach(key => {
-      const k = key.innerText;
-      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
-    });
-  });
-  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
-})(document);
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>

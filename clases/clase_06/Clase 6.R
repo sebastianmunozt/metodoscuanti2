@@ -73,6 +73,7 @@ datos %>%
 #ejercicio: pruebe hacer una tabla de frecuencia con freq() de la variable raza
 
 
+
 #02.Forma 2: mediante tidyverse####
 datos %>%
   count(religion) %>% # contar las frecuencias de cada religión
@@ -116,10 +117,9 @@ datos %>%
 
 summarytools::ctable( x = datos$religion, y = datos$raza)
 
-
 # cruce de dos variables categóricas:
-# en la X suele ir variable dependiente: religión (izquierda)
-# en la y la independiente: raza (arriba)
+# en la X suele ir variable dependiente: religión
+# en la y la independiente: raza
 # la pregunta es: ¿cómo la dependiente modifica a la independiente?
 
 
@@ -251,8 +251,8 @@ datos$partido_r <- datos$partido_r %>% fct_relevel(c("Demócrata", "Republicano"
 table(datos$religion, datos$raza)
 
 #hacerlo con tidyverse
-#datos %>% 
-#  table(religion, raza) #no reconoce
+datos %>% 
+  table(religion, raza) #no reconoce
 
 datos %>% 
   select(religion, raza) %>% 
@@ -374,7 +374,6 @@ f_religion1 <- datos %>%
   freq(religion, prop = TRUE, order = "freq", report.nas =  FALSE)  %>% 
   tb() #con esto lo convierto al formato data.frame, el que puede ser exportado a excel
 
-
 class(f_religion1)
 
 #guardo la tabla en un excel (puedo pasarla a un ppt)
@@ -416,7 +415,7 @@ datos %>%
   freq(religion, prop = TRUE, order = "freq", report.nas =  FALSE)  %>% 
   tb() %>%
   kable(col.names = c("Religion", "Frecuencia", "%", "% Acumulado"),
-        caption = "Distribución de frecuencias de Religión", 
+        caption = "Distribución de frecuencias de Relgión", 
         format = "html", digits = 2) %>%  #le doy formate con kable
   kable_classic(full_width = F, html_font = "Cambria") 
 
@@ -461,7 +460,7 @@ datos %>%
   kable(col.names = c("Religion", "Frecuencia", "Porcentaje"),
         caption = "Distribución de frecuencias de Relgión", 
         format = "html", digits = 2) %>%  #le doy formate con kable
-  kable_classic(full_width = F, html_font = "Cambria", font_size = 15)  #le doy formato con kable
+  kable_classic(full_width = F, html_font = "Cambria", font_size = 15)  #le doy formate con kable
 
 
 #si la queremos guardar en una imagen sumamos save_kable ()
@@ -509,7 +508,7 @@ c_religionxraza1 %>%
 c_religionxraza1 %>% 
   kable(., caption="Tabla de contingencia para religión y raza") %>% 
   kable_classic(full_width = F, html_font = "Cambria", font_size = 15) %>% 
-  save_kable(file = "tablas/c_religionxraza1.png", zoom = 2)
+  save_kable(file = "tablas/c_religionxraza1", zoom = 2)
 
 
 
