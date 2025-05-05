@@ -1,9 +1,5 @@
 ---
-title: "Introducción al análisis de variables categóricas"
-subtitle: "Distribución de Frecuencias y Tablas de Contingencia"
-author: "Sebastián Muñoz-Tapia"
-institute: "Antropología UAH"
-date: "`r Sys.Date()`"
+
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -21,7 +17,14 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
 
 ```
 
+class: slideInRight, middle
 
+# Introducción al análisis de variables categóricas
+## Distribución de Frecuencias y Tablas de Contingencia
+### Sebastián Muñoz-Tapia
+
+---
+class: slideInRight, middle
 ## Contenido
 0. Tipos de análisis de datos
 1. ¿Qué es la distribución de frecuencias?
@@ -39,36 +42,44 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
 
 
 ---
+class: slideInRight, middle
 ## Según cantidad de variables
 
 - *Análisis univariado*:
-  + Se enfoca en examinar una sola variable. 
+  + Se enfoca en examinar **una** sola variable. 
   + Por ejemplo, si queremos analizar la cantidad de personas por género en una población, estaríamos realizando un análisis univariado.
 
 - *Análisis bivariado*:
-  + Examina la relación entre dos variables. 
+  + Examina la relación entre **dos** variables. 
   + Por ejemplo, si queremos examinar cómo la edad de una persona afecta su nivel de educación, estaríamos realizando un análisis bivariado.
 
 - *Análisis multivariado*: 
-  + Examina de la relación entre tres o más variables. 
+  + Examina de la relación entre **tres o más** variables. 
   + Por ejemplo, si queremos examinar cómo la edad, el género y la educación afectan la probabilidad de que una persona vote, estaríamos realizando un análisis multivariado.
 
+---
+class: slideInRight, middle
+
+<img src="tablas/unibimulti.png" style="width:100%; height:auto;">
 
 ---
-
+class: slideInRight, middle
 ## Según tipos de variables
 
 - *Análisis de variables cuantitativas*:
-  + Examina variables numéricas, como la edad, el ingreso o la estatura.
+  + Examina variables **numéricas**, como la edad, el ingreso o la estatura.
 
 - *Análisis de variables cualitativas*: 
-  + Examina variables categóricas, como el género, la etnia o la religión.
+  + Examina variables **categóricas**, como el género, la etnia o la religión.
 
 - *Análisis de variables cuantitativas y cualitativas*: 
   + Examina la relación entre variables cuantitativas y cualitatitvas. 
   + Por ejemplo, si existe una diferencia de salarios entre hombres y mujeres. 
+  
+- **¿Qué pasa con las ordinales?**: Usualmente, se tratan como cualitativas. A veces, cuándo tienen cantidad suficiente de categorías, se utilizan algunas medidas cercanas a las cuantitativas
 
 ---
+class: slideInRight, middle
 ## Según si es descriptivo o inferencial 
 
 - *Estadística descriptiva*:
@@ -80,8 +91,15 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
   + Realiza **inferencias** a través de pruebas de hipótesis de significación estadística.
   + Por ejemplo, una encuesta. 
 
+---
+class: slideInRight, middle, center
+
+<img src="tablas/des-inf.png" style="width:70%; height:auto;">
+
+
 
 ---
+class: slideInRight, middle
 
 ## De lo inferencial al machine learning/ inteligencia artificial
 
@@ -94,12 +112,27 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
   + Algoritmo se alimenta de mediciones anteriores y se pueden ir actualizando.
   + Por ejemplo, Algoritmos de recomendación de consumos culturales (Spotify, Netflix, etcétera).
   
+---
+class: slideInRight, middle, center
 
+<img src="tablas/ml.png" style="width:70%; height:auto;">
+
+---
+class: slideInRight, middle
+
+<img src="tablas/red.png" style="width:100%; height:auto;">
 
 
 ---
+class: slideInRight, middle
 
 # Ejemplos
+
+
+
+
+<img src="tablas/unibimulti.png" style="width:100%; height:auto;">
+---
 
 ## Análisis univariado: 
 
@@ -110,6 +143,8 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
   + Se utilizan para resumir la información de una variable **cuantitativa**. El promedio indica el valor promedio de una variable, la mediana indica el valor central de una variable y la moda indica el valor más común de una variable.
 
 ---
+class: slideInRight, middle
+
 #Ejemplos, continuación...
 ## Análisis bivariado:
 
@@ -120,6 +155,7 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
   + Examina la relación entre dos **variables cuantitativas**. Por ejemplo, para saber si hay una relación entre la altura y el peso, podemos calcular la correlación entre estas dos variables y ver si hay una relación positiva, negativa o no hay relación entre ellas.
   
 ---
+class: slideInRight, middle
 
 #Ejemplos, continuación... 
 
@@ -132,6 +168,7 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
   + Examina la *relación entre varias variables cuantitativas*. Por ejemplo, si queremos saber cómo se relacionan los diferentes tipos de actividades culturales que las personas realizan, podemos hacer un análisis factorial que nos permita identificar los factores subyacentes que explican la relación entre estas actividades.
 
 ---
+class: slideInRight, middle
 #Ejemplos, continuación... 
 
 ## Análisis descriptivo:
@@ -141,8 +178,8 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
 -  *Muestra de estudiantes de una universidad*: Examinar el puntaje de una muestra de los estudiantes de antropología de la Universidad Alberto Hurtado.  
 
 ---
+class: slideInRight, middle, inverse
 
-class: inverse
 
 # Tipos de análisis
 
@@ -172,6 +209,7 @@ class: inverse
 
 
 ---
+class: slideInRight, middle
 
 ## Preguntas?...
 
@@ -191,44 +229,41 @@ class: inverse
   
 
 ---
-class: inverse
+class: slideInRight, middle
 
 # Distribución de Frecuencias
 
 ## Introducción
 
-- La distribución de frecuencias es una herramienta estadística que nos permite conocer cómo se distribuyen los datos en una muestra o población.
-- En esta presentación, veremos los principales conceptos y técnicas para la construcción e interpretación de una distribución de frecuencias.
-
----
-
-## ¿Qué es la distribución de frecuencias?
-
-- La distribución de frecuencias es una técnica estadística que nos permite conocer cómo se distribuyen los datos en una muestra o población.
+- La distribución de frecuencias es una herramienta estadística que nos permite conocer **cómo se distribuyen** los datos en una muestra o población.
 - La distribución de frecuencias puede ser construida para variables cuantitativas y cualitativas.
 - Para trabajar con cuantitativas se deben recodificar.
 - En una distribución de frecuencias, se agrupan los datos en clases o intervalos, y se cuenta la frecuencia de cada clase.
 
----
 
-class: center
+---
+class: slideInRight, center
+
+
 
 <img src="tablas/f_religion2.png" style="width:60%; height:auto;">
 
 
 
 ---
+class: slideInRight, middle
 
 ## Cálculo de las frecuencias absolutas y relativas
 
-- La frecuencia absoluta de una clase es el número de observaciones que caen en cada clase.
-- La frecuencia relativa de una clase es la proporción de observaciones que caen en esa clase respecto al total de observaciones.
-- La frecuencia relativa puede ser expresada como un porcentaje.
+- La **frecuencia absoluta** de una clase es el número de observaciones que caen en cada clase.
+- La frecuencia relativa de una clase es la **proporción** de observaciones que caen en esa clase respecto al total de observaciones.
+- La frecuencia relativa puede ser expresada como un **porcentaje**.
 
 ---
+class: slideInRight, middle
 ```{r echo=FALSE}
 
-pacman::p_load(tidyverse, openxlsx, readxl,readr,janitor, forcats, writexl, DataExplorer, 
+pacman::p_load(tidyverse, openxlsx, readxl,readr,janitor, forcats, writexl, 
                datos,  knitr, gt, 
                summarytools, ggthemes)
 
@@ -260,30 +295,33 @@ datos %>%
 
 
 ---
+class: slideInRight, middle
 
 ## Principales elementos de una distribución de frecuencias
 
 
-- Clases o intervalos: son los rangos de valores en los que se divide el conjunto de datos.
-- Frecuencia absoluta: es el número de observaciones en cada clase.
-- Frecuencia relativa: es la proporción de observaciones en cada clase respecto al total de observaciones.
-- Frecuencia acumulada: es la suma de las frecuencias absolutas hasta una determinada clase.
-- Frecuencia relativa acumulada: es la proporción de observaciones acumuladas hasta una determinada clase respecto al total de observaciones.
+- **Clases o intervalos**: son los rangos de valores en los que se divide el conjunto de datos.
+- **Frecuencia absoluta**: es el número de observaciones en cada clase.
+- **Frecuencia relativa**: es la proporción de observaciones en cada clase respecto al total de observaciones.
+- **Frecuencia acumulada**: es la suma de las frecuencias absolutas hasta una determinada clase.
+
 
 ---
+class: slideInRight, middle
 
 #Ejemplos
 
 ###Edad de los habitantes de una comunidad indígena
-- En este caso, las clases podrían ser los rangos de edad (por ejemplo, 0-10 años, 11-20 años, 21-30 años, etc.), y las frecuencias absolutas permitirían conocer cuántas personas hay en cada rango de edad. Además, se podría calcular la frecuencia relativa para conocer la proporción de personas en cada rango de edad.
+- En este caso, las **clases** podrían ser los **rangos de edad** (por ejemplo, 0-10 años, 11-20 años, 21-30 años, etc.), y las **frecuencias absolutas** permitirían conocer **cuántas personas** hay en cada rango de edad. Además, se podría calcular la frecuencia relativa para conocer la **proporción** de personas en cada rango de edad.
 
 ### Idioma materno de una población
 - En este caso, las categorías podrían ser los distintos idiomas hablados por los integrantes de la población (por ejemplo, español, mapudungun, aymara, etc.). Las frecuencias absolutas permitirían conocer cuántas personas tienen cada idioma materno y las frecuencias relativas la proporción de la población que habla cada idioma materno..
 ---
+class: slideInRight, middle
 
 ## Representación gráfica de la distribución de frecuencias
 
-- La distribución de frecuencias puede ser representada gráficamente con un histograma, un polígono de frecuencias o un gráfico de barras.
+- Cuado queremos representar variables cuantitativas, la distribución de frecuencias puede ser representada gráficamente con un **histograma**, un polígono de frecuencias o un gráfico de barras.
 - Estos gráficos nos permiten visualizar la distribución de los datos y las características más relevantes de la distribución.
 
 ---
@@ -294,7 +332,7 @@ hist(alturas, breaks = 5, main = "Distribución de Frecuencias de Alturas", xlab
 ```
 
 ---
-
+class: slideInRight, middle
 
 ```{r, out.width="100%", fig.width=8, fig.height=5, echo=FALSE}
 
@@ -313,17 +351,26 @@ ggplot(datos, aes(x=raza, y=cantidad)) +
 
 ```
 
+- ¿Qué indica el eje Y? ¿Cómo está midiendo?
+- ¿Qué indica el eje x?
+
 ---
-class: inverse
+class: slideInRight, middle, inverse
 
 ## ¿Qué son las tablas de contingencia?
 
 - En la investigación antropológica, a menudo se utilizan las tablas de contingencia para analizar la relación entre **dos o más variables categóricas**.
 - Las tablas de contingencia presentan los datos en una tabla de dos o más dimensiones, con las categorías de una variable en una dimensión y las categorías de la otra variable en la otra dimensión.
-- Las tablas de contingencia pueden ser analizadas utilizando técnicas estadísticas como el **chi-cuadrado** y el **test exacto de Fisher** para determinar si la relación entre las variables es significativa o no. 
 - Son útiles en antropología para analizar las relaciones entre variables categóricas, como la relación entre la etnia y la religión o la relación entre la etnia y la preferencia política. 
 
 ---
+class: slideInRight, middle, inverse
+
+- Las tablas de contingencia pueden ser analizadas utilizando técnicas estadísticas como el **chi-cuadrado** y el **test exacto de Fisher** para determinar si la relación entre las variables es significativa o no. 
+
+
+---
+class: slideInRight, middle
 
 ##Organización de variables
 
@@ -331,8 +378,16 @@ class: inverse
 - Por ejemplo, si se está analizando la relación entre la etnia y la religión, se colocaría la etnia en la parte superior (variable independiente) y la religión (variable dependiente) en el lateral izquierdo. 
 
 
+class: slideInRight, center
+
+
+
+<img src="tablas/vivsvd.png" style="width:60%; height:auto;">
+
+
 
 ---
+class: slideInRight, middle
 
 ## Ejemplo tabla de contingencia Religión y Raza 
 
@@ -359,12 +414,14 @@ class: inverse
 
 
 ---
+class: slideInRight, middle
 
 ##Organización de las proporciones
 
-- La decisión sobre dónde colocar las proporciones en una tabla de contingencia depende del objetivo de la investigación y de las hipótesis que se quieren probar. Las proporciones se pueden calcular por filas, por columnas o por toda la tabla.
+- La decisión sobre **dónde colocar las proporciones** en una tabla de contingencia depende del objetivo de la investigación y de las hipótesis que se quieren probar. Las proporciones se pueden calcular por filas, por columnas o por toda la tabla.
 
 ---
+class: slideInRight, middle
 ## Proporciones por **filas**
 - Permite observar las **proporciones** de *cada categoría de la variable dependiente* dentro de cada *categoría de la variable independiente*. 
 - Este tipo de análisis es útil para comparar la frecuencia relativa de la variable dependiente para cada categoría de la variable independiente. 
@@ -372,6 +429,7 @@ class: inverse
 
 
 ---
+class: slideInRight, middle
 ## Proporciones por **columnas**
 - Permite observar las **proporciones** de *cada categoría de la variable independiente* dentro de *cada categoría de la variable dependiente*. 
 - Este tipo de análisis es útil para comparar la frecuencia relativa de la variable independiente para cada categoría de la variable dependiente. 
@@ -380,6 +438,7 @@ class: inverse
 - Si el porcentaje del total en cada categoría es superior al **5%** se suele poner señalar que hay influencia. 
 
 ---
+class: slideInRight, middle
 ## Proporciones por **totales**
 
 - Permite observar las **proporciones** de *cada categoría de la variable dependiente* y de la *variable independiente* en **conjunto**. 
@@ -387,7 +446,7 @@ class: inverse
 - Por ejemplo, si se desea analizar la relación entre la edad y el género, se puede colocar la proporción de cada religión y cada etnia en toda la tabla.
 
 ---
-class: inverse
+class: slideInRight, middle, inverse
 
 ## En resumen
 
