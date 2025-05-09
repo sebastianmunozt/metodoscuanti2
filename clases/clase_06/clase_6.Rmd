@@ -74,7 +74,16 @@ class: slideInRight, middle
 ## Verity Green
 
 ---
+class: slideInRight, middle
+background-image: url("tablas/divino.png")
+background-size: cover
 
+---
+
+class: slideInRight, middle
+
+## Divino Anticristo
+---
 class: slideInRight, middle
 
 ### ¿Qué tienen en común estos personajes?
