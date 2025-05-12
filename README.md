@@ -117,20 +117,17 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSc1sShBA6IM
 
 | 📑 Evaluación/Tarea              | 📚 Contenido                                    | 📆 Entrega        |
 |-------------------------------|----------------------------------------------|----------------|
-| 📝 Tarea 1                    | Formulario corregido                         | 📅 Marzo 21  |
-| 📝 Tarea 2                    | Realización de Prueba Piloto                 | 📅 Marzo 28  |
-| 📌 Avance 1                   | Presentación de formulario corregido - Según Prueba Piloto 📄 [**Esquema-IA**](https://sebastianmunozt.github.io/metodoscuanti2/files/informe-de-avance-1.docx)| 📅 Abril 04       |
-| ✅ Evaluación individual I     | Nivelación en R                              | 📅 Abril 11       |
-| 📋 Formulario Final           | Presentación de formulario final conjunto (solo ayudantes y directores) | 📅 Abril 25       |
-| 📊 Inicio Trabajo de Campo     | Hacer 5 cuestionarios por persona            | 📅 Mayo 09        |
-| 📊 Finalización Trabajo de Campo | Hacer 5 cuestionarios por persona            | 📅 Mayo 16        |
-| ✅ Evaluación individual II    | Procesamiento y análisis de datos cuanti/cuali | 📅 Junio 27       |
-| ⚠️ Pruebas recuperativas       | Pruebas 1 y 2 según el caso                   | 📅 Julio 04      |
+| 📝 Tarea 1                    | Formulario corregido                         | 📅 Marzo 21    |
+| 📝 Tarea 2                    | Realización de Prueba Piloto                 | 📅 Marzo 28    |
+| 📌 Avance 1                   | Presentación de formulario corregido - Según Prueba Piloto 📄 [**Esquema-IA**](https://sebastianmunozt.github.io/metodoscuanti2/files/informe-de-avance-1.docx) | 📅 Abril 04    |
+| ✅ Evaluación individual I     | Nivelación en R                              | 📅 Abril 11    |
+| 📋 Formulario Final           | Presentación de formulario final conjunto (solo ayudantes y directores) | 📅 Abril 25    |
+| 📊 Inicio Trabajo de Campo     | Hacer 5 cuestionarios por persona            | 📅 Mayo 23     |
+| 📊 Finalización Trabajo de Campo | Hacer 5 cuestionarios por persona            | 📅 Mayo 30     |
+| ✅ Evaluación individual II    | Procesamiento y análisis de datos cuanti/cuali | 📅 Junio 27   |
+| ⚠️ Pruebas recuperativas       | Pruebas 1 y 2 según el caso                   | 📅 Julio 04    |
 | 📢 Entrega grupal final        | Presentación de investigación en clases y entrega de trabajo | 📅 Julio 18 |
-| 📌 Entrega final de notas      | -                                           | 📅 Julio 25 |
-
-
- 
+| 📌 Entrega final de notas      | -                                           | 📅 Julio 25    |
 
 
 
