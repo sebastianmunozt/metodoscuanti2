@@ -1,9 +1,4 @@
 ---
-title: "Análisis de Variables Cuantitativas"
-subtitle: "Medidas de dispersión y tendencia central"
-author: "Sebastián Muñoz-Tapia & Gino Ocampo"
-institute: "Antropología UAH"
-date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -14,6 +9,7 @@ output:
       countIncrementalSlides: false
 
 ---
+class: inverse, center, middle
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
@@ -21,6 +17,15 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#FF961C")
 
 ```
 
+
+
+
+# Análisis de Variables Cuantitativas
+### Medidas de dispersión y tendencia central
+#### Sebastián Muñoz-Tapia 
+
+ 
+---
 
 class: inverse, center, middle
 
@@ -30,9 +35,11 @@ class: inverse, center, middle
 ![salario](img/salariospocos.jpg)
 
 ---
+class: slideInRight, middle
+
 ## Medidas de tendencia central 
 
-- Conjunto de herramientas estadísticas utilizadas para encontrar un valor representativo de un conjunto de datos,las medidas más comunes son:
+- Conjunto de herramientas estadísticas utilizadas para encontrar un **valor representativo** de un **conjunto de datos**,las medidas más comunes son:
 
 - **Media**: 
   + Promedio de un conjunto de datos.
@@ -47,9 +54,11 @@ class: inverse, center, middle
 
 
 ---
+class: slideInRight, middle
+
 ## Medidas de tendencia central
 
-- ¿Cuándo media y cuándo mediana?
+- ¿Cuándo sirve la media y cuándo mediana?
   + **Media**: cuando datos se distribuyen de forma normal, no hay tantos valores atípicos, se busca obtener una medida sensible a todos los datos. 
   + **Mediana**: cuando se desea obtener un valor que sea representativo del centro de la distribución de los datos, sin verse afectado por valores extremos que pueden distorsionar la medida.
   
@@ -59,6 +68,8 @@ class: inverse, center, middle
   + De las tres medidas de tendencia central es la única que funciona para variables categóricas (nominales u ordinales)
 
 ---
+class: slideInRight, middle
+
 ## Medidas de tendencia central
 
 
@@ -70,7 +81,7 @@ class: inverse, center, middle
 
 class: middle, center
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE}
 
 
 library(ggplot2)
@@ -109,16 +120,19 @@ class: inverse, center, middle
 ![salario](img/salariostodos.jpg)
 
 ---
+class: slideInRight, middle
 
 ## Medidas de dispersión
 
-- Estadísticos de centro se quedan cortos en capacidad descriptiva en cuanto al análisis de variables cuantitativas.
-- Grupos con igual media se diferencian mucho entre sí
-- Es necesario conocer el grado de dispersión
+- Estadísticos de centro se quedan cortos en capacidad descriptiva en cuanto al análisis de variables cuantitativas: 
+  + Grupos con igual media se diferencian mucho entre sí
+  + Es necesario conocer el grado de dispersión
 - *Grado de parecido entre los datos  en el sentido de concentración o alejamiento entre ellos*.
 
 
 ---
+class: slideInRight, middle
+
 
 ### Varianza
 - Medida de variabilidad de los datos, lo que nos indica cuánto se dispersan los datos de un conjunto respecto a su media. 
@@ -130,6 +144,8 @@ class: inverse, center, middle
   + Si los **salarios** son más **similares**, la **varianza será menor**.
 
 ---
+class: slideInRight, middle
+
 ##Ejemplo
 
 - Supongamos que tenemos el siguiente conjunto de ingresos en miles de pesos mensuales de 5 personas: 
@@ -139,6 +155,8 @@ class: inverse, center, middle
 
 
 ---
+class: slideInRight, middle
+
   
 ###¿Cómo se calcula? 
 
@@ -164,6 +182,7 @@ class: center, middle
 <img src="img/varianzamuestral.jpg" width="580px"/> 
 
 ---
+class: slideInRight, middle
 ### Desviación estándar 
 
 - Medida de la dispersión de los datos alrededor de su media. 
@@ -175,27 +194,32 @@ class: center, middle
 
 
 ---
+class: slideInRight, middle
 
 ### Continuando con ejemplo anterior: 
-  + Varianza de los ingresos fue de 200 mil dólares **al cuadrado**. 
+  + Varianza de los ingresos fue de 200 dólares **al cuadrado**. 
   + Para obtener la desviación estándar, solo necesitamos calcular la raíz cuadrada de la varianza: 
   + sqrt(200) = 14
   + o con función sd()
   
 -  Interpretación 
-  + En promedio los ingresos se alejan en 14 de la media. 
+  + La media de 10, 20, 30, 40, 50 es 30. 
+  + Y en **promedio** los ingresos **se alejan** en 14 de la **media**. 
+  
   
 ---
+class: slideInRight, middle
 
 ##Cuartiles
-- Forma de dividir un conjunto de datos en cuatro partes iguales. 
+- Forma de dividir un conjunto de datos en **cuatro partes iguales**. 
 - Dividen los datos en cuatro grupos que contienen el mismo número de observaciones.
-- Primer cuartil (Q1) es el valor que separa el 25% de los datos más bajos del 75% de los datos más altos. 
-- Segundo cuartil (Q2) es la mediana, es decir, el valor que separa el 50% de los datos más bajos del 50% de los datos más altos. 
-- Tercer cuartil (Q3) es el valor que separa el 75% de los datos más bajos del 25% de los datos más altos.
+- **Primer cuartil (Q1)** es el valor que separa el 25% de los datos más bajos del 75% de los datos más altos. 
+- **Segundo cuartil (Q2)** es la mediana, es decir, el valor que separa el 50% de los datos más bajos del 50% de los datos más altos. 
+- **Tercer cuartil (Q3)** es el valor que separa el 75% de los datos más bajos del 25% de los datos más altos.
 
 
 ---
+class: slideInRight, middle
 
 ##Deciles y percentiles
 - Deciles: 
@@ -208,6 +232,8 @@ class: center, middle
   + El percentil 25 es el valor que separa el 25% de los datos más bajos del 75% de los datos más altos. El percentil 50 es la mediana, que separa el 50% de los datos más bajos del 50% de los datos más altos.
 
 ---
+class: slideInRight, middle
+
 #Medidas de desigualdad
 ## Coeficiente de Gini
 
@@ -252,12 +278,15 @@ ggplot(df, aes(x = perfect_pop, y = cum_frac_income)) +
 ```
 
 ---
+class: slideInRight, middle
+
 ### Ejemplo "riqueza de un país": 
   + En una población de 100 personas, cada persona tiene una cantidad diferente de riqueza. 
   + Si la distribución de la riqueza es completamente igualitaria, cada persona tendría exactamente la misma cantidad de riqueza, por lo que el coeficiente de Gini sería 0. 
   + Si una sola persona tiene toda la riqueza y el resto de las personas no tienen nada, el coeficiente de Gini sería 1.
 
 ---
+class: slideInRight, middle
 
 # Graficar. Caja y bigotes o *boxplot*
 
@@ -282,8 +311,8 @@ ggplot(df, aes(x = grupo, y = valor)) +
 ]
 
 .pull-right[
-- línea central: representa la mediana 
-- la caja: representa el rango intercuartílico (IQR). Va desdeel primer cuartil (25%) y el tercer cuartil (75%), abarcando un 50% de los datos. 
-- los "bigotes": representan valores fuera de la caja, sin considerar los valores atípicos. 
-- puntos:  por encima o por debajo de los bigotes se consideran valores atípicos o "outliers".
+- **línea central**: representa la mediana 
+- **la caja**: representa el rango intercuartílico (IQR). Va desdeel primer cuartil (25%) y el tercer cuartil (75%), abarcando un 50% de los datos. 
+- **los "bigotes"**: representan valores fuera de la caja, sin considerar los valores atípicos. 
+- **puntos**:  por encima o por debajo de los bigotes se consideran valores atípicos o "outliers".
 ]
