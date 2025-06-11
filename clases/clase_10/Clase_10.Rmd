@@ -365,145 +365,83 @@ class: middle
 
 ![IC](tablas/intervalos_confianza.png)
 
+
+
+
 ---
-class: middle
-
-### Ejemplo de prueba T para diferencia de medias
-
-```{r,  echo=FALSE, eval=TRUE, warning=FALSE, error=FALSE}
-#Cargar paquetes
-pacman::p_load(haven, tidyverse, janitor,sjmisc,kableExtra,plm, stargazer)
-#cargar datos
-bbdd<-read_dta("data_analysis.dta")
-
-bbdd <- janitor::clean_names(bbdd) #minusculas
-
-#seleccionar variables para tabla 2
-bbdd <- bbdd %>%  select("lb_edad_post",
-                         "lb_ingpercap_post",
-                         "lb_ing_laboral",
-                         "lb_participa",
-                         "lb_desempleo",
-                         "lb_ocupadas",
-                         "lb_hrs_trabaja",
-                         "lb_mes_trabaja",
-                         "lb_contrato",
-                         "lb_edu_anos",
-                         "lb_edu_max1",
-                         "lb_edu_max2",
-                         "lb_edu_max3",
-                         "lb_edu_max4",
-                         "lb_asiste_post",
-                         "stress",
-                         "lb_bebe",
-                         "lb_n_kids",
-                         "lb_cuida_infantil",
-                         "est1",
-                         "est2",
-                         "est3",
-                         "est4",
-                         "treatment",
-                         "seg")
-
-#filtrar por seguimiento (seg)
-bbdd <- bbdd %>% filter( seg==1 )
+class: center, middle
 
 
-## Cálculo de la diferencia de medias y estadístico t por cada variable de interés
-  
-#crear un vector con los nombres de las variables
-variables_interes <- names(bbdd)
+#### 🎯 Prueba *t* de Student — Supuestos con ejemplos prácticos  
+| Supuesto | ¿Qué significa? | Ejemplo práctico |
+|-----------|-----------------|------------------|
+| **Independencia** | Cada valor proviene de casos que no se influyen mutuamente. | Pesas **20 manzanas** de un huerto A y **20 manzanas** de un huerto B; cada manzana se recoge de distinto árbol al azar, de modo que el peso de una no afecta al de otra. |
+| **Normalidad** | Los valores (o las diferencias, si la prueba es pareada) forman una “panza” de campana. | Al trazar un histograma del peso de las manzanas de cada huerto, la mayoría de los pesos se agrupan cerca del promedio (≈ 180 g) y muy pocas manzanas son extremadamente ligeras o pesadas. |
+| **Homogeneidad de varianzas** | Los grupos presentan una dispersión similar alrededor de su media. | La variabilidad de pesos en el huerto A (desviación estándar ≈ 20 g) y en el huerto B (≈ 22 g) es parecida; ninguno muestra pesos mucho más dispersos que el otro. |
 
+---
+class: center, middle
 
-# quitar nombres de variables del tratamiento
-nombres_tratamiento <- c("treatment","seg")
-variables_interes <- variables_interes[!(variables_interes %in% nombres_tratamiento)]
+## 1️⃣ Independencia  
+- Asegúrate de que **cada fila** sea un sujeto distinto y elegido al azar.  
+- No existe un test automático; depende del diseño del muestreo.  
 
+---
+class: center, middle
 
-#Creo una grilla vacía (formato dataframe) que luego se llenará con los valores del loop
-resultados <- data.frame(Variable = character(),
-                         Media_Tratado = numeric(),
-                         Media_Control = numeric(),
-                         Estadistico_t = numeric(),
-                         stringsAsFactors = FALSE)
+## 2️⃣ Normalidad por grupo  
+```r
+# QQ-plot
+library(ggplot2)
+ggplot(datos, aes(sample = y)) +
+  stat_qq() + stat_qq_line() +
+  facet_wrap(~ grupo)
 
-#loop
-for (var in variables_interes) {
-  #creo 2 subconjuntos con las categorías de treatment
-  subset_tratado <- subset(bbdd, treatment == 1, select = var)
-  subset_tratado <- subset_tratado[complete.cases(subset_tratado), ]
-  subset_control <- subset(bbdd, treatment == 0, select = var)
-  subset_control <- subset_control[complete.cases(subset_control), ]
-
-  #Cálculo de las medias y el valor p del estadístico t de igualdad de medias.
-  mean_tratado <- mean(subset_tratado[[var]], na.rm = T)#media de tratado
-  mean_control <- mean(subset_control[[var]], na.rm = T)#media de control
-  t_test_result <- t.test(subset_tratado[[var]], subset_control[[var]])#t
-  p_valor <- t_test_result$p.value#p-value
-  
-  #Se almacenan los resultados en la grilla formato dataframe
-  resultados <- rbind(resultados, data.frame(Variable = var,
-                                             Tratado = round(mean_tratado,2),
-                                             Control = round(mean_control,2),
-                                             p = round(p_valor,3)))#valor p está con 3 decimales
-}
-
-# tabla cruzada de todas las variables con treatment (tratado y control) y su valor p
-resultados <- resultados %>% select(-Variable)
-
-#Tabla descriptivos
-bbdd<-bbdd %>% select(-c("treatment","seg"))
-descriptivos<-sjmisc::descr(bbdd,
-      show = c("mean","sd","n"))
-descriptivos <- descriptivos %>% select(c("mean", "sd", "n"))
-descriptivos<-round(descriptivos,2)
-
-#Fusión de ambas tablas
-tabla2 <-cbind(descriptivos,resultados)
-
-#Poner nombre a las filas 
-rownames(tabla2)<- c("Applicant age",
-         "Household per capita income",
-         "Applicant monthly income",
-         "Labor force participation rate",
-         "Unemployment Rate",
-         "Occupation Rate",
-         "Hours of work (daily)",
-         "Months Worked in 2011",
-         "Have employment contract",
-         "Years of Education",
-         "Proportion without education",
-         "Primary school proportion",
-         "Secondary school proportion",
-         "College (and/or further) education proportion",
-         "Attending an educational institution",
-         "Stress Index",
-         "Applicants with children less than 5 years old",
-         "Children signed up to the program by applicants",
-         "Proportion that receives childcare support",
-         "Strata 1: works and has children < 5 (N=369)",
-         "Strata 2: does not work and has children < 5 (N=109)",
-         "Strata 3: works and has children > 5 (N=1141)",
-         "Strata 4: does not work and has children > 5 (N=215)")
-
-
-
-#tabla2
-
-#ahora con Kable, queda una tabla fancy
-
-kable(tabla2,
-      caption = "Table 2. Balance between treatment and control group at baseline",
-      col.names = c("Average", "SD", "N°", "Treatment", "Control", "P-value T=C"),
-      position = "center") %>% 
-  kable_classic(full_width = F,
-                html_font = "Cambria") %>% #Definimos fuente
-  footnote(" ",#Especificamos la nota al pie
-           general_title = "Fuente: Elaboración propia en base a Martinez y Perticará (2017): Childcare effects on maternal
-employment: Evidence from Chile. ")
+# Shapiro-Wilk (solo si n < 50)
+by(datos$y, datos$grupo, shapiro.test)
 
 ```
+
 ---
+class: center, middle
+
+## 3️⃣ Igualdad de varianzas
+
+
+```r
+
+library(car)              # instalar si es necesario
+leveneTest(y ~ grupo, datos)   # p > 0.05 ⇒ varianzas iguales
+
+```
+Si p ≤ 0,05, usa la versión de Welch.
+
+---
+class: center, middle
+
+##4️⃣ Elección de la prueba
+
+| Situación                                               | Código en R                                      |
+| ------------------------------------------------------- | ------------------------------------------------ |
+| Normalidad OK **y** varianzas iguales                   | `t.test(y ~ grupo, datos, var.equal = TRUE)`     |
+| Varianzas desiguales **o** normalidad dudosa con n ≥ 20 | `t.test(y ~ grupo, datos)` *(Welch por defecto)* |
+| Normalidad mala **y** n < 20                            | `wilcox.test(y ~ grupo, datos)`                  |
+---
+class: center, middle
+##  5️⃣ Interpretar el resultado
+
+
+- p < 0,05 → diferencia significativa entre grupos.
+- p ≥ 0,05 → no se detecta diferencia.
+
+---
+class: center, middle
+
+##  6️⃣ Reportar
+“Se realizó una prueba t de Welch, t(gl = …), p = …, mostrando que el grupo A presentó una media significativamente mayor que el grupo B.”
+
+---
+
 class: inverse, center, middle
 
 # ANOVA

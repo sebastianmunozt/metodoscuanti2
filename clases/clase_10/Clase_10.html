@@ -4,8 +4,6 @@
     <title>Clase_10.knit</title>
     <meta charset="utf-8" />
     <script src="libs/header-attrs-2.25/header-attrs.js"></script>
-    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
-    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -332,240 +330,83 @@ class: middle
 
 ![IC](tablas/intervalos_confianza.png)
 
----
-class: middle
 
-### Ejemplo de prueba T para diferencia de medias
 
-&lt;table class=" lightable-classic" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;"&gt;
-&lt;caption&gt;Table 2. Balance between treatment and control group at baseline&lt;/caption&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Average &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; SD &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; N° &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Treatment &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Control &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; P-value T=C &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Applicant age &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 37.39 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 8.95 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1833 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 37.40 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 37.38 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.968 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Household per capita income &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 120.34 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 88.70 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1820 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 118.56 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 122.39 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.368 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Applicant monthly income &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 254.34 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 209.08 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1517 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 257.86 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 250.18 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.481 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Labor force participation rate &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.30 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1786 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.854 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Unemployment Rate &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.22 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1601 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.939 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Occupation Rate &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.85 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.36 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1786 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.85 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.85 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.918 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Hours of work (daily) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 8.65 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 9.26 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1617 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 8.90 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 8.35 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.230 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Months Worked in 2011 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 6.99 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4.91 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1703 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 7.13 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 6.83 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.218 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Have employment contract &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.49 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.50 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1303 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.51 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.48 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.237 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Years of Education &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 9.32 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.25 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1778 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 9.35 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 9.29 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.709 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Proportion without education &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.02 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.12 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1787 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.02 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.01 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.538 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Primary school proportion &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.39 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.49 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1787 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.38 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.41 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.184 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Secondary school proportion &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.53 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.50 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1787 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.54 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.51 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.274 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; College (and/or further) education proportion &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.24 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1787 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.905 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Attending an educational institution &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.23 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1811 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.05 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.975 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Stress Index &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 25.11 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 9.01 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1731 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 24.91 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 25.34 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.324 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Applicants with children less than 5 years old &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.26 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.44 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.27 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.25 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.589 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Children signed up to the program by applicants &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.32 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.57 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.30 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.34 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.117 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Proportion that receives childcare support &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.61 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.49 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1478 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.62 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.60 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.584 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Strata 1: works and has children &amp;lt; 5 (N=369) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.20 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.40 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.21 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.19 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.526 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Strata 2: does not work and has children &amp;lt; 5 (N=109) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.24 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.06 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.943 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Strata 3: works and has children &amp;gt; 5 (N=1141) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.62 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.48 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.61 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.63 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.337 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Strata 4: does not work and has children &amp;gt; 5 (N=215) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.12 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.32 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1834 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.12 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.11 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.477 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;tfoot&gt;
-&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;&lt;span style="font-style: italic;"&gt;Fuente: Elaboración propia en base a Martinez y Perticará (2017): Childcare effects on maternal&lt;br&gt;employment: Evidence from Chile. &lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;
-&lt;sup&gt;&lt;/sup&gt;  &lt;/td&gt;&lt;/tr&gt;
-&lt;/tfoot&gt;
-&lt;/table&gt;
+
 ---
+class: center, middle
+
+
+#### 🎯 Prueba *t* de Student — Supuestos con ejemplos prácticos  
+| Supuesto | ¿Qué significa? | Ejemplo práctico |
+|-----------|-----------------|------------------|
+| **Independencia** | Cada valor proviene de casos que no se influyen mutuamente. | Pesas **20 manzanas** de un huerto A y **20 manzanas** de un huerto B; cada manzana se recoge de distinto árbol al azar, de modo que el peso de una no afecta al de otra. |
+| **Normalidad** | Los valores (o las diferencias, si la prueba es pareada) forman una “panza” de campana. | Al trazar un histograma del peso de las manzanas de cada huerto, la mayoría de los pesos se agrupan cerca del promedio (≈ 180 g) y muy pocas manzanas son extremadamente ligeras o pesadas. |
+| **Homogeneidad de varianzas** | Los grupos presentan una dispersión similar alrededor de su media. | La variabilidad de pesos en el huerto A (desviación estándar ≈ 20 g) y en el huerto B (≈ 22 g) es parecida; ninguno muestra pesos mucho más dispersos que el otro. |
+
+---
+class: center, middle
+
+## 1️⃣ Independencia  
+- Asegúrate de que **cada fila** sea un sujeto distinto y elegido al azar.  
+- No existe un test automático; depende del diseño del muestreo.  
+
+---
+class: center, middle
+
+## 2️⃣ Normalidad por grupo  
+```r
+# QQ-plot
+library(ggplot2)
+ggplot(datos, aes(sample = y)) +
+  stat_qq() + stat_qq_line() +
+  facet_wrap(~ grupo)
+
+# Shapiro-Wilk (solo si n &lt; 50)
+by(datos$y, datos$grupo, shapiro.test)
+
+```
+
+---
+class: center, middle
+
+## 3️⃣ Igualdad de varianzas
+
+
+```r
+
+library(car)              # instalar si es necesario
+leveneTest(y ~ grupo, datos)   # p &gt; 0.05 ⇒ varianzas iguales
+
+```
+Si p ≤ 0,05, usa la versión de Welch.
+
+---
+class: center, middle
+
+##4️⃣ Elección de la prueba
+
+| Situación                                               | Código en R                                      |
+| ------------------------------------------------------- | ------------------------------------------------ |
+| Normalidad OK **y** varianzas iguales                   | `t.test(y ~ grupo, datos, var.equal = TRUE)`     |
+| Varianzas desiguales **o** normalidad dudosa con n ≥ 20 | `t.test(y ~ grupo, datos)` *(Welch por defecto)* |
+| Normalidad mala **y** n &lt; 20                            | `wilcox.test(y ~ grupo, datos)`                  |
+---
+class: center, middle
+##  5️⃣ Interpretar el resultado
+
+
+- p &lt; 0,05 → diferencia significativa entre grupos.
+- p ≥ 0,05 → no se detecta diferencia.
+
+---
+class: center, middle
+
+##  6️⃣ Reportar
+“Se realizó una prueba t de Welch, t(gl = …), p = …, mostrando que el grupo A presentó una media significativamente mayor que el grupo B.”
+
+---
+
 class: inverse, center, middle
 
 # ANOVA
