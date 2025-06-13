@@ -113,7 +113,9 @@ class: middle
 
 2.- Evidencia empírica
 
-3.- Regla de decisión en términos de probabilidad: Si, suponiendo cierta la hipótesis, el resultado muestral observado es improbable, se considerará que la hipótesis es incompatible con los datos; por el contrario, si, suponiendo cierta la hipótesis, el resultado muestral observado es probable, se considerará que la hipótesis es compatible con los datos. 
+3.- Regla de decisión en términos de probabilidad: 
+- Si, suponiendo cierta la hipótesis, el **resultado muestral observado es improbable**, se considerará que la hipótesis es incompatible con los datos;0
+- por el contrario, si, suponiendo cierta la hipótesis, el **resultado muestral observado es probable**, se considerará que la hipótesis es compatible con los datos. 
 
 4.- Toma de decisión: rechazar o mantener H0
 
@@ -124,7 +126,7 @@ class: middle
 ## Pasos Pruebas de hipótesis
 
 - Formulación de la hipótesis nula (H0) y la hipótesis alternativa (Ha).
-- Selección del nivel de significancia, que determina la probabilidad de cometer un error de tipo I (rechazar H0 cuando es verdadera): el p-value (en Ciencias Sociales se utiliza en general un 95%)
+- Selección del **nivel de significancia**, que determina la probabilidad de cometer un error de tipo I (rechazar H0 cuando es verdadera): el p-value (en Ciencias Sociales se utiliza en general un 95%)
 - Selección de la prueba estadística apropiada y el cálculo del valor de la prueba.
 -Comparación del valor de la prueba con un valor crítico o el intervalo de confianza para determinar si se rechaza o no la hipótesis nula.
 
@@ -170,7 +172,7 @@ class: middle
 
 ## Chi cuadrado
 
-- Prueba estadística utilizada para determinar si hay una asociación significativa entre dos variables categóricas. 
+- Prueba estadística utilizada para determinar si hay una asociación significativa entre **dos variables categóricas**. 
 - Compara si hay diferencia significativa entre distribución observada y distribución esperada bajo un modelo de independencia.
 
 El proceso implica los siguientes pasos:
@@ -255,7 +257,7 @@ class: middle
 ## Test de Fisher
 
 - Prueba estadística **no paramétrica** utilizada para evaluar la independencia entre dos variables categóricas. 
-- Similar al  chi-cuadrado, pero se utiliza cuando los tamaños de muestra son pequeños o cuando algunas celdas de la tabla de contingencia tienen valores esperados muy pequeños.
+- Similar al  chi-cuadrado, pero se utiliza cuando los **tamaños de muestra son pequeños** o cuando algunas **celdas** de la tabla de contingencia tienen **valores esperados muy pequeños**.
 - Se aplica cuando se tienen dos variables categóricas y se desea determinar si hay una asociación significativa entre ellas. 
 
 ---
@@ -272,36 +274,11 @@ class: middle
 
 
 ---
-class: middle
+class: inverse, center, middle
 
-## Pruebas paramétricas y no-paramétricas
-
-.pull-left[
-- **Pruebas estadísticas paramétricas**:
-  + Asumen que los datos siguen una distribución normal y se utilizan para probar hipótesis sobre los parámetros poblacionales, como la media y la desviación estándar. Estas pruebas requieren que los datos sean numéricos y continuos.
-] 
-
-
-.pull-right[  
-- **Pruebas estadísticas no paramétricas**: 
-  + Se utilizan cuando no se cumplen las suposiciones de normalidad o cuando los datos son categóricos o nominales en lugar de numéricos.
-]
-
----
-class: center, middle
-
-## Pruebas paramétricas y no-paramétricas
-
-.pull-left[
-![](Clase_10_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
-]
-
-.pull-right[  
-![](Clase_10_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
-]
-
-
-
+### Entonces para cruzar dos variables cualitativa (nominales y ordinales), tenemos dos posibilidades: chi-cuadrado y test de Fisher.
+- Pero, ¿Qué pasa cuándo queremos entender la diferencia entre una variable cualitativa y una cuantitativa?
+- Usualmente al comparar el valor de una variable (por ejemplo, el promedio de ingresos) entre dos grupos.
 
 
 ---
@@ -317,7 +294,7 @@ class: middle
 
 Es una prueba de hipótesis utilizada cuando contamos con:
 
-* Una variable cuantitativa (Prueba T para una muestra)
+* Una variable cuantitativa (Prueba T para una muestra): se compara valor en muestra, con valor en población.
 * Una variable cuantitativa y una variable dicotómica (Prueba T para muestras independientes)
 
 ![Tstudent](tablas/pruebas_t.png)
@@ -330,19 +307,22 @@ class: middle
 
 ![IC](tablas/intervalos_confianza.png)
 
+---
+class: center, middle
 
-
+### Necesidad de considerar los supuestos.
 
 ---
 class: center, middle
 
 
 #### 🎯 Prueba *t* de Student — Supuestos con ejemplos prácticos  
-| Supuesto | ¿Qué significa? | Ejemplo práctico |
-|-----------|-----------------|------------------|
-| **Independencia** | Cada valor proviene de casos que no se influyen mutuamente. | Pesas **20 manzanas** de un huerto A y **20 manzanas** de un huerto B; cada manzana se recoge de distinto árbol al azar, de modo que el peso de una no afecta al de otra. |
-| **Normalidad** | Los valores (o las diferencias, si la prueba es pareada) forman una “panza” de campana. | Al trazar un histograma del peso de las manzanas de cada huerto, la mayoría de los pesos se agrupan cerca del promedio (≈ 180 g) y muy pocas manzanas son extremadamente ligeras o pesadas. |
-| **Homogeneidad de varianzas** | Los grupos presentan una dispersión similar alrededor de su media. | La variabilidad de pesos en el huerto A (desviación estándar ≈ 20 g) y en el huerto B (≈ 22 g) es parecida; ninguno muestra pesos mucho más dispersos que el otro. |
+| Supuesto                      | ¿Qué significa?                                                                                                                             | Ejemplo práctico                                                                                                                                                                                                                                              |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Independencia**             | Los valores de cada observación no deben influirse mutuamente.                                                                              | Se registra el sueldo mensual de **120 empleados**; cada persona aporta **un solo** dato y se clasifica como «masculino» o «femenino». El salario de un empleado no afecta al de otro.                                                                        |
+| **Normalidad**                | La distribución de la variable cuantitativa en **cada** grupo se aproxima a una campana (o lo hace después de una transformación adecuada). | Al graficar los ingresos de hombres y mujeres, ambos histogramas muestran forma aproximadamente normal (o lo hacen tras `log(ingreso)` si hay asimetría). El test de Shapiro–Wilk para cada género arroja *p* &gt; 0,05, por lo que no se rechaza la normalidad. |
+| **Homogeneidad de varianzas** | Los grupos presentan una dispersión similar alrededor de su media.                                                                          | La desviación estándar de los sueldos masculinos es ≈ \$220 000 y la de los femeninos ≈ \$210 000; la prueba de Levene devuelve *p* = 0,37, indicando que las varianzas pueden considerarse iguales.                                                          |
+
 
 ---
 class: center, middle
@@ -419,18 +399,18 @@ class: middle
 • El procedimiento ANOVA de un factor genera un análisis de varianza de un factor para
 una variable dependiente cuantitativa respecto a una única variable de factor (la
 variable independiente). El análisis de varianza se utiliza para contrastar la hipótesis
-de que varias medias son iguales. Esta técnica es una extensión de la prueba t para
-dos muestras.
+de que varias medias son iguales. Esta técnica es una **extensión de la prueba t para
+dos muestras**.
 
 • Es una prueba paramétrica
 
 • Es una prueba omnibus: no se sabe bien entre qué grupos están las diferencias (para
 eso se ocupan pruebas post-hoc)
 
-• La variable dependiente es cuantitativa u ordinal tratada como cuantitativa (ej:
+• La variable dependiente es cuantitativa u **ordinal** tratada como cuantitativa (ej:
 escalas likert de 1 a 7)
 
-• La variable independiente debe ser categórica de más de 2 grupos, independientes
+• La variable independiente debe ser categórica de **más de 2 grupos**, independientes
 entre sí
 
 
@@ -440,9 +420,11 @@ class: middle
 
 ¿Cuándo usar Chi-Cuadrado?: Chi cuadrado se utiliza cuando contamos con dos variables categóricas (nominales u ordinales).
 
-¿Cuándo usar Prueba T?: Prueba T se utiliza cuando contamos con una variable cuantitativa y otra categórica (variable de agrupación). Esta última debe diferencia únicamente en dos grupos (ejemplo: variable sexo con categorías de respuesta hombre y mujer).
+¿Cuándo usar Test de Fisher?: cuando se utiliza cuando contamos con dos variables categóricas (nominales u ordinales), pero valores esperados son menos de 5 en ciertas celdas.
 
-¿Cuándo usar Anova?: Anova se utiliza cuando contamos con una variable cuantitativa y otra categórica (variable de agrupación). Esta última debe diferencia desde tres grupos (ejemplo: variable posición política con categorías de respuesta derecha, centro e izquierda).
+¿Cuándo usar Prueba T?: Prueba T se utiliza cuando contamos con una variable cuantitativa y otra categórica (variable de agrupación). Esta última debe diferencia únicamente en dos grupos (ejemplo: variable sexo con categorías de respuesta hombre y mujer). Si no se cumplen supuestos de normalidad o varianzas parecidas hay que elegir: Welch o Wilcox (menos de 20 casos)
+
+¿Cuándo usar Anova?: Anova se utiliza cuando contamos con una variable cuantitativa y otra categórica (variable de agrupación). Esta última debe diferencia desde al menos en tres grupos (ejemplo: variable posición política con categorías de respuesta derecha, centro e izquierda). Si no se cumplen supuestos de normalidad se recomienda Kruskal-Wallis/Friedman; sino se cumplen varianzas parecidas se recomienda Welch.
 
 ---
 class: middle
