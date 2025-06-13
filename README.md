@@ -32,30 +32,6 @@
 🔹 Instala `R`: [📺 **Ver Cápsula**](https://youtu.be/URtP9Qo2Trw?si=6BCceJEx7f6sXduZ)
 
 ---
-| 🔢 | 📆 Fecha | 📚 Contenido | 📂 Material Clase | 📖 Material Apoyo |
-| :-: | :- | :- | :- | :- |
-| 1️⃣ | 🗓️ Viernes 14 de marzo | Introducción y repaso cuestionarios | [📑 Presentación](https://syncmagic.live/?id=m53vKjr7) · [💻 GColab-Rbase](https://colab.research.google.com/drive/17Hc4XpyXoXXcYQtcbcBQMIJ_ztVwo0wO?pli=1) | [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_01/clase_1.R) · [🎥 Cápsula-Rbase](https://www.youtube.com/playlist?list=PLtMKbC0NRgrE6LO02NvL4G9LdypG3P4lA) |
-| 2️⃣ | 🗓️ Viernes 21 de marzo | Google Colab – Repaso Rbase y `tidyverse` 1 | [📚 tidyverse](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_02/clase_2#1) · [💻 GColab-tidyverse](https://colab.research.google.com/drive/1Qp37zYreyqS5hoSZWSpPvg1W4bzchOW6?pli=1) · [📊 Base .xlsx](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_02/base/base_antropologia_limpia.xlsx) | [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_02/clase_2.R) · [🎥 Cápsula-tidyverse](https://youtube.com/playlist?list=PLtMKbC0NRgrHdBUAW7fcEhGYQC4qDg_XP) |
-| 3️⃣ | 🗓️ Viernes 28 de marzo | `tidyverse` 2 – Introducción al muestreo | [📖 Muestreo](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_03/clase_3#1) · [📊 Fórmulas](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_03/formula.xls) | – |
-| 4️⃣ | 🗓️ Viernes 4 de abril  | Data Wrangling | [📚 PPT-DW](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_04/clase_04#1) · [💻 GColab-DW](https://colab.research.google.com/drive/1bF7yiqpgHQ3yBRdj98lyy8PBb6EDysFz?pli=1) · [📊 Base .xlsx](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_04/data/base_antropologia_sucia.xlsx) | [🎥 Cápsula](https://youtu.be/Gjvdr_pu1-M) · [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_04/Clase_4_Data_Wrangling/Clase_4_Script.R) |
-| 5️⃣ | 🗓️ Viernes 11 de abril | **📝 Evaluación individual I** – Nivelación en R | – | – |
-| ⛔ | 🗓️ Viernes 18 de abril | 🚫 No hay clases – Viernes Santo | – | ❌ |
-| 6️⃣ | 🗓️ Viernes 25 de abril | Data Wrangling 2 | – | [🎥 Cápsula](https://youtu.be/TCOFzBTJn14) · [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_05/clase5_script.R) |
-| ⛔ | 🗓️ Viernes 2 de mayo  | 🚫 No hay clases – Receso UAH | – | ❌ |
-| 7️⃣ | 🗓️ Viernes 9 de mayo  | Análisis de datos categóricos | [📚 PPT-AC](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_06/clase_6#1) · [💻 GColab-AC](https://colab.research.google.com/drive/1NYNdEf3jnmoA6wlLlDY7TuWZ7OUmwWOf?pli=1) | [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_06/clase_6.R) |
-| ⛔ | 🗓️ Viernes 16 de mayo  | 🚫 No hay clases – Paro estudiantil | – | ❌ |
-| ⛔ | 🗓️ Viernes 23 de mayo  | 🚫 No hay clases – Paro estudiantil | – | ❌ |
-| 8️⃣ | 🗓️ Viernes 30 de mayo  | Visualización de datos cualitativos en `ggplot` *(reprogramada)* | [💻 GColab-DataVisCuali](https://colab.research.google.com/drive/1D0cqmmQR7izwypUBMSC9O4bMobVgcB5b?pli=1) · [📚 PPT-8](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_08/clase8.pptx) | [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_08/Clase_8.R) |
-| 9️⃣ | 🗓️ Viernes 6 de junio  | Visualización de datos cuantitativos *(reprogramada)* | [📚 PPT-DataVisC](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_09/clase_9#1) · [💻 GColab-DataVisCuanti](https://colab.research.google.com/drive/1XRQCbmLDABvVzYU36UNu4lPF92_vMqDC?pli=1) | [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_09/clase_9.R) |
-| 🔟 | 🗓️ Viernes 13 de junio | Prueba de hipótesis: χ², Test de Fisher, _t_ de Student y ANOVA *(reprogramada)* | [💻 GColab-PruebaHipótesis](https://colab.research.google.com/drive/1mSbeh5OzR-93DaJ1-zWfGryRAvNyzil6?pli=1) · [📚 PPT-10](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/Clase_10#1) | [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/Clase_10.R) |
-| ⛔ | 📡 Clase Online | Correlación y regresión *(cápsula)* | – | [📚 Clase 11](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_11/Clase_11/Clase_11#1) |
-| 1️⃣1️⃣ | 🗓️ Viernes 27 de junio | Repaso general: Prueba y trabajos finales | – | ⏳ Pendiente |
-| 1️⃣2️⃣ | 🗓️ Viernes 4 de julio | **📝 Evaluación individual II** | – | ⏳ Pendiente |
-| ⛔ | 🗓️ Día a convenir | Pruebas recuperativas | – | ⏳ Pendiente |
-| 1️⃣3️⃣ | 🗓️ Viernes 11 de julio | **📢 Entrega grupal final** – Presentación de investigación y entrega del trabajo | – | ⏳ Pendiente |
-
-
----
 
 | 🔢 | 📆 Fecha | 📚 Contenido | 📂 Material Clase | 📖 Material Apoyo |
 | :-: | :- | :- | :- | :- |
