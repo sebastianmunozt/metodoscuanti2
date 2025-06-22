@@ -51,11 +51,10 @@
 | 9️⃣ | 🗓️ Viernes 6 de junio | Visualización de datos cuantitativos *(reprogramada)* | [📚 PPT-DataVisC](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_09/clase_9#1) · [💻 GColab-DataVisCuanti](https://colab.research.google.com/drive/1XRQCbmLDABvVzYU36UNu4lPF92_vMqDC?pli=1) | [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_09/clase_9.R) · [📊 Base](https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Casen_en_Pandemia_2020_revisada202209.sav.zip) · [🎥 Cápsulas](https://www.youtube.com/playlist?list=PLtMKbC0NRgrG3uXtGiM-XZ969XtI_1lZ2) |
 | 🔟 | 🗓️ Viernes 13 de junio | Prueba de hipótesis: χ², Test de Fisher, _t_ de Student y ANOVA *(reprogramada)* | [💻 GColab-PruebaHipótesis](https://colab.research.google.com/drive/1mSbeh5OzR-93DaJ1-zWfGryRAvNyzil6?pli=1) · [📚 PPT-10](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/Clase_10#1) · [📊 Base .xlsx](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/base/base_antropologia_limpia.xlsx) | [📚 Clase 10](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/Clase_10#1) · [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/Clase_10.R) · [📊 Base](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/base/base_antropologia_limpia.xlsx) · [🎥 Cápsula](https://youtu.be/i0MxC9GXRzw) |
 | ⛔ | 📡 Clase Online | Correlación y regresión *(cápsula)* | – | [📚 Clase 11](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_11/Clase_11/Clase_11#1) · [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_11/Clase_11/Clase_11.R) · [📊 Base](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_11/IMS.xlsx) |
-| 1️⃣1️⃣ | 🗓️ Viernes 27 de junio | Repaso general: Prueba y trabajos finales | – | ⏳ Pendiente |
+| 1️⃣1️⃣ | 🗓️ Viernes 27 de junio | Repaso general: Prueba y trabajos finales | [💻 GColab-RepasoGeneral](https://colab.research.google.com/drive/1LwyW2Y7iMB1Q4LAM_eFRy7fO4DZI5HRP?pli=1) | ⏳ Pendiente |
 | 1️⃣2️⃣ | 🗓️ Viernes 4 de julio | **📝 Evaluación individual II** | – | ⏳ Pendiente |
 | ⛔ | 🗓️ Día a convenir | Pruebas recuperativas | – | ⏳ Pendiente |
 | 1️⃣3️⃣ | 🗓️ Viernes 11 de julio | **📢 Entrega grupal final** – Presentación de investigación y entrega del trabajo | – | ⏳ Pendiente |
-
 
 
 
