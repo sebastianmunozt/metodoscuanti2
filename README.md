@@ -126,7 +126,7 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSc1sShBA6IM
 | 📊 Finalización Trabajo de Campo | Hacer 5 cuestionarios por persona            | 📅 Mayo 30     |
 | ✅ Evaluación individual II    | Procesamiento y análisis de datos cuanti/cuali | 📅 Junio 27   |
 | ⚠️ Pruebas recuperativas       | Pruebas 1 y 2 según el caso                   | 📅 Julio 04    |
-| 📢 Entrega grupal final        | Presentación de investigación en clases y entrega de trabajo | 📅 Julio 18 |
+| 📢 Entrega grupal final        | Presentación de investigación en clases y entrega de trabajo | 📅 Julio 11 |
 | 📌 Entrega final de notas      | -                                           | 📅 Julio 25    |
 
 
@@ -136,6 +136,11 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSc1sShBA6IM
 
 
 - ¿Existirán cambios?
+
+---
+
+[💻 A](https://colab.research.google.com/drive/1UY5VQ0C_h8pXs7b6JRfhK8Q66ehTESUF?usp=sharing)
+[💻 B](https://colab.research.google.com/drive/1mlTkkOb2hNjrQcu9ndCo4Cr8LhvxTmOa?usp=sharing)
 
 ---
 
