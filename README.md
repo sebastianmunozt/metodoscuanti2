@@ -95,7 +95,7 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSc1sShBA6IM
 
 ---
 
-### Cápsula
+### Cápsula Trabajo Final
 
 - Les dejo la cápsula grabada [`[aquí]`](https://uahurtadocl.sharepoint.com/:v:/s/Ayudantas308/EVr_FaWfIYJJiz4YU78bRXIBBlFnmyC3NsRRLuJ6snqvkQ?e=eYgV7l)
 
