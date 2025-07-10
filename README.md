@@ -94,7 +94,15 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSc1sShBA6IM
 | Lunes 30/06 | Repaso General | [`📜.R`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_10/Ayudantia10.R) . [`📊Base`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_04/base_antropologia_limpia.xlsx) | Sin discusión | Pendiente |
 
 ---
-'
+
+### Cápsula
+
+- Les dejo la cápsula grabada [`[aquí]`](https://uahurtadocl.sharepoint.com/:v:/s/Ayudantas308/EVr_FaWfIYJJiz4YU78bRXIBBlFnmyC3NsRRLuJ6snqvkQ?e=eYgV7l)
+
+- Les dejo el script .R [`[aquí]`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/capsula/capsula.R)
+
+---
+
 ### Asistencias Ayudantías 
 
 - Puedes ver cómo vas con las asistencias de las ayudantías [`[aquí]`](https://docs.google.com/spreadsheets/d/1xiA-3Ax8luWj-NZvo3nbx15PvagDve5y/edit?gid=291208957#gid=291208957)
