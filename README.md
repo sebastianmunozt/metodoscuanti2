@@ -28,6 +28,8 @@
 
 ---
 
+## Aquí podrá ver su [asistencia](https://docs.google.com/spreadsheets/d/1MAW2Hy749424e_v8gI9Hnqpgh9XMwT63wdR0RVT0xy8/edit?usp=sharing)
+
 ## 💻 **Descarga e instalación de R y RStudio**
 🔹 Instala `R`: [📺 **Ver Cápsula**](https://youtu.be/URtP9Qo2Trw?si=6BCceJEx7f6sXduZ)
 
