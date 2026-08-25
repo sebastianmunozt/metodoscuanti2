@@ -59,7 +59,7 @@ class: slideInRight, fadeOutLeft, middle, inverse
 
 ## repaso & tidyverse
 - Métodos cuantitativos 2
-- Prof. Sebastián Muñoz
+- Prof. Gino Ocampo & Sebastián Muñoz
 
 ---
 
@@ -126,7 +126,7 @@ class: slideInRight, fadeOutLeft, middle
 
 
 .pull-left[
-  + saber hablar con los computadores, yo y Rrancesca como sus informantes clave.
+  + saber hablar con los computadores, yo, Sebastián y Francesca como sus informantes clave.
 
 <img src="img/humanonohumano.png" width="2000px"/>
 
@@ -279,9 +279,9 @@ class: slideInRight, fadeOutLeft, middle
 ## Entonces...
 
 .pull-left[
-- Si en mi en la base de datos de mi encuesta, quisiera: 
+- Si en la base de datos de mi encuesta, quisiera: 
   + trabajar sólo con las mujeres ¿qué función utilizaría?
-  + trabajar sólo con las variables que me interesan por ser el foco de mi grupo (e.g. solo las de "política" o "lectura")
+  + trabajar sólo con las variables que me interesan por ser el foco de mi grupo (e.g. solo las de "uso de pantalla" o "autoritarismo")
   + hacer una tabla de la media y la mediana de la edad por sexo.
   + recodificar los ingresos en 3 grupos: altos, medios, bajos]
 
