@@ -82,7 +82,7 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSeOSQzUZzt2
 
 | 📆 Fecha      | 📚 Contenido                                                  | 📌 Tareas | 📖 Material a discutir | 🎥 Grabación |
 |------------|------------------------------------------------------------|--------|---------------------|------------|
-| Viernes 04-09 | Repaso general y Tidyverse 1: filter y select | Pendiente  | [`🔍Datos y poder`](https://mx.boell.org/es/2019/04/12/el-feminismo-de-los-datos-big-data-vigilancia-y-genero) . [`🔍Sesgos algorítmicos`](https://www.codemotion.com/magazine/es/inteligencia-artificial/el-impacto-de-los-algoritmos-sesgados-como-enfrentarlo-desde-el-desarrollo/?utm_source=chatgpt.com) | [`🎦Ayudantía 1`](https://uahurtadocl.sharepoint.com/:v:/r/sites/Ayudantas_f96904/Documentos%20compartidos/General/Recordings/Reuni%C3%B3n%20en%20General-20260904_183845-Grabaci%C3%B3n%20de%20la%20reuni%C3%B3n.mp4?d=wc7f3f39652984ca89074e9edae2ecd43&csf=1&web=1&e=twjIyp&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| Viernes 04-09 | Repaso general y Tidyverse 1: filter y select | [`🗳️.IPYNB`](ayudantias/ayudantia_01/AYUDANTIA_1.ipynb) . [`📚PPT`](ayudantias/ayudantia_01/AYUDANTIA_1.pdf) | [`🔍Datos y poder`](https://mx.boell.org/es/2019/04/12/el-feminismo-de-los-datos-big-data-vigilancia-y-genero) . [`🔍Sesgos algorítmicos`](https://www.codemotion.com/magazine/es/inteligencia-artificial/el-impacto-de-los-algoritmos-sesgados-como-enfrentarlo-desde-el-desarrollo/?utm_source=chatgpt.com) | [`🎦Ayudantía 1`](https://uahurtadocl.sharepoint.com/:v:/r/sites/Ayudantas_f96904/Documentos%20compartidos/General/Recordings/Reuni%C3%B3n%20en%20General-20260904_183845-Grabaci%C3%B3n%20de%20la%20reuni%C3%B3n.mp4?d=wc7f3f39652984ca89074e9edae2ecd43&csf=1&web=1&e=twjIyp&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
 | Por definir | Tidyverse 2: mutate, rename, arrange | Pendiente | [`🔍Big data y antropología`](https://www.youtube.com/watch?v=7McW0Yph-0Q&ab_channel=LUISAFERNANDASERRANOARRIAGA) . [`🔍Sesgo algorítmico`](https://www.youtube.com/watch?v=onJs6DXczu0&ab_channel=DCCUChile) | Pendiente |
 | Por definir | Data Wrangling | [`📜.Rmd`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_03/Ayudantia3.Rmd) . [`📜.R`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_03/AYUDANTIA3.R) . [`📊Base`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_03/Encuesta-Estudiantes-Antropología-2023-(respuestas)) . [`📚PPT`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_03/ayudantia3.pdf) | [`🔍Ningún dato es neutral`](https://www.titonet.com/estrategia-digital/neutralidad-de-los-datos.html) . [`🔍Mito de la neutralidad`](https://www.ciudadesaescalahumana.org/2015/11/el-mito-de-la-neutralidad-del-dato-la.html)  | Pendiente |
 | Por definir | Repaso General | [`📜.Rmd`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_04/ayudantia4.Rmd) . [`📜.R`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_04/ayudantia4.R) . [`📊Base`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_04/base_antropologia_limpia.xlsx) . [`📚PPT`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_04/ayudantia4.pdf) | Sin discusión | [`🎦Ayudantía 4`](https://uahurtadocl.sharepoint.com/sites/Section_22511621031/_layouts/15/stream.aspx?id=%2Fsites%2FSection%5F22511621031%2FDocumentos%20compartidos%2FGeneral%2FRecordings%2FReuni%C3%B3n%20en%20%5FGeneral%5F%2D20250414%5F161129%2DGrabaci%C3%B3n%20de%20la%20reuni%C3%B3n%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E4fc97fd7%2Db770%2D4a0f%2D9374%2D16c82d25adb7) |
@@ -92,6 +92,12 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSeOSQzUZzt2
 | Por definir | Análisis de datos numéricos | [`📜.R`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_08/ayudantia8.R) . [`📊Base`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_08/cuestionarioantropología.xlsx) . [`📚PPT`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_08/ayudantia8.pdf) | Sin discusión | [`🎦Ayudantía 8`](https://uahurtadocl.sharepoint.com/sites/Section_22511621031/_layouts/15/stream.aspx?id=%2Fsites%2FSection%5F22511621031%2FDocumentos%20compartidos%2FGeneral%2FRecordings%2FReuni%C3%B3n%20en%20General%2D20250609%5F161723%2DGrabaci%C3%B3n%20de%20la%20reuni%C3%B3n%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ecee1b1f9%2D5f38%2D42ff%2Da12c%2D9b4713ba8277e) |
 | Por definir | Test de hipótesis: T de Student y ANOVA | [`📜.R`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_09/ayudantia9.R) . [`📊Base`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_04/base_antropologia_limpia.xlsx) . [`📚PPT`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_09/ayudantia9.pdf) | Sin discusión | [`🎦Ayudantía 9`](https://uahurtadocl.sharepoint.com/sites/Section_22511621031/_layouts/15/stream.aspx?id=%2Fsites%2FSection%5F22511621031%2FDocumentos%20compartidos%2FGeneral%2FRecordings%2FReuni%C3%B3n%20en%20General%2D20250616%5F161952%2DGrabaci%C3%B3n%20de%20la%20reuni%C3%B3n%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E2485802b%2Ddb11%2D46b6%2Db43d%2De1367cce9626) |
 | Por definir | Repaso General | [`📜.R`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_10/Ayudantia10.R) . [`📊Base`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_04/base_antropologia_limpia.xlsx) | Sin discusión | [`🎦Ayudantía 10`](https://uahurtadocl.sharepoint.com/:v:/s/Section_22511621031/EXgdbSdI9t1AtJR-sfHx3G4BNbiroKT-pvpO68t57NoC8A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=xlHxmw)  |
+
+---
+
+### Asistencias Ayudantías 
+
+- Puedes ver cómo vas con las asistencias de las ayudantías [`[aquí]`]()
 
 ---
 
@@ -110,12 +116,6 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSeOSQzUZzt2
 - Les dejo la cápsula grabada [`[aquí]`](https://uahurtadocl.sharepoint.com/:v:/s/Ayudantas308/EVr_FaWfIYJJiz4YU78bRXIBBlFnmyC3NsRRLuJ6snqvkQ?e=eYgV7l)
 
 - Les dejo el script .R [`aquí`](https:///sebastianmunozt.github.io/metodoscuanti2/ayudantias/ayudantia_10/CAPSULA.R)
-
----
-
-### Asistencias Ayudantías 
-
-- Puedes ver cómo vas con las asistencias de las ayudantías [`[aquí]`](https://docs.google.com/spreadsheets/d/1xiA-3Ax8luWj-NZvo3nbx15PvagDve5y/edit?gid=291208957#gid=291208957)
 
 
 ---
