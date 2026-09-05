@@ -97,7 +97,7 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSeOSQzUZzt2
 
 ### Asistencias Ayudantías 
 
-- Puedes ver cómo vas con las asistencias de las ayudantías [`[aquí]`]()
+- [`[Informe asistencia Ayudantía 1]`](ayudantias/ayudantia_01/Meeting - Informe de asistencia 9-04-26.csv)
 
 ---
 
