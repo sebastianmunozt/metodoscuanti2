@@ -97,6 +97,7 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSeOSQzUZzt2
 ### Asistencias Ayudantías 
 
 - [`[Informe asistencia Ayudantía 1]`](ayudantias/ayudantia_01/Meeting - Informe de asistencia 9-04-26.csv)
+- [`[Informe asistencia Ayudantía 2]`](ayudantias/ayudantia_02/asistencia.csv)
 
 ---
 
