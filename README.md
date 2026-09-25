@@ -98,7 +98,7 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSeOSQzUZzt2
 
 - [`[Informe asistencia Ayudantía 1]`](ayudantias/ayudantia_01/Meeting - Informe de asistencia 9-04-26.csv)
 - [`[Informe asistencia Ayudantía 2]`](ayudantias/ayudantia_02/asistencia.csv)
-- [`[Informe asistencia Ayudantía 2]`]()
+- [`[Informe asistencia Ayudantía 2]`](ayudantias/ayudantia_03/Reunión en _General_  - Informe de asistencia 9-25-26.csv)
 
 ---
 
