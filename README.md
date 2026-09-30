@@ -58,9 +58,9 @@
 ---
 ### Materiales para encuesta
 
-- 🔗 [**Marco-muestral**](https:///sebastianmunozt.github.io/metodoscuanti2/clases/clase_03/trabajo_de_campo/marco-muestral.xlsx)
-- 🔗 [**Carta-encuestadxs**](https:///sebastianmunozt.github.io/metodoscuanti2/clases/clase_03/trabajo_de_campo/carta-encuestadxs.pdf)
-- 🔗 [**Manual-encuestador**](https:///sebastianmunozt.github.io/metodoscuanti2/clases/clase_03/trabajo_de_campo/manual-encuestador_a-2025.pdf)
+- 🔗 [**Marco-muestral**](https://sebastianmunozt.github.io/metodoscuanti2/clases/trabajo_de_campo/marco-muestral.xlsx)
+- 🔗 [**Carta-encuestadxs**](https://sebastianmunozt.github.io/metodoscuanti2/clases/trabajo_de_campo/carta-encuestadxs.pdf)
+- 🔗 [**Manual-encuestador**](https://sebastianmunozt.github.io/metodoscuanti2/clases/trabajo_de_campo/manual-encuestador_a-2026.pdf)
 
 
 ---
