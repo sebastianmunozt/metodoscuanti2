@@ -1,0 +1,15 @@
+:root {
+  --r-main-font-size: 30px;
+  --r-heading2-size: 1.55em;
+  --r-heading1-size: 2.35em;
+  --r-block-margin: 14px;
+}
+
+.reveal .slides section img {
+  margin: 6px auto;
+  object-fit: contain;
+}
+
+.reveal .slides section table {
+  font-size: 0.86em;
+}
