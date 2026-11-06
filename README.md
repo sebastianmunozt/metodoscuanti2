@@ -48,10 +48,10 @@
 | 8️⃣ | 🗓️ Martes 3 de noviembre  | Visualización de datos cualitativos en `ggplot` *(reprogramada)* | [💻 GColab-DataVisCuali resuelto](https://colab.research.google.com/drive/1D0cqmmQR7izwypUBMSC9O4bMobVgcB5b?pli=1) · [💻 GColab-DataVisCuali no resuelto](https://colab.research.google.com/drive/1Vz-CSp_pGYx9gpaiZ_LncDWWxWTWU7Yc) · [📚 PPT-8](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_08/clase8.pptx) | [📚 Clase 8](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_08/Clase_8.pptx) · [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_08/Clase_8.R) · [🎥 Cápsulas](https://youtube.com/playlist?list=PLtMKbC0NRgrEiQkrPaX_zd_dmVmnxwQW1) ||
 | 9️⃣ | 🗓️ Martes 10 de noviembre| Visualización de datos cuantitativos *(reprogramada)* | [📚 PPT-DataVisC](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_09/clase_9#1) · [💻 GColab-DataVisCuanti](https://colab.research.google.com/drive/1XRQCbmLDABvVzYU36UNu4lPF92_vMqDC?pli=1) | [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_09/clase_9.R) · [📊 Base](https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Casen_en_Pandemia_2020_revisada202209.sav.zip) · [🎥 Cápsulas](https://www.youtube.com/playlist?list=PLtMKbC0NRgrG3uXtGiM-XZ969XtI_1lZ2) |
 | 🔟 | Martes 17 de noviembre | Prueba de hipótesis: χ², Test de Fisher, _t_ de Student y ANOVA | [💻 GColab-PruebaHipótesis](https://colab.research.google.com/drive/1mSbeh5OzR-93DaJ1-zWfGryRAvNyzil6?pli=1) · [📚 PPT-10](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/Clase_10#1) · [📊 Base .xlsx](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/base/base_antropologia_limpia.xlsx) | [📚 Clase 10](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/Clase_10#1) · [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/Clase_10.R) · [📊 Base](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_10/base/base_antropologia_limpia.xlsx) · [🎥 Cápsula](https://youtu.be/i0MxC9GXRzw) |
-| 1️⃣1️⃣ |   Martes 24 de noviembre |📡 Clase Online | Correlación y regresión *(cápsula)* | – | [📚 Clase 11](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_11/Clase_11/Clase_11#1) · [📜 Script .R](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_11/Clase_11/Clase_11.R) · [📊 Base](https://sebastianmunozt.github.io/metodoscuanti2/clases/clase_11/IMS.xlsx) |
-| 1️⃣2️⃣ | 🗓️ Martes 1 de diciembre | **📝 Evaluación individual II** | [💻 GColab-RepasoGeneral](https://colab.research.google.com/drive/1LwyW2Y7iMB1Q4LAM_eFRy7fO4DZI5HRP?pli=1) | ⏳ Pendiente |
-| 1️⃣3️⃣ | 🗓️ Martes 8 de diciembre | **📢 Entrega grupal final** – Presentación de investigación y entrega del trabajo | – | ⏳ Pendiente |
-| ⛔ | 🗓️ Día a convenir | Pruebas recuperativas | – | ⏳ Pendiente |
+| 1️⃣1️⃣ | 🗓️ Martes 24 de noviembre | Correlación y regresión | ⏳ Pendiente | ⏳ Pendiente |
+| 1️⃣2️⃣ | 🗓️ Martes 1 de diciembre | Repaso y presentación de experiencias en investigación cuantitativa | [💻 GColab-RepasoGeneral](https://colab.research.google.com/drive/1LwyW2Y7iMB1Q4LAM_eFRy7fO4DZI5HRP?pli=1) | ⏳ Pendiente |
+| 1️⃣3️⃣ | 🗓️ Martes 8 de diciembre | **📝 Evaluación individual II** | – | ⏳ Pendiente |
+| 1️⃣4️⃣ | 🗓️ Martes 15 de diciembre | **📢 Entrega grupal final** – Presentación de investigación y entrega del trabajo · **Pruebas recuperativas** | – | ⏳ Pendiente |
 
 
 
@@ -149,9 +149,9 @@ En el siguiente [`[Forms]`](https://docs.google.com/forms/d/e/1FAIpQLSeOSQzUZzt2
 | 📋 Formulario Final           | Presentación de formulario final conjunto (solo ayudantes y directores) | 📅 Septiembre 29    |
 | 📊 Inicio Trabajo de Campo     | Hacer 5 cuestionarios por persona            | 📅 Octubre 6     |
 | 📊 Finalización Trabajo de Campo | Hacer 5 cuestionarios por persona            | 📅 Octubre 13     |
-| ✅ Evaluación individual II    | Procesamiento y análisis de datos cuanti/cuali | 📅 Noviembre 24   |
-| ⚠️ Pruebas recuperativas       | Pruebas 1 y 2 según el caso                   | 📅 Día a convenir   |
-| 📢 Entrega grupal final        | Presentación de investigación en clases y entrega de trabajo | 📅 Diciembre 1 |
+| ✅ Evaluación individual II    | Procesamiento y análisis de datos cuanti/cuali | 📅 Diciembre 8   |
+| ⚠️ Pruebas recuperativas       | Pruebas 1 y 2 según el caso                   | 📅 Diciembre 15   |
+| 📢 Entrega grupal final        | Presentación de investigación en clases y entrega de trabajo | 📅 Diciembre 15 |
 | 📌 Entrega final de notas      | -                                           | 📅 Diciembre 15    |
 
 
