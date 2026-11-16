@@ -14,6 +14,9 @@ class: inverse, center, middle
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
 style_duo_accent(primary_color = "#035AA6", secondary_color = "#FF961C")
+# Incorporar los gráficos al HTML; evita depender de carpetas externas en GitHub.
+knitr::opts_chunk$set(fig.path = "clase_9_files/figure-html/")
+knitr::opts_knit$set(upload.fun = knitr::image_uri)
 
 ```
 
