@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>clase_9.knit</title>
+    <title>Clase_9.knit</title>
     <meta charset="utf-8" />
-    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.30/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -24,6 +24,128 @@ class: inverse, center, middle
 ---
 
 class: inverse, center, middle
+
+# Repaso en duplas
+
+Conversen un minuto por diapositiva. Acuerden una respuesta y una razón para sostenerla. No hace falta usar R.
+
+---
+## 1. Una variable categórica
+
+Encuestamos sobre **tendencia política**: izquierda, centro o derecha.
+
+- ¿Cómo resumirían las respuestas para saber cuál es la más frecuente?
+- ¿Qué nos dice contar personas? ¿Qué agrega calcular porcentajes?
+
+???
+Tabla de frecuencias: cantidades y porcentajes. Aclarar el total de respuestas usado como denominador.
+
+---
+## 2. ¿Cómo mostrarían las respuestas?
+
+Queremos comunicar la distribución de **izquierda, centro y derecha**.
+
+- Dibujen un gráfico sencillo en una hoja.
+- ¿Qué pondrían en cada eje?
+- ¿Mostrarían cantidades o porcentajes? ¿Por qué?
+
+???
+Barras: categorías y cantidades o porcentajes. Si proponen torta, discutir qué facilita comparar las barras.
+
+---
+## 3. Ahora tenemos dos variables
+
+Además de tendencia política, preguntamos el **género**.
+
+- Inventen una pregunta que necesite ambas variables.
+- ¿Basta con mirar cada variable por separado?
+- ¿Qué tabla o gráfico permitiría compararlas?
+
+???
+Ejemplo: ¿cómo se distribuye la tendencia política dentro de cada grupo de género? Tabla de contingencia y barras agrupadas o apiladas al 100%.
+
+---
+## 4. ¿Porcentaje de quiénes?
+
+En una encuesta ficticia hay **120 mujeres y 80 hombres**. Se identifican con la izquierda **54 mujeres y 24 hombres**.
+
+- ¿Podemos comparar los grupos solo con 54 y 24?
+- ¿Cuántas personas de cada 100 se identifican con la izquierda en cada grupo?
+- ¿Qué total debemos usar para calcular cada porcentaje?
+
+???
+54/120 × 100 = 45%; 24/80 × 100 = 30%. Se usa el total de cada grupo para comparar distribuciones.
+
+---
+## 5. Tendencia política según género
+
+**Tabla 1 · Datos ficticios. Porcentajes por columna.**
+
+| Tendencia | Mujeres | Hombres | Total |
+|:---|---:|---:|---:|
+| Izquierda | 45% | 30% | 39% |
+| Centro | 30% | 30% | 30% |
+| Derecha | 25% | 40% | 31% |
+| **Total** | **100%** | **100%** | **100%** |
+| **Personas** | **120** | **80** | **200** |
+
+Completen: **«De cada 100 mujeres, ___…»**
+
+¿En qué tendencia aparece la mayor diferencia entre grupos? ¿Hay una sola?
+
+Si preguntamos cómo varía la tendencia política según el género, ¿cuál es la variable dependiente y cuál la independiente?
+
+???
+45 se identifican con la izquierda. Hay dos diferencias máximas iguales: 15 puntos porcentuales en izquierda y derecha. Dependiente: tendencia política, cuya distribución comparamos; independiente: género, que define los grupos. Es una elección según la pregunta, no prueba causalidad. Total: 78/200 = 39% izquierda, 60/200 = 30% centro y 62/200 = 31% derecha; no promediar porcentajes sin ponderar, porque los grupos tienen tamaños distintos. Las categorías de género están simplificadas para el ejercicio y no representan todas las identidades.
+
+---
+## 6. Participación y confianza vecinal
+
+**Tabla 2 · Datos ficticios. Porcentajes por columna.**
+
+| Confianza vecinal | Participa | No participa | Total |
+|:---|---:|---:|---:|
+| Baja | 20% | 45% | 32,5% |
+| Media | 30% | 35% | 32,5% |
+| Alta | 50% | 20% | 35% |
+| **Total** | **100%** | **100%** | **100%** |
+| **Personas** | **100** | **100** | **200** |
+
+- ¿Entre quiénes es más frecuente la confianza alta?
+- Escriban una frase comparando dos porcentajes.
+- Si comparamos confianza según participación, ¿cuál es la variable dependiente y cuál la independiente? ¿La tabla demuestra causalidad?
+
+???
+50% frente a 20%: diferencia de 30 puntos porcentuales. Dependiente: confianza; independiente: participación en organizaciones. La denominación responde a la pregunta analítica. Asociación descriptiva, no prueba causalidad; la confianza también podría favorecer la participación. Total: 65/200, 65/200 y 70/200. Cada columna suma 100%.
+
+---
+## 7. Leer una distribución
+
+**Gráfico 1 · Afiliación religiosa · 200 respuestas ficticias.**
+
+&lt;img src="Clase_9_files/figure-html/repaso-religion-1.svg" alt="" width="85%" style="display: block; margin: auto;" /&gt;
+
+¿Cuál es la respuesta más frecuente? ¿Eso significa que la eligió más de la mitad?
+
+???
+Católica: 40%, es la categoría más frecuente pero no es mayoría absoluta.
+
+---
+## 8. Mismos datos, dos gráficos
+
+**Género y apoyo al gobierno · Datos ficticios, no una encuesta real.**
+
+&lt;img src="Clase_9_files/figure-html/repaso-gobierno-1.svg" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+
+- ¿Qué significa el **40%**? ¿Qué grupo muestra mayor apoyo y por cuántos puntos porcentuales?
+- ¿Cuál facilita comparar el apoyo? ¿Cuál muestra mejor la distribución de cada grupo?
+
+???
+De cada 100 mujeres, 40 responden sí. Entre hombres: 55%; diferencia de 15 puntos porcentuales. Ambos gráficos usan porcentajes dentro de cada género y los mismos colores. Categorías simplificadas de género para el ejercicio.
+
+---
+class: inverse, center, middle
+
 
 # Medidas de tendencia central
 ### ¿¿¿Qué valor "representa" al grupo???
@@ -77,7 +199,7 @@ class: slideInRight, middle
 
 class: middle, center
 
-![](clase_9_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+![](Clase_9_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -216,7 +338,7 @@ class: slideInRight, middle
 ---
 class: middle, center
 
-![](clase_9_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+![](Clase_9_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
 
 ---
 class: slideInRight, middle
@@ -232,7 +354,7 @@ class: slideInRight, middle
 # Graficar. Caja y bigotes o *boxplot*
 
 .pull-left[ 
-![](clase_9_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+![](Clase_9_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
 ]
 
 .pull-right[
@@ -245,9 +367,9 @@ class: slideInRight, middle
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

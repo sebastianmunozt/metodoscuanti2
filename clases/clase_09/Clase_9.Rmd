@@ -29,6 +29,164 @@ style_duo_accent(primary_color = "#035AA6", secondary_color = "#FF961C")
 
 class: inverse, center, middle
 
+# Repaso en duplas
+
+Conversen un minuto por diapositiva. Acuerden una respuesta y una razón para sostenerla. No hace falta usar R.
+
+---
+## 1. Una variable categórica
+
+Encuestamos sobre **tendencia política**: izquierda, centro o derecha.
+
+- ¿Cómo resumirían las respuestas para saber cuál es la más frecuente?
+- ¿Qué nos dice contar personas? ¿Qué agrega calcular porcentajes?
+
+???
+Tabla de frecuencias: cantidades y porcentajes. Aclarar el total de respuestas usado como denominador.
+
+---
+## 2. ¿Cómo mostrarían las respuestas?
+
+Queremos comunicar la distribución de **izquierda, centro y derecha**.
+
+- Dibujen un gráfico sencillo en una hoja.
+- ¿Qué pondrían en cada eje?
+- ¿Mostrarían cantidades o porcentajes? ¿Por qué?
+
+???
+Barras: categorías y cantidades o porcentajes. Si proponen torta, discutir qué facilita comparar las barras.
+
+---
+## 3. Ahora tenemos dos variables
+
+Además de tendencia política, preguntamos el **género**.
+
+- Inventen una pregunta que necesite ambas variables.
+- ¿Basta con mirar cada variable por separado?
+- ¿Qué tabla o gráfico permitiría compararlas?
+
+???
+Ejemplo: ¿cómo se distribuye la tendencia política dentro de cada grupo de género? Tabla de contingencia y barras agrupadas o apiladas al 100%.
+
+---
+## 4. ¿Porcentaje de quiénes?
+
+En una encuesta ficticia hay **120 mujeres y 80 hombres**. Se identifican con la izquierda **54 mujeres y 24 hombres**.
+
+- ¿Podemos comparar los grupos solo con 54 y 24?
+- ¿Cuántas personas de cada 100 se identifican con la izquierda en cada grupo?
+- ¿Qué total debemos usar para calcular cada porcentaje?
+
+???
+54/120 × 100 = 45%; 24/80 × 100 = 30%. Se usa el total de cada grupo para comparar distribuciones.
+
+---
+## 5. Tendencia política según género
+
+**Tabla 1 · Datos ficticios. Porcentajes por columna.**
+
+| Tendencia | Mujeres | Hombres | Total |
+|:---|---:|---:|---:|
+| Izquierda | 45% | 30% | 39% |
+| Centro | 30% | 30% | 30% |
+| Derecha | 25% | 40% | 31% |
+| **Total** | **100%** | **100%** | **100%** |
+| **Personas** | **120** | **80** | **200** |
+
+Completen: **«De cada 100 mujeres, ___…»**
+
+¿En qué tendencia aparece la mayor diferencia entre grupos? ¿Hay una sola?
+
+Si preguntamos cómo varía la tendencia política según el género, ¿cuál es la variable dependiente y cuál la independiente?
+
+???
+45 se identifican con la izquierda. Hay dos diferencias máximas iguales: 15 puntos porcentuales en izquierda y derecha. Dependiente: tendencia política, cuya distribución comparamos; independiente: género, que define los grupos. Es una elección según la pregunta, no prueba causalidad. Total: 78/200 = 39% izquierda, 60/200 = 30% centro y 62/200 = 31% derecha; no promediar porcentajes sin ponderar, porque los grupos tienen tamaños distintos. Las categorías de género están simplificadas para el ejercicio y no representan todas las identidades.
+
+---
+## 6. Participación y confianza vecinal
+
+**Tabla 2 · Datos ficticios. Porcentajes por columna.**
+
+| Confianza vecinal | Participa | No participa | Total |
+|:---|---:|---:|---:|
+| Baja | 20% | 45% | 32,5% |
+| Media | 30% | 35% | 32,5% |
+| Alta | 50% | 20% | 35% |
+| **Total** | **100%** | **100%** | **100%** |
+| **Personas** | **100** | **100** | **200** |
+
+- ¿Entre quiénes es más frecuente la confianza alta?
+- Escriban una frase comparando dos porcentajes.
+- Si comparamos confianza según participación, ¿cuál es la variable dependiente y cuál la independiente? ¿La tabla demuestra causalidad?
+
+???
+50% frente a 20%: diferencia de 30 puntos porcentuales. Dependiente: confianza; independiente: participación en organizaciones. La denominación responde a la pregunta analítica. Asociación descriptiva, no prueba causalidad; la confianza también podría favorecer la participación. Total: 65/200, 65/200 y 70/200. Cada columna suma 100%.
+
+---
+## 7. Leer una distribución
+
+**Gráfico 1 · Afiliación religiosa · 200 respuestas ficticias.**
+
+```{r repaso-religion, echo=FALSE, warning=FALSE, message=FALSE, dev='svglite', fig.width=8, fig.height=2.65, out.width='85%', fig.align='center'}
+library(ggplot2)
+religion_repaso <- data.frame(
+  religion = c("Cat\u00f3lica", "Sin religi\u00f3n", "Evang\u00e9lica", "Otra"),
+  porcentaje = c(40, 35, 20, 5))
+ggplot(religion_repaso, aes(reorder(religion, porcentaje), porcentaje)) +
+  geom_col(fill = "#035AA6", width = .65) +
+  geom_text(aes(label = paste0(porcentaje, "%")), hjust = -.15, size = 5) +
+  coord_flip() + scale_y_continuous(limits = c(0, 50), breaks = seq(0,50,10)) +
+  labs(x = NULL, y = "Porcentaje de las respuestas") +
+  theme_minimal(base_size = 15)
+```
+
+¿Cuál es la respuesta más frecuente? ¿Eso significa que la eligió más de la mitad?
+
+???
+Católica: 40%, es la categoría más frecuente pero no es mayoría absoluta.
+
+---
+## 8. Mismos datos, dos gráficos
+
+**Género y apoyo al gobierno · Datos ficticios, no una encuesta real.**
+
+```{r repaso-gobierno, echo=FALSE, warning=FALSE, message=FALSE, dev='svglite', fig.width=10, fig.height=3.2, out.width='100%', fig.align='center'}
+apoyo_repaso <- data.frame(
+  genero = rep(c("Mujeres", "Hombres"), each = 2),
+  apoyo = factor(rep(c("Si", "No"), 2), levels = c("Si", "No")),
+  porcentaje = c(40, 60, 55, 45))
+colores_repaso <- c("Si" = "#035AA6", "No" = "#FF961C")
+comun_repaso <- list(
+  scale_fill_manual(values = colores_repaso, labels = c("S\u00ed", "No")),
+  scale_y_continuous(limits = c(0,100), breaks = seq(0,100,25)),
+  labs(x = "G\u00e9nero", y = "Porcentaje dentro\nde cada g\u00e9nero", fill = "Apoya"),
+  theme_minimal(base_size = 13), theme(legend.position = "bottom"))
+apilado_repaso <- ggplot(apoyo_repaso, aes(genero, porcentaje, fill = apoyo)) +
+  geom_col(width = .65) +
+  geom_text(aes(label = paste0(porcentaje, "%")),
+            position = position_stack(vjust = .5), size = 4.5, colour = "white") +
+  comun_repaso + ggtitle("Barras apiladas al 100%")
+agrupado_repaso <- ggplot(apoyo_repaso, aes(genero, porcentaje, fill = apoyo)) +
+  geom_col(position = position_dodge(width = .75), width = .65) +
+  geom_text(aes(label = paste0(porcentaje, "%")),
+            position = position_dodge(width = .75), vjust = -.4, size = 4.5) +
+  comun_repaso + ggtitle("Barras agrupadas")
+grid::grid.newpage()
+grid::pushViewport(grid::viewport(layout = grid::grid.layout(1, 2)))
+print(apilado_repaso, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1))
+print(agrupado_repaso, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 2))
+```
+
+- ¿Qué significa el **40%**? ¿Qué grupo muestra mayor apoyo y por cuántos puntos porcentuales?
+- ¿Cuál facilita comparar el apoyo? ¿Cuál muestra mejor la distribución de cada grupo?
+
+???
+De cada 100 mujeres, 40 responden sí. Entre hombres: 55%; diferencia de 15 puntos porcentuales. Ambos gráficos usan porcentajes dentro de cada género y los mismos colores. Categorías simplificadas de género para el ejercicio.
+
+---
+class: inverse, center, middle
+
+
 # Medidas de tendencia central
 ### ¿¿¿Qué valor "representa" al grupo???
 

@@ -289,6 +289,59 @@ La recta estimada es $\widehat{Y}=79{,}61-0{,}862X$. El símbolo $\widehat{Y}$ d
 
 **Para comprobarlo:** ¿cuánto cambiaría el índice estimado si la escolaridad pasara de 20 % a 25 %? Comparen dos valores de la recta; la pendiente por sí sola no demuestra un efecto causal.
 
+## Un punto, una estimación y un residuo
+
+La recta estima **69,26** puntos de fecundidad para **Courtelary**. El dato observado es **80,20**. La línea vertical muestra la diferencia entre ambos valores.
+
+```{r}
+#| dev: svglite
+#| fig-width: 8
+#| fig-height: 3.3
+#| out-height: 335px
+#| fig-align: center
+#| fig-alt: "En Courtelary, un segmento vertical une el valor ajustado de 69,26 con el observado de 80,20."
+recta <- lm(Fertility ~ Education, data = suiza)
+caso <- data.frame(x = suiza["Courtelary", "Education"],
+                   observado = suiza["Courtelary", "Fertility"],
+                   ajustado = unname(fitted(recta)["Courtelary"]))
+nube +
+  geom_abline(intercept = coef(recta)[1], slope = coef(recta)[2], colour = "#A14225") +
+  geom_segment(data = caso, aes(x = x, xend = x, y = ajustado, yend = observado),
+               inherit.aes = FALSE, linewidth = 1.4, colour = "#702963") +
+  geom_point(data = caso, aes(x, observado), inherit.aes = FALSE, size = 4, colour = "#702963") +
+  geom_point(data = caso, aes(x, ajustado), inherit.aes = FALSE, size = 3, colour = "#A14225") +
+  geom_text(data = caso, aes(x, observado, label = "Courtelary"),
+            inherit.aes = FALSE, hjust = 0, nudge_x = 1.2, colour = "#702963")
+```
+
+**Observado − ajustado = 80,20 − 69,26 = +10,94.** La recta estimó de menos.
+
+## Leer el signo del residuo
+
+| Si el dato queda… | El residuo es… | La recta estimó… |
+|:---|:---|:---|
+| Por encima de la recta | Positivo | **De menos** |
+| Por debajo de la recta | Negativo | **De más** |
+| Sobre la recta | Cero | Exactamente el valor observado |
+
+**Prueba rápida:** si un distrito registra 60 puntos y la recta estima 70, ¿cuál es su residuo? ¿La recta estimó de más o de menos?
+
+::: {.notes}
+60 − 70 = −10. La recta estimó 10 puntos de más. El signo da la dirección; la distancia a cero da el tamaño del error.
+:::
+
+## ¿Qué nos dicen muchos residuos juntos?
+
+En la regresión de **fecundidad según agricultura**, el residuo mínimo fue **−25,54** y el máximo, **+24,49**. La mediana fue **−0,64**. Un valor central cercano a cero puede coexistir con errores grandes en algunos distritos.
+
+| Al graficar los residuos contra los valores ajustados… | Vale la pena preguntar… |
+|:---|:---|
+| Aparece una curva | ¿La recta deja fuera parte de la forma de la relación? |
+| La nube se abre como un abanico | ¿La recta se equivoca más en unos valores que en otros? |
+| Un distrito queda muy lejos de cero | ¿Qué sabemos de ese distrito que el modelo no recoge? |
+
+Un patrón es una pista para investigar. Un punto lejano no se elimina solo por estar lejos.
+
 ## Residuos y calidad del ajuste
 
 - **Residuo:** distancia vertical con signo entre un punto y la recta: valor observado menos valor ajustado. Si el punto está por encima de la recta, el residuo es positivo.
